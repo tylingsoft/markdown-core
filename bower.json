@@ -20,6 +20,7 @@
   ],
   "dependencies": {
     "markdown-it": null,
-    "jquery": null
+    "jquery": null,
+    "github-markdown-css": null
   }
 }
