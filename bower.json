@@ -1,0 +1,24 @@
+{
+  "name": "markdown-core",
+  "version": "0.0.1",
+  "authors": [
+    "Tyler Long <tyler4long@gmail.com>"
+  ],
+  "description": "Markdown Core",
+  "main": "index.html",
+  "keywords": [
+    "markdown"
+  ],
+  "license": "MIT",
+  "homepage": "http://mdp.tylingsoft.com/",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "markdown-it": "~5.0.0"
+  }
+}
