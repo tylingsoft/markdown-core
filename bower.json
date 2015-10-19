@@ -19,6 +19,7 @@
     "tests"
   ],
   "dependencies": {
-    "markdown-it": "~5.0.0"
+    "markdown-it": null,
+    "jquery": null
   }
 }

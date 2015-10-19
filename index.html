@@ -4,8 +4,30 @@
   <meta charset='utf-8'>
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Markdown Core</title>
+  <script src="vendor/jquery/dist/jquery.min.js"></script>
+  <script src="vendor/markdown-it/dist/markdown-it.min.js"></script>
+  <script>
+    $(function(){
+      var md = window.markdownit();
+      var result = md.render($('#markdown').val());
+      console.log(result);
+      $('#html').html(result);
+    });
+  </script>
 </head>
 <body>
-  Hello world!
+  <textarea rows="20" cols="100" id="markdown">
+# heading 1
+
+Hello world
+
+
+## heading 2
+
+Good morning!
+
+  </textarea>
+  <div id="html">
+  </div>
 </body>
 </html>
