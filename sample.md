@@ -47,3 +47,7 @@ $(document).ready(function() {
 for i in range(1, 10):
     print 'Hello world {0}'.format(i)
 ```
+
+## HTML code
+
+<strong>Hello world</strong>

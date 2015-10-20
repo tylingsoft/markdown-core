@@ -1,5 +1,6 @@
 $(function(){
   var md = window.markdownit({
+    html: true,
     linkify: true
   });
   $.get('sample.md',function(data){
