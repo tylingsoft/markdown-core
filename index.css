@@ -4,3 +4,11 @@
   margin: 0 auto;
   padding: 30px;
 }
+
+pre code.hljs {
+  display: block;
+}
+
+code.hljs {
+  display: inline;
+}
