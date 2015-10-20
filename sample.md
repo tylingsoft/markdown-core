@@ -20,6 +20,8 @@ do_this_and_do_that_and_another_thing.
 
 
 ## Emoji :panda_face:
+### Emoji :panda_face:
+#### Emoji :panda_face:
 
 :sparkles: :camel: :boom: :panda_face:
 
@@ -61,3 +63,25 @@ for i in range(1, 10):
 ## HTML code
 
 <strong>Hello world</strong>
+
+
+## Math
+
+Inline math `$E = mc^2$`, another one: `$\dfrac{ \tfrac{1}{2}[1-(\tfrac{1}{2})^n] }{ 1-\tfrac{1}{2} } = s_n$`.
+
+```math
+\oint_C x^3\, dx + 4y^2\, dy
+
+2 = \left(
+ \frac{\left(3-x\right) \times 2}{3-x}
+ \right)
+
+\sum_{m=1}^\infty\sum_{n=1}^\infty\frac{m^2\,n}
+ {3^m\left(m\,3^n+n\,3^m\right)}
+
+\phi_n(\kappa) =
+ \frac{1}{4\pi^2\kappa^2} \int_0^\infty
+ \frac{\sin(\kappa R)}{\kappa R}
+ \frac{\partial}{\partial R}
+ \left[R^2\frac{\partial D_n(R)}{\partial R}\right]\,dR
+```
