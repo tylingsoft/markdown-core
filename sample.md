@@ -18,6 +18,12 @@ http://example.com
 
 do_this_and_do_that_and_another_thing.
 
+
+## Emoji :panda_face:
+
+:sparkles: :camel: :boom: :panda_face:
+
+
 ## Task lists
 
 - [x] @mentions, #refs, [links](), **formatting**, and <del>tags</del> are supported
