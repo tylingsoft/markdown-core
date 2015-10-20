@@ -15,3 +15,14 @@ Good morning!
   item * 2
 end
 ```
+
+```javascript
+$(document).ready(function() {
+  $('pre code').each(function(i, block) {
+    hljs.highlightBlock(block);
+  });
+});
+```
+
+    for i in range(1, 10):
+        print 'Hello world {0}'.format(i)

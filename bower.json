@@ -21,6 +21,7 @@
   "dependencies": {
     "markdown-it": null,
     "jquery": null,
-    "github-markdown-css": null
+    "github-markdown-css": null,
+    "highlightjs": null
   }
 }
