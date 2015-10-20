@@ -1,5 +1,9 @@
 # Markdown Core
 
+first line  
+second line
+
+---
 
 ## Github Flavored Markdown
 
