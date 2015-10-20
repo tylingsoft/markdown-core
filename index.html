@@ -5,40 +5,12 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Markdown Core</title>
   <link rel="stylesheet" href="vendor/github-markdown-css/github-markdown.css">
-  <style>
-    .markdown-body {
-      min-width: 200px;
-      max-width: 790px;
-      margin: 0 auto;
-      padding: 30px;
-    }
-  </style>
+  <link rel="stylesheet" href="index.css">
   <script src="vendor/jquery/dist/jquery.min.js"></script>
   <script src="vendor/markdown-it/dist/markdown-it.min.js"></script>
-  <script>
-    $(function(){
-      var md = window.markdownit();
-      var result = md.render($('#markdown').val());
-      console.log(result);
-      $('article.markdown-body').html(result);
-    });
-  </script>
+  <script src="index.js"></script>
 </head>
 <body>
-  <textarea rows="20" cols="100" id="markdown">
-# heading 1
-
-Hello world
-
-
-## heading 2
-
-Good morning!
-
-  </textarea>
-  <article class="markdown-body">
-    <h1>Unicorns</h1>
-    <p>All the things</p>
-  </article>
+  <article class="markdown-body"></article>
 </body>
 </html>

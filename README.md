@@ -3,4 +3,4 @@
 
 ## todo
 
-1. setup bower
+1. edit and preview side by side
