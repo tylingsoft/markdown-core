@@ -84,6 +84,8 @@ for i in range(1, 10):
 
 Inline math `$E = mc^2$`, another one: `$\dfrac{ \tfrac{1}{2}[1-(\tfrac{1}{2})^n] }{ 1-\tfrac{1}{2} } = s_n$`.
 
+Invalid math `$E = mc^^^^2$`
+
 ```math
 \oint_C x^3\, dx + 4y^2\, dy
 

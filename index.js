@@ -39,6 +39,22 @@ $(function(){
     return content;
   }
 
+
+  // math
+  md.renderer.rules.code_inline = function(token, idx) {
+    var code = token[idx].content;
+    if(code.startsWith('$') && code.endsWith('$')) {
+      code = code.substr(1, code.length-2);
+      try{
+        return katex.renderToString(code);
+      } catch(err) {
+        return '<code>' + err + '</code>';
+      }
+    }
+    return '<code>' + code + '</code>';
+  }
+
+
   $.get('sample.md',function(data){
     var result = md.render(data);
     console.log(result); // for debug
