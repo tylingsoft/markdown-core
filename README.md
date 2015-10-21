@@ -9,3 +9,6 @@
 1. 参照这里的代码： https://markdown-it.github.io/index.js  markdown-it 的完整例子
 1. 将这里的核心代码移植到 Markdown Plus， 从而升级 M+
 1. gantt x lables
+1. disable inline code syntax highlight?
+    1. 挺酷的，可以留之
+1. 看看还有哪些流行的markdown-it plugin

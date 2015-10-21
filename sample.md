@@ -19,19 +19,13 @@ http://example.com
 do_this_and_do_that_and_another_thing.
 
 
-## Fontawesome :fa-cab:
-
-:fa-flag: :fa-bicycle: :fa-leaf:
+## Fontawesome: :fa-cab: :fa-flag: :fa-bicycle: :fa-leaf: :fa-heart:
 
 
-## Ionicons :ion-printer:
-
-:ion-social-tux: :ion-lock-combination: :ion-ios-medkit:
+## Ionicons: :ion-printer: :ion-social-tux: :ion-lock-combination: :ion-ios-medkit: :ion-coffee:
 
 
-## Emoji :panda_face:
-
-:sparkles: :camel: :boom: :panda_face:
+## Emoji: :panda_face: :sparkles: :camel: :boom: :pig:
 
 
 ## Task lists
@@ -87,7 +81,7 @@ for i in range(1, 10):
 
 Inline math `$E = mc^2$`, another one: `$\dfrac{ \tfrac{1}{2}[1-(\tfrac{1}{2})^n] }{ 1-\tfrac{1}{2} } = s_n$`.
 
-Invalid math `$E = mc^^^^2$`
+Invalid math: `$E = mc^^^^2$`
 
 ```math
 \oint_C x^3\, dx + 4y^2\, dy
