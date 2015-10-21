@@ -12,3 +12,4 @@
 1. disable inline code syntax highlight?
     1. 挺酷的，可以留之
 1. 看看还有哪些流行的markdown-it plugin
+1. rename global object to mdp
