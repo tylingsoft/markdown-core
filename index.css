@@ -12,3 +12,7 @@ pre code.hljs {
 code.hljs {
   display: inline;
 }
+
+div.mermaid {
+  text-align: center;
+}

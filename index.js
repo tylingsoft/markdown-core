@@ -74,7 +74,8 @@ $(function(){
       });
       return '<div>' + tex + '</div>';
     } else if (token[idx].info == '') { // 没有指明语言
-      if(firstLine === 'gantt' || firstLine === 'sequenceDiagram' || firstLine.match(/^graph (?:TB|BT|RL|LR|TD);?$/)) { // mermaid
+      // mermaid
+      if(firstLine === 'gantt' || firstLine === 'sequenceDiagram' || firstLine.match(/^graph (?:TB|BT|RL|LR|TD);?$/)) {
         if(firstLine === 'sequenceDiagram') {
           code += '\n'; // 如果末尾没有空行，则语法错误
         }
