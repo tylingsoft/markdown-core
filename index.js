@@ -39,8 +39,7 @@ $(function(){
     return content;
   }
 
-
-  // math
+  // inline math
   md.renderer.rules.code_inline = function(token, idx) {
     var code = token[idx].content;
     if(code.startsWith('$') && code.endsWith('$')) {
@@ -54,10 +53,31 @@ $(function(){
     return '<code>' + code + '</code>';
   }
 
+  // math block
+  md.renderer.rules.fence = function(token, idx) {
+    var code = token[idx].content;
+    if(token[idx].info == 'math') {
+      var tex = '';
+      code.split(/\n\n/).forEach(function(line){ // 连续两个换行，则开始下一个公式
+        line = line.trim();
+        if(line.length > 0) {
+          try {
+            tex += katex.renderToString(line, { displayMode: true });
+          } catch(err) {
+            tex += '<pre>' + err + '</pre>';
+          }
+        }
+      });
+      return '<div>' + tex + '</div>';
+    } else if (token[idx].info == '') {
+      return '<pre><code>' + code + '</code></pre>';
+    } else {
+      return '<pre><code class="language-' + token[idx].info + '">' + code + '</code></pre>';
+    }
+  }
 
   $.get('sample.md',function(data){
     var result = md.render(data);
-    console.log(result); // for debug
     $('article.markdown-body').html(result);
     $('code').each(function(i, block) {
       hljs.highlightBlock(block);
