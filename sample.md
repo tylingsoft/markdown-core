@@ -33,10 +33,20 @@ do_this_and_do_that_and_another_thing.
 
 ## Task lists
 
-- [x] @mentions, #refs, [links](), **formatting**, and <del>tags</del> are supported
+`[ ] inline code`
+
+```
+[*] code block
+```
+
+[ ] todo item 1 [*] todo item 2
+
+- hello world
+- [ ] @mentions, #refs, [links](), **formatting**, and <del>tags</del> are supported
 - [x] list syntax is required (any unordered or ordered list supported)
-- [x] this is a complete item
-- [ ] this is an incomplete item
+
+1. [x] this is a complete item
+1. [ ] this is an incomplete item
 
 
 ## Code blocks
