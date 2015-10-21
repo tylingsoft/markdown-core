@@ -6,7 +6,12 @@ $(function(){
     })
     .use(window.markdownitEmoji);
   md.renderer.rules.emoji = function(token, idx) {
-    return emojione.shortnameToImage(':' + token[idx].markup + ':');
+    var shortname = token[idx].markup;
+    if(shortname.startsWith('fa-')) {
+      return '<i class="fa ' + shortname + '"></i>';
+    } else {
+      return emojione.shortnameToImage(':' + shortname + ':');
+    }
   };
   emojione.cacheBustParam = ''; // or '?v=1.5.1'
   $.get('sample.md',function(data){

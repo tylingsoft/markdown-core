@@ -959,7 +959,7 @@ module.exports = function normalize_opts(options) {
   // Compile regexp
   var names = Object.keys(emojies)
                 .map(function (name) { return ':' + name + ':'; })
-                .concat(':fa-[a-z0-9-]+?:')
+                .concat(':fa-[a-z0-9-]+?:') // fontawesome
                 .concat(Object.keys(shortcuts).map(function (name) { return quoteRE(name); }))
                 .sort()
                 .reverse()
