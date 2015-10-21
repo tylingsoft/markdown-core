@@ -23,6 +23,10 @@ $(function(){
   window.list_item = false;
   md.renderer.rules.list_item_open = function(token, idx) {
     window.list_item = true;
+    var content = token[idx+2].content;
+    if(content.startsWith('[ ] ') || content.startsWith('[x] ')) {
+      return '<li class="task-list-item">';
+    }
     return '<li>';
   }
   md.renderer.rules.list_item_close = function(token, idx) {

@@ -1,93 +1,94 @@
-# Markdown Core
+# Markdown Plus
 
-first line  
-second line
+![Markdown Plus](http://mdp.tylingsoft.com/icon.png)
+Markdown Plus ("M+" or "mdp" for short) is a versatile markdown editor. Besides common markdown, GitHub flavored markdown, it also supports task lists, emojis, Font Awesome icons, Ionicons icons, mathematical formulae, flowcharts, sequence diagrams, gantt diagrams, Vim mode and Emacs mode.
+
+
+##### Fork me on GitHub: <i class="fa fa-github" style="font-size: 64px;"/> [tylingsoft/markdown-plus](https://github.com/tylingsoft/markdown-plus).
+
+##### Buy our Mac app: <i class="fa fa-apple" style="font-size: 64px;"/> [tylingsoft.com/mdp](https://tylingsoft.com/mdp)
 
 ---
 
-## Github Flavored Markdown
 
-~~strikethrough~~
+## Code blocks with syntax highlight
 
-header 1 | header 2
----|---
-row 1 col 1 | row 1 col 2
-row 2 col 1 | row 2 col 2
+    <?php
+        echo "Hello world!";
 
-http://example.com
+```python
+from fabric.api import local
 
-do_this_and_do_that_and_another_thing.
-
-
-## Fontawesome :fa-cab:
-
-:fa-flag: :fa-bicycle: :fa-leaf:
+def update():
+    local('rm -rf bower_components')
+    local('bower cache clean')
+    local('bower update')
+```
 
 
-## Ionicons :ion-printer:
+## Tables and alignment
 
-:ion-social-tux: :ion-lock-combination: :ion-ios-medkit:
+Function name | Description
+------------- | -----------
+`help()`      | Display the help window.
+`destroy()`   | **Destroy your computer!**
 
-
-## Emoji :panda_face:
-
-:sparkles: :camel: :boom: :panda_face:
+| Left-Aligned  | Center Aligned  | Right Aligned |
+| :------------ |:---------------:| -----:|
+| col 3 is      | some wordy text | $1600 |
+| col 2 is      | centered        |   $12 |
 
 
 ## Task lists
 
-`[ ] inline code`
+- [ ] a bigger project
+  - [x] first subtask
+  - [x] follow up subtask
+  - [ ] final subtask
+- [ ] a separate task
 
-```
-[*] code block
-```
-
-[ ] todo item 1 [*] todo item 2
-
-- hello world
-- [ ] @mentions, #refs, [links](), **formatting**, and <del>tags</del> are supported
-- [x] list syntax is required (any unordered or ordered list supported)
-
-1. [x] this is a complete item
-1. [ ] this is an incomplete item
+[Task Lists Syntax](https://help.github.com/articles/writing-on-github/#task-lists)
 
 
-## Code blocks
+## Emojis
 
-Before inline code `$(function(){ console.log('Hello world') });` after inline code.
+<img src="https://s.tylingsoft.com/emoji-icons/smile.png" width="64"/>
+<img src="https://s.tylingsoft.com/emoji-icons/whale.png" width="64"/>
+<img src="https://s.tylingsoft.com/emoji-icons/santa.png" width="64"/>
+<img src="https://s.tylingsoft.com/emoji-icons/panda_face.png" width="64"/>
+<img src="https://s.tylingsoft.com/emoji-icons/dog.png" width="64"/>
+<img src="https://s.tylingsoft.com/emoji-icons/truck.png" width="64"/>
 
-```ruby
-[1, 2, 3, 4, 5].collect do |item|
-  item * 2
-end
-```
-
-```javascript
-$(document).ready(function() {
-  $('pre code').each(function(i, block) {
-    hljs.highlightBlock(block);
-  });
-});
-```
-
-    for i in range(1, 10):
-        print 'Hello world {0}'.format(i)
-
-```
-for i in range(1, 10):
-    print 'Hello world {0}'.format(i)
-```
-
-## HTML code
-
-<strong>Hello world</strong>
+[Emoji Cheat Sheet](http://www.emoji-cheat-sheet.com/)
 
 
-## Math
+## Font Awesome icons
+
+<i class="fa fa-cloud" style="font-size: 64px;"/>
+<i class="fa fa-flag" style="font-size: 64px;"/>
+<i class="fa fa-car" style="font-size: 64px;"/>
+<i class="fa fa-truck" style="font-size: 64px;"/>
+<i class="fa fa-heart" style="font-size: 64px;"/>
+<i class="fa fa-dollar" style="font-size: 64px;"/>
+
+[All the Font Awesome icons](http://fontawesome.io/icons/)
+
+
+## Ionicons icons
+
+<i class="icon ion-beer" style="font-size: 88px;"/>
+<i class="icon ion-key" style="font-size: 88px;"/>
+<i class="icon ion-locked" style="font-size: 88px;"/>
+<i class="icon ion-location" style="font-size: 88px;"/>
+<i class="icon ion-plane" style="font-size: 88px;"/>
+<i class="icon ion-ios-eye" style="font-size: 88px;"/>
+
+[All the Ionicons icons](http://ionicons.com/)
+
+
+## Mathematical formulae
 
 Inline math `$E = mc^2$`, another one: `$\dfrac{ \tfrac{1}{2}[1-(\tfrac{1}{2})^n] }{ 1-\tfrac{1}{2} } = s_n$`.
-
-Invalid math `$E = mc^^^^2$`
 
 ```math
 \oint_C x^3\, dx + 4y^2\, dy
@@ -98,13 +99,15 @@ Invalid math `$E = mc^^^^2$`
 
 \sum_{m=1}^\infty\sum_{n=1}^\infty\frac{m^2\,n}
  {3^m\left(m\,3^n+n\,3^m\right)}
-
+ 
 \phi_n(\kappa) =
  \frac{1}{4\pi^2\kappa^2} \int_0^\infty
  \frac{\sin(\kappa R)}{\kappa R}
  \frac{\partial}{\partial R}
  \left[R^2\frac{\partial D_n(R)}{\partial R}\right]\,dR
 ```
+
+[Mathematical Formulae Syntax](http://meta.wikimedia.org/wiki/Help:Displaying_a_formula)
 
 
 ## Flowcharts
@@ -116,6 +119,8 @@ graph TD
     C -->|One| D[Result one]
     C -->|Two| E[Result two]
 ```
+
+[Flowchart Syntax](http://knsv.github.io/mermaid/flowchart.html)
 
 
 ## Sequence diagrams
@@ -133,12 +138,7 @@ sequenceDiagram
     end
 ```
 
-
-```
-sequenceDiagram
-    Alice->>John: Hello John, how are you?
-    John-->Alice: Great!
-```
+[Sequence Diagram Syntax](http://knsv.github.io/mermaid/sequenceDiagram.html)
 
 
 ## Gantt diagrams
@@ -154,3 +154,5 @@ gantt
     Task in sec      :2014-01-12, 12d
     anther task      : 24d
 ```
+
+[Gantt Diagram Syntax](http://knsv.github.io/mermaid/gantt.html)
