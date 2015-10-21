@@ -1,4 +1,4 @@
-window.md = window.markdownit({
+window.mdc = window.markdownit({
   html: true,
   xhtmlOut: true, // <br /> instead of <br>
   linkify: true
@@ -6,9 +6,9 @@ window.md = window.markdownit({
 
 
 // icons
-md = md.use(window.markdownitEmoji);
+mdc = mdc.use(window.markdownitEmoji);
 emojione.cacheBustParam = ''; // 当emojione的图片升级了，可以修改这个让浏览器的缓存失效
-md.renderer.rules.emoji = function(token, idx) {
+mdc.renderer.rules.emoji = function(token, idx) {
   var shortname = token[idx].markup;
   if(shortname.startsWith('fa-')) { // fontawesome
     return '<i class="fa ' + shortname + '"></i>';
@@ -22,7 +22,7 @@ md.renderer.rules.emoji = function(token, idx) {
 
 // task list
 window.task_list_item = false;
-md.renderer.rules.list_item_open = function(token, idx) {
+mdc.renderer.rules.list_item_open = function(token, idx) {
   var content = token[idx+2].content;
   if(content.startsWith('[ ] ') || content.startsWith('[x] ')) {
     window.task_list_item = true;
@@ -30,11 +30,11 @@ md.renderer.rules.list_item_open = function(token, idx) {
   }
   return '<li>';
 }
-md.renderer.rules.list_item_close = function(token, idx) {
+mdc.renderer.rules.list_item_close = function(token, idx) {
   window.task_list_item = false;
   return '</li>';
 }
-md.renderer.rules.text = function(token, idx) {
+mdc.renderer.rules.text = function(token, idx) {
   var content = token[idx].content;
   if(window.task_list_item) {
     if(content.startsWith('[ ] ')) {
@@ -49,7 +49,7 @@ md.renderer.rules.text = function(token, idx) {
 
 
 // inline math
-md.renderer.rules.code_inline = function(token, idx) {
+mdc.renderer.rules.code_inline = function(token, idx) {
   var code = token[idx].content;
   if(code.startsWith('$') && code.endsWith('$')) {
     code = code.substr(1, code.length-2);
@@ -64,7 +64,7 @@ md.renderer.rules.code_inline = function(token, idx) {
 
 
 // math block
-md.math_block = function(code) {
+mdc.math_block = function(code) {
   var tex = '';
   code.split(/\n\n/).forEach(function(line) { // 连续两个换行，则开始下一个公式
     line = line.trim();
@@ -84,7 +84,7 @@ md.math_block = function(code) {
 mermaid.parseError = function(err, hash){
   window.mermaidError = err;
 };
-md.mermaid_charts = function(code) {
+mdc.mermaid_charts = function(code) {
   if(code.startsWith('sequenceDiagram')) {
     code += '\n'; // append empty line to the end, otherwise syntax error. It's a bug of mermaid.
   }
@@ -97,23 +97,23 @@ md.mermaid_charts = function(code) {
 
 
 // fence block
-md.renderer.rules.fence = function(token, idx) {
+mdc.renderer.rules.fence = function(token, idx) {
   var code = token[idx].content.trim();
   if(token[idx].info == 'math') { // math
-    return md.math_block(code);
+    return mdc.math_block(code);
   }
   if(token[idx].info.length > 0) { // programming language
     return '<pre><code class="language-' + token[idx].info + '">' + code + '</code></pre>';
   }
   var firstLine = code.split(/\n/)[0].trim();
   if(firstLine === 'gantt' || firstLine === 'sequenceDiagram' || firstLine.match(/^graph (?:TB|BT|RL|LR|TD);?$/)) {
-    return md.mermaid_charts(code) // mermaid
+    return mdc.mermaid_charts(code) // mermaid
   }
   return '<pre><code>' + code + '</code></pre>'; // unknown programming language
 }
 
-md.init = function(markdown) {
-  var result = md.render(markdown);
+mdc.init = function(markdown) {
+  var result = mdc.render(markdown);
   $('article.markdown-body').html(result);
   $('code').each(function(i, block) {
     hljs.highlightBlock(block);

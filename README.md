@@ -12,6 +12,6 @@
 1. disable inline code syntax highlight?
     1. 挺酷的，可以留之
 1. 看看还有哪些流行的markdown-it plugin
-1. rename global object to mdc
 1. make mdc the only global object expored
 1. 新的project： markdown-it-icons 支持 emoji，fontawesome, ionicons ...etc.
+1. rename index.css
