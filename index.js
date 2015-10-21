@@ -8,7 +8,7 @@ $(function(){
   md.renderer.rules.emoji = function(token, idx) {
     return emojione.shortnameToImage(':' + token[idx].markup + ':');
   };
-  emojione.cacheBustParam = '';
+  emojione.cacheBustParam = ''; // or '?v=1.5.1'
   $.get('sample.md',function(data){
     var result = md.render(data);
     console.log(result); // for debug

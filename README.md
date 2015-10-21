@@ -9,3 +9,4 @@
 1. task lists
 1. 参照这里的代码： https://markdown-it.github.io/index.js  markdown-it 的完整例子
 1. math
+1. fontawesome
