@@ -4,6 +4,7 @@ window.md = window.markdownit({
   linkify: true
 });
 
+
 // icons
 md = md.use(window.markdownitEmoji);
 emojione.cacheBustParam = ''; // 当emojione的图片升级了，可以修改这个让浏览器的缓存失效
@@ -17,6 +18,7 @@ md.renderer.rules.emoji = function(token, idx) {
   }
   return emojione.shortnameToImage(':' + shortname + ':'); // emojione
 };
+
 
 // task list
 window.task_list_item = false;
@@ -43,4 +45,69 @@ md.renderer.rules.text = function(token, idx) {
     }
   }
   return content;
+}
+
+
+// inline math
+md.renderer.rules.code_inline = function(token, idx) {
+  var code = token[idx].content;
+  if(code.startsWith('$') && code.endsWith('$')) {
+    code = code.substr(1, code.length-2);
+    try{
+      return katex.renderToString(code);
+    } catch(err) {
+      return '<code>' + err + '</code>';
+    }
+  }
+  return '<code>' + code + '</code>';
+}
+
+
+// math block
+function math(code) {
+  var tex = '';
+  code.split(/\n\n/).forEach(function(line) { // 连续两个换行，则开始下一个公式
+    line = line.trim();
+    if(line.length > 0) {
+      try {
+        tex += katex.renderToString(line, { displayMode: true });
+      } catch(err) {
+        tex += '<pre>' + err + '</pre>';
+      }
+    }
+  });
+  return '<div>' + tex + '</div>';
+}
+
+
+// mermaid charts
+mermaid.parseError = function(err, hash){
+  window.mermaidError = err;
+};
+function charts(code) {
+  if(code.startsWith('sequenceDiagram')) {
+    code += '\n'; // append empty line to the end, otherwise syntax error. It's a bug of mermaid.
+  }
+  if(mermaid.parse(code)) {
+    return '<div class="mermaid">' + code + '</div>';
+  } else {
+    return '<pre>' + window.mermaidError + '</pre>';
+  }
+}
+
+
+// fence block
+md.renderer.rules.fence = function(token, idx) {
+  var code = token[idx].content.trim();
+  if(token[idx].info == 'math') { // math
+    return math(code);
+  }
+  if(token[idx].info.length > 0) { // programming language
+    return '<pre><code class="language-' + token[idx].info + '">' + code + '</code></pre>';
+  }
+  var firstLine = code.split(/\n/)[0].trim();
+  if(firstLine === 'gantt' || firstLine === 'sequenceDiagram' || firstLine.match(/^graph (?:TB|BT|RL|LR|TD);?$/)) {
+    return charts(code) // mermaid
+  }
+  return '<pre><code>' + code + '</code></pre>'; // unknown programming language
 }
