@@ -10,8 +10,10 @@ $(function(){
   emojione.cacheBustParam = ''; // or '?v=1.5.1'
   md.renderer.rules.emoji = function(token, idx) {
     var shortname = token[idx].markup;
-    if(shortname.startsWith('fa-')) {
+    if(shortname.startsWith('fa-')) { // fontawesome
       return '<i class="fa ' + shortname + '"></i>';
+    } else if(shortname.startsWith('ion-')) { // ionicons
+      return '<i class="' + shortname + '"></i>';
     } else {
       return emojione.shortnameToImage(':' + shortname + ':');
     }

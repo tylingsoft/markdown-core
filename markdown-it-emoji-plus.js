@@ -960,6 +960,7 @@ module.exports = function normalize_opts(options) {
   var names = Object.keys(emojies)
                 .map(function (name) { return ':' + name + ':'; })
                 .concat(':fa-[a-z0-9-]+?:') // fontawesome
+                .concat(':ion-[a-z0-9-]+?:') // ionicons
                 .concat(Object.keys(shortcuts).map(function (name) { return quoteRE(name); }))
                 .sort()
                 .reverse()

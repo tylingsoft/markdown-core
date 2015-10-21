@@ -21,12 +21,15 @@ do_this_and_do_that_and_another_thing.
 
 ## Fontawesome :fa-cab:
 
-:fa-flag: :fa-bicycle:
+:fa-flag: :fa-bicycle: :fa-leaf:
+
+
+## Ionicons :ion-printer:
+
+:ion-social-tux: :ion-lock-combination: :ion-ios-medkit:
 
 
 ## Emoji :panda_face:
-### Emoji :panda_face:
-#### Emoji :panda_face:
 
 :sparkles: :camel: :boom: :panda_face:
 
