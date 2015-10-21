@@ -19,6 +19,7 @@
     "tests"
   ],
   "dependencies": {
-    "github-markdown-css": null
+    "github-markdown-css": null,
+    "mermaid": null
   }
 }

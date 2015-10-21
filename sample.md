@@ -102,3 +102,45 @@ Invalid math `$E = mc^^^^2$`
  \frac{\partial}{\partial R}
  \left[R^2\frac{\partial D_n(R)}{\partial R}\right]\,dR
 ```
+
+
+## Flowcharts
+
+```
+graph TD
+    A[Hard edge] -->|Link text| B(Round edge)
+    B --> C{Decision}
+    C -->|One| D[Result one]
+    C -->|Two| E[Result two]
+```
+
+
+## Sequence diagrams
+
+```
+sequenceDiagram
+    Alice->>Bob: Hello Bob, how are you?
+    alt is sick
+        Bob->>Alice: Not so good :(
+    else is well
+        Bob->>Alice: Feeling fresh like a daisy
+    end
+    opt Extra response
+        Bob->>Alice: Thanks for asking
+    end
+```
+
+
+## Gantt diagrams
+
+```
+gantt
+    title A Gantt Diagram
+    dateFormat  YYYY-MM-DD
+    section Section
+    A task           :a1, 2014-01-01, 30d
+    Another task     :after a1, 20d
+    section Another
+    Task in sec      :2014-01-12, 12d
+    anther task      : 24d
+```
