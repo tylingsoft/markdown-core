@@ -14,3 +14,4 @@
 1. 看看还有哪些流行的markdown-it plugin
 1. rename global object to mdc
 1. make mdc the only global object expored
+1. 新的project： markdown-it-icons 支持 emoji，fontawesome, ionicons ...etc.
