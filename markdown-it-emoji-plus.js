@@ -959,10 +959,10 @@ module.exports = function normalize_opts(options) {
   // Compile regexp
   var names = Object.keys(emojies)
                 .map(function (name) { return ':' + name + ':'; })
-                .concat(Object.keys(shortcuts))
+                .concat(':fa-[a-z0-9-]+?:')
+                .concat(Object.keys(shortcuts).map(function (name) { return quoteRE(name); }))
                 .sort()
                 .reverse()
-                .map(function (name) { return quoteRE(name); })
                 .join('|');
   var scanRE = RegExp(names, 'g');
 
