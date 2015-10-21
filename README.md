@@ -10,3 +10,4 @@
 1. 参照这里的代码： https://markdown-it.github.io/index.js  markdown-it 的完整例子
 1. math
 1. fontawesome
+1. 将这里的核心代码移植到 Markdown Plus， 从而升级 M+

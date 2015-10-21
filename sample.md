@@ -19,6 +19,11 @@ http://example.com
 do_this_and_do_that_and_another_thing.
 
 
+## Fontawesome
+
+:fa-flag: :fa-bicycle:
+
+
 ## Emoji :panda_face:
 ### Emoji :panda_face:
 #### Emoji :panda_face:
