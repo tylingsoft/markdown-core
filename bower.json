@@ -18,6 +18,8 @@
     "tests"
   ],
   "dependencies": {
-    "mermaid": null
+    "mermaid": null,
+    "markdown-it-sub": null,
+    "markdown-it-sup": null
   }
 }

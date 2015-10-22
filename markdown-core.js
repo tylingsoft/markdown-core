@@ -4,6 +4,9 @@ window.mdc = window.markdownit({
   linkify: true
 });
 
+// subscript & superscript
+mdc = mdc.use(window.markdownitSub);
+mdc = mdc.use(window.markdownitSup);
 
 // icons
 mdc = mdc.use(window.markdownitEmoji);

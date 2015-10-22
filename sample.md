@@ -150,6 +150,7 @@ gantt
 ```
 
 
-## subscript & superscript
+## subscript: H~2~O
 
-H~2~O & 29^th^
+
+## superscript: 29^th^
