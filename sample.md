@@ -148,3 +148,8 @@ gantt
     Task in sec      :2014-01-12, 12d
     anther task      : 24d
 ```
+
+
+## subscript & superscript
+
+H~2~O & 29^th^
