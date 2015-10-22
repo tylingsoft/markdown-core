@@ -1,6 +1,5 @@
 {
   "name": "markdown-core",
-  "version": "0.0.1",
   "authors": [
     "Tyler Long <tyler4long@gmail.com>"
   ],
@@ -19,7 +18,6 @@
     "tests"
   ],
   "dependencies": {
-    "github-markdown-css": null,
     "mermaid": null
   }
 }
