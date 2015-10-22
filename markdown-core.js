@@ -79,7 +79,7 @@ mdc.math_block = function(code) {
 
 // mermaid charts
 mermaid.parseError = function(err, hash){
-  window.mermaidError = err;
+  mdc.mermaidError = err;
 };
 mdc.mermaid_charts = function(code) {
   if(code.startsWith('sequenceDiagram')) {
@@ -88,7 +88,7 @@ mdc.mermaid_charts = function(code) {
   if(mermaid.parse(code)) {
     return '<div class="mermaid">' + code + '</div>';
   } else {
-    return '<pre>' + window.mermaidError + '</pre>';
+    return '<pre>' + mdc.mermaidError + '</pre>';
   }
 }
 
@@ -109,7 +109,7 @@ mdc.renderer.rules.fence = function(token, idx) {
   return '<pre><code>' + code + '</code></pre>'; // unknown programming language
 }
 
-mdc.init = function(markdown) {
+mdc.init = function(markdown) { // convert markdown into HTML
   var result = mdc.render(markdown);
   $('article.markdown-body').html(result);
   $('code').each(function(i, block) {
