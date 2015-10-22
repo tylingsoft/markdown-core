@@ -21,22 +21,22 @@ mdc.renderer.rules.emoji = function(token, idx) {
 
 
 // task list
-window.task_list_item = false;
+mdc.task_list_item = false;
 mdc.renderer.rules.list_item_open = function(token, idx) {
   var content = token[idx+2].content;
   if(content.startsWith('[ ] ') || content.startsWith('[x] ')) {
-    window.task_list_item = true;
+    mdc.task_list_item = true;
     return '<li class="task-list-item">';
   }
   return '<li>';
 }
 mdc.renderer.rules.list_item_close = function(token, idx) {
-  window.task_list_item = false;
+  mdc.task_list_item = false;
   return '</li>';
 }
 mdc.renderer.rules.text = function(token, idx) {
   var content = token[idx].content;
-  if(window.task_list_item) {
+  if(mdc.task_list_item) {
     if(content.startsWith('[ ] ')) {
       return '<input type="checkbox" disabled /> ' + content.substring(4);
     }
