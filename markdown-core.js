@@ -7,7 +7,7 @@ window.mdc = window.markdownit({
 
 // icons
 mdc = mdc.use(window.markdownitEmoji);
-emojione.cacheBustParam = ''; // 当emojione的图片升级了，可以修改这个让浏览器的缓存失效
+emojione.cacheBustParam = ''; // change this to invalidate emojione icons cache
 mdc.renderer.rules.emoji = function(token, idx) {
   var shortname = token[idx].markup;
   if(shortname.startsWith('fa-')) { // fontawesome
@@ -51,7 +51,7 @@ mdc.renderer.rules.text = function(token, idx) {
 // inline math
 mdc.renderer.rules.code_inline = function(token, idx) {
   var code = token[idx].content;
-  if(code.startsWith('$') && code.endsWith('$')) {
+  if(code.startsWith('$') && code.endsWith('$')) { // inline math
     code = code.substr(1, code.length-2);
     try{
       return katex.renderToString(code);
@@ -59,21 +59,18 @@ mdc.renderer.rules.code_inline = function(token, idx) {
       return '<code>' + err + '</code>';
     }
   }
-  return '<code>' + code + '</code>';
+  return '<code>' + code + '</code>'; // not math
 }
 
 
 // math block
 mdc.math_block = function(code) {
   var tex = '';
-  code.split(/\n\n/).forEach(function(line) { // 连续两个换行，则开始下一个公式
-    line = line.trim();
-    if(line.length > 0) {
-      try {
-        tex += katex.renderToString(line, { displayMode: true });
-      } catch(err) {
-        tex += '<pre>' + err + '</pre>';
-      }
+  code.split(/(?:\n\s*){2,}/).forEach(function(line) { // consecutive new lines means a new formula
+    try {
+      tex += katex.renderToString(line.trim(), { displayMode: true });
+    } catch(err) {
+      tex += '<pre>' + err + '</pre>';
     }
   });
   return '<div>' + tex + '</div>';

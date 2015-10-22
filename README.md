@@ -13,3 +13,4 @@
 1. 看看还有哪些流行的markdown-it plugin
 1. 新的project： markdown-it-icons 支持 emoji，fontawesome, ionicons ...etc.
 1. all comments English
+1. source map feature? 左右同步滚动需要这个
