@@ -12,6 +12,12 @@ mdc = mdc.use(window.markdownitSup);
 // footnote
 mdc = mdc.use(window.markdownitFootnote);
 
+// containers
+mdc = mdc.use(window.markdownitContainer, 'success');
+mdc = mdc.use(window.markdownitContainer, 'info');
+mdc = mdc.use(window.markdownitContainer, 'warning');
+mdc = mdc.use(window.markdownitContainer, 'danger');
+
 // icons
 mdc = mdc.use(window.markdownitEmoji);
 emojione.cacheBustParam = ''; // change this to invalidate emojione icons cache

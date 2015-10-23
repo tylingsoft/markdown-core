@@ -165,3 +165,22 @@ note.]
 5. line one
 1. line two
 12. line three
+
+
+## Custom containers
+
+::: success
+success container
+:::
+
+::: info
+info container
+:::
+
+::: warning
+warning container
+:::
+
+::: danger
+danger container
+:::

@@ -20,6 +20,7 @@
   "dependencies": {
     "markdown-it-sub": null,
     "markdown-it-sup": null,
-    "markdown-it-footnote": null
+    "markdown-it-footnote": null,
+    "markdown-it-container": null
   }
 }
