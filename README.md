@@ -15,7 +15,6 @@
     1. there might be some apps to do this
     1. and name it markdown-core.full.js ?
     1. is it possible because some libraries depends on external fonts and images.
-1. abbreviations
 1. definition lists
 1. <ins>
 1. <mark>
