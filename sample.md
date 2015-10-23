@@ -3,7 +3,6 @@
 first line  
 second line
 
----
 
 ## Github Flavored Markdown
 
@@ -30,18 +29,9 @@ do_this_and_do_that_and_another_thing.
 
 ## Task lists
 
-`[ ] inline code`
-
-```
-[*] code block
-```
-
-[ ] todo item 1 [*] todo item 2
-
 - hello world
 - [ ] @mentions, #refs, [links](), **formatting**, and <del>tags</del> are supported
 - [x] list syntax is required (any unordered or ordered list supported)
-
 1. [x] this is a complete item
 1. [ ] this is an incomplete item
 
@@ -56,7 +46,8 @@ Before inline code `$(function(){ console.log('Hello world') });` after inline c
 end
 ```
 
-```javascript
+
+```
 $(document).ready(function() {
   $('pre code').each(function(i, block) {
     hljs.highlightBlock(block);
@@ -64,13 +55,10 @@ $(document).ready(function() {
 });
 ```
 
+
     for i in range(1, 10):
         print 'Hello world {0}'.format(i)
 
-```
-for i in range(1, 10):
-    print 'Hello world {0}'.format(i)
-```
 
 ## HTML code
 
@@ -79,9 +67,8 @@ for i in range(1, 10):
 
 ## Math
 
-Inline math `$E = mc^2$`, another one: `$\dfrac{ \tfrac{1}{2}[1-(\tfrac{1}{2})^n] }{ 1-\tfrac{1}{2} } = s_n$`.
+Inline math: `$E = mc^2$`, another one: `$\dfrac{ \tfrac{1}{2}[1-(\tfrac{1}{2})^n] }{ 1-\tfrac{1}{2} } = s_n$`.
 
-Invalid math: `$E = mc^^^^2$`
 
 ```math
 \oint_C x^3\, dx + 4y^2\, dy
@@ -125,13 +112,6 @@ sequenceDiagram
     opt Extra response
         Bob->>Alice: Thanks for asking
     end
-```
-
-
-```
-sequenceDiagram
-    Alice->>John: Hello John, how are you?
-    John-->>Alice: Great!
 ```
 
 
