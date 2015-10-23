@@ -151,3 +151,17 @@ belong to the previous footnote.
 Here is an inline note.^[Inlines notes are easier to write, since
 you don't have to pick an identifier and move down to type the
 note.]
+
+
+## Blockquotes
+
+> Blockquotes can also be nested...
+>> ...by using additional greater-than signs right next to each other...
+> > > ...or with spaces between arrows.
+
+
+## Start list with offsets
+
+5. line one
+1. line two
+12. line three

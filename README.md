@@ -12,8 +12,8 @@
 1. 看看还有哪些流行的markdown-it plugin
 1. 新的project： markdown-it-icons 支持 emoji，fontawesome, ionicons ...etc.
 1. source map feature? 左右同步滚动需要这个
-1. footnote
 1. merge all the assets into one and host it locally?
     1. there might some apps to do this
     1. and name it markdown-core.full.js ?
     1. is it possible because some libraries depends on external fonts and images.
+1. footnote style
