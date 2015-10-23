@@ -1,3 +1,4 @@
+// markdown-it
 window.mdc = window.markdownit({
   html: true,
   xhtmlOut: true, // <br /> instead of <br>
@@ -7,6 +8,9 @@ window.mdc = window.markdownit({
 // subscript & superscript
 mdc = mdc.use(window.markdownitSub);
 mdc = mdc.use(window.markdownitSup);
+
+// footnote
+mdc = mdc.use(window.markdownitFootnote);
 
 // icons
 mdc = mdc.use(window.markdownitEmoji);
