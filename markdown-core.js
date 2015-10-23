@@ -24,6 +24,10 @@ mdc = mdc.use(window.markdownitAbbr);
 // definition list
 mdc = mdc.use(window.markdownitDeflist);
 
+// insert & mark
+mdc = mdc.use(window.markdownitIns);
+mdc = mdc.use(window.markdownitMark);
+
 // icons
 mdc = mdc.use(window.markdownitEmoji);
 emojione.cacheBustParam = ''; // change this to invalidate emojione icons cache

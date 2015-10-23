@@ -23,6 +23,8 @@
     "markdown-it-footnote": null,
     "markdown-it-container": null,
     "markdown-it-abbr": null,
-    "markdown-it-deflist": null
+    "markdown-it-deflist": null,
+    "markdown-it-ins": null,
+    "markdown-it-mark": null
   }
 }

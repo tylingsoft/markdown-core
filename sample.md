@@ -225,3 +225,13 @@ Term 1
 Term 2
   ~ Definition 2a
   ~ Definition 2b
+
+
+## insert
+
+++Inserted text++
+
+
+## mark
+
+==Marked text==
