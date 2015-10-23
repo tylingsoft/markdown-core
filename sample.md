@@ -192,3 +192,11 @@ danger container
 
 paragraph 2
 :::
+
+
+## Abbreviations
+
+Before the HTML & W3C definition.
+*[HTML]: Hyper Text Markup Language
+*[W3C]:  World Wide Web Consortium
+The HTML specification is maintained by the W3C.

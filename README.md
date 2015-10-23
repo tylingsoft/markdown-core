@@ -15,7 +15,6 @@
     1. there might be some apps to do this
     1. and name it markdown-core.full.js ?
     1. is it possible because some libraries depends on external fonts and images.
-1. custom containers
 1. abbreviations
 1. definition lists
 1. <ins>
@@ -23,3 +22,4 @@
 1. toc
 1. https://www.npmjs.com/browse/keyword/markdown-it-plugin
 1. 懂得适可而止，不可能优雅地支持所有的功能
+1. footnotes font size smaller

@@ -18,6 +18,9 @@ mdc = mdc.use(window.markdownitContainer, 'info');
 mdc = mdc.use(window.markdownitContainer, 'warning');
 mdc = mdc.use(window.markdownitContainer, 'danger');
 
+// abbreviations
+mdc = mdc.use(window.markdownitAbbr);
+
 // icons
 mdc = mdc.use(window.markdownitEmoji);
 emojione.cacheBustParam = ''; // change this to invalidate emojione icons cache

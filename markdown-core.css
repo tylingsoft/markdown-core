@@ -56,3 +56,8 @@ hr.footnotes-sep {
   background-color: #f2dede;
   border-color: #ebccd1;
 }
+
+abbr[title] {
+    cursor: help;
+    border-bottom: 1px dotted #777;
+}
