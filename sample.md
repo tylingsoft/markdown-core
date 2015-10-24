@@ -4,11 +4,7 @@ first line
 second line
 
 
-## Table of contents
-
-@[toc]
-
-@[toc](Custom TOC section title)
+@[toc](Table of Contents)
 
 
 ## headings
