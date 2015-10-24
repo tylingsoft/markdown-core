@@ -18,11 +18,12 @@ div.mermaid {
 }
 
 hr.footnotes-sep {
-  margin: 128px 0 0 0;
+  margin: 64px 0 32px 0;
   height: 1px;
 }
 .footnotes {
-  font-size: 80%;
+  font-size: 90%;
+  padding-left: 16px;
 }
 
 li.footnote-item > p {
