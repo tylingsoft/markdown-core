@@ -37,6 +37,9 @@ mdc = mdc.use(window.markdownitDeflist);
 mdc = mdc.use(window.markdownitIns);
 mdc = mdc.use(window.markdownitMark);
 
+// table of contents
+mdc = mdc.use(window.markdownitTOC);
+
 // icons
 mdc = mdc.use(window.markdownitEmoji);
 emojione.cacheBustParam = ''; // change this to invalidate emojione icons cache

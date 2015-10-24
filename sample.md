@@ -4,6 +4,19 @@ first line
 second line
 
 
+## Table of contents
+
+@[toc]
+
+@[toc](Custom TOC section title)
+
+
+## headings
+### heading 3
+#### 标题 4
+##### heading 5
+###### heading 6
+
 ## Github Flavored Markdown
 
 ~~strikethrough~~
