@@ -17,4 +17,9 @@
     1. is it possible because some libraries depends on external fonts and images.
 1. toc
 1. https://www.npmjs.com/browse/keyword/markdown-it-plugin
-1. 也许这个项目才是快速扩展 markdown-it 的方法
+1. https://www.npmjs.com/browse/keyword/markdown-it
+1. 也许这个项目才是快速扩展 markdown-it 的方法: https://github.com/markdown-it/markdown-it-for-inline
+    1. 代码短了很多，灵活性也更好。比如它可以直接修改当前token甚至下一个token的内容和属性。
+1. https://www.npmjs.com/package/markdown-it-sanitizer
+1. this feature is really interesting: https://www.npmjs.com/package/markdown-it-decorate
+    1. 这个功能上好像是它的子集： https://www.npmjs.com/package/markdown-it-classy
