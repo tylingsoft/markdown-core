@@ -22,3 +22,4 @@
 1. 控制图片大小，可能可以用到：https://www.npmjs.com/package/markdown-it-imsize
 1. 包管理改成 npm + browserify ＋ uglify
     1. http://dontkry.com/posts/code/using-npm-on-the-client-side.html
+1. GitHub heading, hover to find quick link
