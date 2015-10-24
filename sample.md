@@ -6,8 +6,6 @@ second line
 
 ## Table of contents
 
-[TOC](http://baidu.com)
-
 [TOC]
 
 

@@ -22,7 +22,3 @@
 1. 控制图片大小，可能可以用到：https://www.npmjs.com/package/markdown-it-imsize
 1. 包管理改成 npm + browserify ＋ uglify
     1. http://dontkry.com/posts/code/using-npm-on-the-client-side.html
-1. toc 改进
-    1. 不要自动增加section title
-    1. <p> 好像有问题
-    1. [toc](http://baidu.com) 识别有问题
