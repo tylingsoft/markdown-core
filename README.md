@@ -25,3 +25,4 @@
 1. toc 改进
     1. 不要自动增加section title
     1. <p> 好像有问题
+    1. [toc](http://baidu.com) 识别有问题

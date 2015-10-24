@@ -4,7 +4,11 @@ first line
 second line
 
 
-@[toc](Table of Contents)
+## Table of contents
+
+[TOC](http://baidu.com)
+
+[TOC]
 
 
 ## headings
