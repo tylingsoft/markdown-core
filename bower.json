@@ -25,6 +25,7 @@
     "markdown-it-abbr": null,
     "markdown-it-deflist": null,
     "markdown-it-ins": null,
-    "markdown-it-mark": null
+    "markdown-it-mark": null,
+    "markdown-it-toc": null
   }
 }
