@@ -5,6 +5,15 @@ window.mdc = window.markdownit({
   linkify: true
 });
 
+// Configuration for Gantt diagrams
+mermaid.ganttConfig = {
+  axisFormatter: [
+    ["%-m/%-d", function (d) {
+        return d.getDay() == 1;
+    }]
+  ]
+};
+
 // subscript & superscript
 mdc = mdc.use(window.markdownitSub);
 mdc = mdc.use(window.markdownitSup);

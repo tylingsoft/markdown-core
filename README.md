@@ -9,7 +9,6 @@
     1. 其实就是toc功能。 可以增加开关，显示或者隐藏toc
 1. 将这里的核心代码移植到 Markdown Plus， 从而升级 M+
     1. mdp should take advantages of mdc
-1. gantt x lables
 1. 新的project：markdown-it-icons 支持 emoji，fontawesome, ionicons ...etc.
 1. source map feature? 左右同步滚动需要这个
 1. toc
