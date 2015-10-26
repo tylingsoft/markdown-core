@@ -25,7 +25,6 @@
 1. GitHub heading, hover to find quick anchor link
 1. 参考马克飞象改进下功能和界面： https://maxiang.io/
     1. 毕竟人家是商业产品，必定有可取之处。
-    1. toc 取消 list style
     1. 提供labels： http://getbootstrap.com/components/#labels
     1. 任务列表不应该支持 ｀1. [ ]｀ 的语法？
 1. 尽量直接输出目标html，而不是输出后再次处理。这样可以防止页面颤抖。还可以提高代码的通用性。
