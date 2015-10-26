@@ -64,3 +64,11 @@ abbr[title] {
     cursor: help;
     border-bottom: 1px dotted #777;
 }
+
+ul.table-of-contents {
+  list-style-type: none;
+}
+
+ul.table-of-contents li {
+  margin: 4px 0;
+}
