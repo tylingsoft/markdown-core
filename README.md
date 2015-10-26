@@ -7,6 +7,7 @@
     1. mdp should take advantages of mdc
 1. 新的project：markdown-it-icons 支持 emoji，fontawesome, ionicons ...etc.
 1. source map feature? 左右同步滚动需要这个
+    1. markdown-it 的很多对象有 map 这个属性，应该可以直接用。
 1. 也许这个项目才是快速扩展 markdown-it 的方法: https://github.com/markdown-it/markdown-it-for-inline
     1. 代码短了很多，灵活性也更好。比如它可以直接修改当前token甚至下一个token的内容和属性。
 1. https://www.npmjs.com/package/markdown-it-sanitizer
@@ -15,11 +16,18 @@
     1. 这个功能上好像是它的子集： https://www.npmjs.com/package/markdown-it-classy
     1. 还有个类似的： https://www.npmjs.com/package/markdown-it-attrs
     1. 功能上很激进，是否要支持？
-1. ionicons 托管到 jsdelivr
-    1. 已经提交了，等待 merge
 1. 将来也可以考虑这个： https://www.npmjs.com/package/markdown-it-html5-embed
     1. 重用了图片的语法来支持视频嵌入，挺好
 1. 控制图片大小，可能可以用到：https://www.npmjs.com/package/markdown-it-imsize
 1. 包管理改成 npm + browserify ＋ uglify
     1. http://dontkry.com/posts/code/using-npm-on-the-client-side.html
-1. GitHub heading, hover to find quick link
+    1. 一个重要的意义是混淆代码
+1. GitHub heading, hover to find quick anchor link
+1. 参考马克飞象改进下功能和界面： https://maxiang.io/
+    1. 毕竟人家是商业产品，必定有可取之处。
+
+
+# notes:
+
+一个很重要的原则是不能破坏原有的markdown的功能。 只能在标准的基础上做合适的添加， 不能做太激进的修改。
+会形成太过于特殊的markdown版本导致无法和其它的版本相兼容。
