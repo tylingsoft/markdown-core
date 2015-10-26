@@ -144,8 +144,11 @@ mdc.renderer.rules.fence = function(token, idx) {
   return '<pre><code>' + code + '</code></pre>'; // unknown programming language
 }
 
-mdc.init = function(markdown) { // convert markdown into HTML
+mdc.init = function(markdown, debug) { // convert markdown into HTML
   var result = mdc.render(markdown);
+  if(debug === true) {
+    console.log(result);
+  }
   $('article.markdown-body').html(result);
   $('code').each(function(i, block) {
     hljs.highlightBlock(block);
