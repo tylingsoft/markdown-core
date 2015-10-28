@@ -37,9 +37,6 @@ mdc = mdc.use(window.markdownitDeflist);
 mdc = mdc.use(window.markdownitIns);
 mdc = mdc.use(window.markdownitMark);
 
-// table of contents
-mdc = mdc.use(window.markdownitTOC);
-
 // icons
 mdc = mdc.use(window.markdownitEmoji);
 emojione.cacheBustParam = ''; // change this to invalidate emojione icons cache
@@ -145,7 +142,9 @@ mdc.renderer.rules.fence = function(token, idx) {
   return '<pre><code>' + code + '</code></pre>'; // unknown programming language
 }
 
-mdc.init = function(markdown, debug) { // convert markdown into HTML
+
+// convert markdown into HTML
+mdc.init = function(markdown, debug) {
   var result = mdc.render(markdown);
   if(debug === true) {
     console.log(result);

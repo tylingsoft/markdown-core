@@ -4,11 +4,6 @@ first line
 second line
 
 
-## Table of contents
-
-[TOC]
-
-
 ## headings
 ### heading 3
 #### 标题 4

@@ -31,6 +31,7 @@
 1. config code block 用户配置专用。不会输出到页面上。比如修改css文件？
 1. markdown-it-toc 项目生成的html结构上有问题。 抽空研究下。 挺棘手。
     1. 改成jquery实现也未尝不可。
+    1. 此功能暂时移除了。有缺陷的实现，宁可不要。
 
 
 # notes:
