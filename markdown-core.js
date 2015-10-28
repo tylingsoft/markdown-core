@@ -43,6 +43,7 @@ mdc = mdc.use(window.markdownitTOC);
 // icons
 mdc = mdc.use(window.markdownitEmoji);
 emojione.cacheBustParam = ''; // change this to invalidate emojione icons cache
+emojione.imagePathPNG = 'https://cdn.jsdelivr.net/emojione/assets/png/';
 mdc.renderer.rules.emoji = function(token, idx) {
   var shortname = token[idx].markup;
   if(shortname.startsWith('fa-')) { // fontawesome
