@@ -31,6 +31,7 @@
     1. 此功能暂时移除了。有缺陷的实现，宁可不要。
 1. inline 代码高亮去掉，搞成固定的前景色吧。 因为高亮的行为很怪异，令人困惑。
     1. 主要是因为，高亮器很难准确猜测出编程语言
+1. update mermaid code: https://github.com/knsv/mermaid/issues/239
 
 
 ## notes:
