@@ -38,7 +38,7 @@ mdc = mdc.use(window.markdownitIns);
 mdc = mdc.use(window.markdownitMark);
 
 // icons
-mdc = mdc.use(window.markdownitEmoji);
+mdc = mdc.use(window.markdownitIcons);
 emojione.cacheBustParam = ''; // change this to invalidate emojione icons cache
 emojione.imagePathPNG = 'https://cdn.jsdelivr.net/emojione/assets/png/';
 mdc.renderer.rules.emoji = function(token, idx) {

@@ -5,7 +5,6 @@
 
 1. 将这里的核心代码移植到 Markdown Plus， 从而升级 M+
     1. mdp should take advantages of mdc
-1. 新的project：markdown-it-icons 支持 emoji，fontawesome, ionicons ...etc.
 1. source map feature? 左右同步滚动需要这个
     1. markdown-it 的很多对象有 map 这个属性，应该可以直接用。
 1. 也许这个项目才是快速扩展 markdown-it 的方法: https://github.com/markdown-it/markdown-it-for-inline
