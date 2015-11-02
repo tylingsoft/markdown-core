@@ -1,5 +1,6 @@
 from fabric.api import local
 
+
 def deploy():
     # copy project to /temp folder
     local('rm -rf /tmp/markdown-core')
@@ -26,3 +27,8 @@ def deploy():
 
     # copy file to Markdown Mate project
     local('cp -r /tmp/markdown-core ~/src/swift/Markdown\ Mate/Markdown\ Mate/')
+
+
+def dist():
+    local('cp markdown-core.css dist/')
+    local('uglifyjs markdown-core.js -o dist/markdown-core.min.js')

@@ -21,11 +21,9 @@
 1. 包管理改成 npm + browserify ＋ uglify
     1. http://dontkry.com/posts/code/using-npm-on-the-client-side.html
     1. 一个重要的意义是混淆代码
-1. GitHub heading, hover to find quick anchor link
-1. 参考马克飞象改进下功能和界面： https://maxiang.io/
-    1. 毕竟人家是商业产品，必定有可取之处。
-    1. 提供labels： http://getbootstrap.com/components/#labels
-    1. 任务列表不应该支持 ｀1. [ ]｀ 的语法？
+1. GitHub heading, hover to show quick anchor link
+1. 提供labels： http://getbootstrap.com/components/#labels
+1. 任务列表不应该支持 ｀1. [ ]｀ 的语法？
 1. 尽量直接输出目标html，而不是输出后再次处理。这样可以防止页面颤抖。还可以提高代码的通用性。
 1. config code block 用户配置专用。不会输出到页面上。比如修改css文件？
 1. markdown-it-toc 项目生成的html结构上有问题。 抽空研究下。 挺棘手。
@@ -35,7 +33,7 @@
     1. 主要是因为，高亮器很难准确猜测出编程语言
 
 
-# notes:
+## notes:
 
 一个很重要的原则是不能破坏原有的markdown的功能。 只能在标准的基础上做合适的添加， 不能做太激进的修改。
 会形成太过于特殊的markdown版本导致无法和其它的版本相兼容。
