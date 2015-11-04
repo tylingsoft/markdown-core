@@ -23,16 +23,11 @@
 1. 提供labels： http://getbootstrap.com/components/#labels
 1. 任务列表不应该支持 ｀1. [ ]｀ 的语法？
 1. 尽量直接输出目标html，而不是输出后再次处理。这样可以防止页面颤抖。还可以提高代码的通用性。
-    1. 目前好像就只有两个地方了，一个是mermaid，另外一个是highlight
+    1. 目前好像就只有两个地方了，一个是mermaid，另外一个是highlight.
+    1. mermaid 最新的api貌似被作者改残了： https://github.com/knsv/mermaid/issues/239
 1. config code block 用户配置专用。不会输出到页面上。比如修改css文件？
     1. 用这种配置文件的方式来替代界面，也不失为一个好办法。
+    1. 参考visual studio code等等的配置文件
 1. markdown-it-toc 项目生成的html结构上有问题。 抽空研究下。 挺棘手。
     1. 改成jquery实现也未尝不可。
     1. 此功能暂时移除了。有缺陷的实现，宁可不要。
-1. update mermaid code: https://github.com/knsv/mermaid/issues/239
-
-
-## notes:
-
-一个很重要的原则是不能破坏原有的markdown的功能。 只能在标准的基础上做合适的添加， 不能做太激进的修改。
-会形成太过于特殊的markdown版本导致无法和其它的版本相兼容。
