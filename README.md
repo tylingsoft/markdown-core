@@ -20,8 +20,8 @@
     1. http://dontkry.com/posts/code/using-npm-on-the-client-side.html
     1. 一个重要的意义是混淆代码
 1. GitHub heading, hover to show quick anchor link
+    1. 貌似有第三方的插件可以实现。这个很简单，第三方也应该足够了。
 1. 提供labels： http://getbootstrap.com/components/#labels
-1. 任务列表不应该支持 ｀1. [ ]｀ 的语法？
 1. 使用mermaidAPI直接输出结果
     1. mermaid 最新的api貌似被作者改残了： https://github.com/knsv/mermaid/issues/239
 1. config code block 用户配置专用。不会输出到页面上。比如修改css文件？
