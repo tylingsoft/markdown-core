@@ -3,8 +3,6 @@
 
 ## todo
 
-1. 将这里的核心代码移植到 Markdown Plus， 从而升级 M+
-    1. mdp should take advantages of mdc
 1. source map feature? 左右同步滚动需要这个
     1. markdown-it 的很多对象有 map 这个属性，应该可以直接用。
 1. 也许这个项目才是快速扩展 markdown-it 的方法: https://github.com/markdown-it/markdown-it-for-inline
@@ -25,7 +23,9 @@
 1. 提供labels： http://getbootstrap.com/components/#labels
 1. 任务列表不应该支持 ｀1. [ ]｀ 的语法？
 1. 尽量直接输出目标html，而不是输出后再次处理。这样可以防止页面颤抖。还可以提高代码的通用性。
+    1. 目前好像就只有两个地方了，一个是mermaid，另外一个是highlight
 1. config code block 用户配置专用。不会输出到页面上。比如修改css文件？
+    1. 用这种配置文件的方式来替代界面，也不失为一个好办法。
 1. markdown-it-toc 项目生成的html结构上有问题。 抽空研究下。 挺棘手。
     1. 改成jquery实现也未尝不可。
     1. 此功能暂时移除了。有缺陷的实现，宁可不要。
