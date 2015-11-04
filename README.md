@@ -22,8 +22,7 @@
 1. GitHub heading, hover to show quick anchor link
 1. 提供labels： http://getbootstrap.com/components/#labels
 1. 任务列表不应该支持 ｀1. [ ]｀ 的语法？
-1. 尽量直接输出目标html，而不是输出后再次处理。这样可以防止页面颤抖。还可以提高代码的通用性。
-    1. 目前好像就只有两个地方了，一个是mermaid，另外一个是highlight.
+1. 使用mermaidAPI直接输出结果
     1. mermaid 最新的api貌似被作者改残了： https://github.com/knsv/mermaid/issues/239
 1. config code block 用户配置专用。不会输出到页面上。比如修改css文件？
     1. 用这种配置文件的方式来替代界面，也不失为一个好办法。
