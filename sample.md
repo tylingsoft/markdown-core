@@ -39,7 +39,7 @@ do_this_and_do_that_and_another_thing.
 - [ ] @mentions, #refs, [links](), **formatting**, and <del>tags</del> are supported
 - [x] list syntax is required (any unordered or ordered list supported)
 1. [x] this is a complete item
-1. [ ] this is an incomplete item
+- [ ] this is an incomplete item **test** [ ] again
 
 
 ## Code blocks

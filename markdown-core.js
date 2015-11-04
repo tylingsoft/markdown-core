@@ -54,13 +54,27 @@ mdc.renderer.rules.emoji = function(token, idx) {
 
 
 // task list
+mdc.bullet_list = false
+mdc.renderer.rules.bullet_list_open = function(token, idx) {
+  mdc.bullet_list = true;
+  return '<ul>';
+}
+mdc.renderer.rules.bullet_list_close = function(token, idx) {
+  mdc.bullet_list = false;
+  return '</ul>';
+}
 mdc.task_list_item = false;
 mdc.renderer.rules.list_item_open = function(token, idx) {
+  if(!mdc.bullet_list) {
+    mdc.task_list_item = false;
+    return '<li>';
+  }
   var content = token[idx+2].content;
   if(content.startsWith('[ ] ') || content.startsWith('[x] ')) {
     mdc.task_list_item = true;
     return '<li class="task-list-item">';
   }
+  mdc.task_list_item = false;
   return '<li>';
 }
 mdc.renderer.rules.list_item_close = function(token, idx) {
@@ -69,13 +83,17 @@ mdc.renderer.rules.list_item_close = function(token, idx) {
 }
 mdc.renderer.rules.text = function(token, idx) {
   var content = token[idx].content;
-  if(mdc.task_list_item) {
-    if(content.startsWith('[ ] ')) {
-      return '<input type="checkbox" disabled /> ' + content.substring(4);
-    }
-    if(content.startsWith('[x] ')) {
-      return '<input type="checkbox" disabled checked /> ' + content.substring(4);
-    }
+  if(!mdc.task_list_item) {
+    return content;
+  }
+  if(idx !== 0) {
+    return content;
+  }
+  if(content.startsWith('[ ] ')) {
+    return '<input type="checkbox" disabled /> ' + content.substring(4);
+  }
+  if(content.startsWith('[x] ')) {
+    return '<input type="checkbox" disabled checked /> ' + content.substring(4);
   }
   return content;
 }
