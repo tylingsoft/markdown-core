@@ -5,14 +5,6 @@
   padding: 30px;
 }
 
-pre code.hljs {
-  display: block;
-}
-
-code.hljs {
-  display: inline;
-}
-
 div.mermaid {
   text-align: center;
 }
