@@ -133,13 +133,20 @@ mdc.renderer.rules.fence = function(token, idx) {
     return mdc.math_block(code);
   }
   if(token[idx].info.length > 0) { // programming language
-    return '<pre><code class="language-' + token[idx].info + '">' + code + '</code></pre>';
+    return '<pre><code class="hljs">' + hljs.highlightAuto(code, [token[idx].info]).value + '</code></pre>';
   }
   var firstLine = code.split(/\n/)[0].trim();
   if(firstLine === 'gantt' || firstLine === 'sequenceDiagram' || firstLine.match(/^graph (?:TB|BT|RL|LR|TD);?$/)) {
     return mdc.mermaid_charts(code) // mermaid
   }
-  return '<pre><code>' + code + '</code></pre>'; // unknown programming language
+  return '<pre><code class="hljs">' + hljs.highlightAuto(code).value + '</code></pre>'; // unknown programming language
+}
+
+
+// code block
+mdc.renderer.rules.code_block = function(token, idx) {
+  var code = token[idx].content.trim();
+  return '<pre><code class="hljs">' + hljs.highlightAuto(code).value + '</code></pre>';
 }
 
 
@@ -150,9 +157,6 @@ mdc.init = function(markdown, debug) {
     console.log(result);
   }
   $('article.markdown-body').html(result);
-  $('pre > code').each(function(i, block) {
-    hljs.highlightBlock(block);
-  });
   if($('.mermaid').length > 0) {
     mermaid.init();
   }
