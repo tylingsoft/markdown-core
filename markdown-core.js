@@ -53,7 +53,6 @@ mdc.renderer.rules.emoji = function(token, idx) {
 };
 
 
-// task list
 mdc.tokens = {};
 mdc.renderer.renderToken = function(tokens, idx, options) {
   var tag = tokens[idx].type;
@@ -62,21 +61,19 @@ mdc.renderer.renderToken = function(tokens, idx, options) {
   } else if (tag.endsWith('_close')) {
     mdc.tokens[tag.substr(0, tag.length - 6)] = false;
   }
-  if(mdc.tokens['bullet_list'] == true && tag == 'list_item_open' && (tokens[idx+2].content.startsWith('[ ] ')||tokens[idx+2].content.startsWith('[x] '))) {
+
+  // task list
+  if(mdc.tokens['bullet_list'] == true && tag == 'list_item_open' && (tokens[idx+2].content.startsWith('[ ] ') || tokens[idx+2].content.startsWith('[x] '))) {
     tokens[idx].attrPush(['class', 'task-list-item']);
-  }
-  return mdc.renderer.constructor.prototype.renderToken.call(this, tokens, idx, options);
-}
-mdc.renderer.renderInline = function(tokens, options, env) {
-  var result = mdc.renderer.constructor.prototype.renderInline.call(this, tokens, options, env);
-  if(mdc.tokens['bullet_list'] == true && mdc.tokens['list_item'] == true) {
-    if(result.startsWith('[ ] ')) {
-      result = '<input type="checkbox" disabled /> ' + result.substring(4);
-    } else if(result.startsWith('[x] ')) {
-      result = '<input type="checkbox" disabled checked /> ' + result.substring(4);
+    tokens[idx+2].children[0].content = tokens[idx+2].children[0].content.substring(4);
+    if(tokens[idx+2].content.startsWith('[ ] ')) { // unfinished task
+      return mdc.renderer.constructor.prototype.renderToken.call(this, tokens, idx, options) + '<input type="checkbox" disabled /> ';
     }
+    // finished task
+    return mdc.renderer.constructor.prototype.renderToken.call(this, tokens, idx, options) + '<input type="checkbox" disabled checked /> ';
   }
-  return result;
+
+  return mdc.renderer.constructor.prototype.renderToken.call(this, tokens, idx, options);
 }
 
 
