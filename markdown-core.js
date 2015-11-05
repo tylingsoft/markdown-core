@@ -97,16 +97,16 @@ mdc.renderer.rules.code_inline = function(tokens, idx) {
 
 
 // math block
-mdc.math_block = function(code) {
+mdc.math_block = function(code, line) {
   var tex = '';
   code.split(/(?:\n\s*){2,}/).forEach(function(line) { // consecutive new lines means a new formula
     try {
       tex += katex.renderToString(line.trim(), { displayMode: true });
     } catch(err) {
-      tex += '<pre>' + err + '</pre>';
+      tex += '<pre data-source-line="' + line + '">' + err + '</pre>';
     }
   });
-  return '<div>' + tex + '</div>';
+  return '<div data-source-line="' + line + '">' + tex + '</div>';
 }
 
 
@@ -131,7 +131,7 @@ mdc.renderer.rules.fence = function(tokens, idx) {
   var token = tokens[idx];
   var code = token.content.trim();
   if(token.info == 'math') { // math
-    return mdc.math_block(code);
+    return mdc.math_block(code, token.map[0] + 1);
   }
   if(token.info.length > 0) { // programming language
     return '<pre data-source-line="' + (token.map[0] + 1) + '"><code class="hljs">' + hljs.highlightAuto(code, [token.info]).value + '</code></pre>';
