@@ -55,16 +55,20 @@ mdc.renderer.rules.emoji = function(token, idx) {
 
 mdc.tokens = {};
 mdc.renderer.renderToken = function(tokens, idx, options) {
-  var tag = tokens[idx].type;
+  var token = tokens[idx];
+  var tag = token.type;
   if (tag.endsWith('_open')) {
     mdc.tokens[tag.substr(0, tag.length - 5)] = true;
+    if(token.level == 0 && token.map != null) {
+      token.attrPush(['data-source-line', token.map[0] + 1]);
+    }
   } else if (tag.endsWith('_close')) {
     mdc.tokens[tag.substr(0, tag.length - 6)] = false;
   }
 
   // task list
   if(mdc.tokens['bullet_list'] == true && tag == 'list_item_open' && (tokens[idx+2].content.startsWith('[ ] ') || tokens[idx+2].content.startsWith('[x] '))) {
-    tokens[idx].attrPush(['class', 'task-list-item']);
+    token.attrPush(['class', 'task-list-item']);
     tokens[idx+2].children[0].content = tokens[idx+2].children[0].content.substring(4);
     if(tokens[idx+2].content.startsWith('[ ] ')) { // unfinished task
       return mdc.renderer.constructor.prototype.renderToken.call(this, tokens, idx, options) + '<input type="checkbox" disabled /> ';
