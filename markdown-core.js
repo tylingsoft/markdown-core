@@ -53,31 +53,46 @@ mdc.renderer.rules.emoji = function(tokens, idx) {
 };
 
 
-mdc.tokens = {};
+mdc.tags = {};
 mdc.renderer.renderToken = function(tokens, idx, options) {
   var token = tokens[idx];
   var tag = token.type;
   if (tag.endsWith('_open')) {
-    mdc.tokens[tag.substr(0, tag.length - 5)] = true;
+    var _tag = tag.substr(0, tag.length - 5);
+    mdc.tags[_tag] = (mdc.tags[_tag] || 0) + 1;
+
+    // source map
     if(token.level == 0 && token.map != null) {
       token.attrPush(['data-source-line', token.map[0] + 1]);
     }
+
   } else if (tag.endsWith('_close')) {
-    mdc.tokens[tag.substr(0, tag.length - 6)] = false;
+    var _tag = tag.substr(0, tag.length - 6);
+    mdc.tags[_tag] = (mdc.tags[_tag] || 0) - 1;
   }
 
   // task list
-  if(mdc.tokens['bullet_list'] == true && tag == 'list_item_open' && (tokens[idx+2].content.startsWith('[ ] ') || tokens[idx+2].content.startsWith('[x] '))) {
+  if((mdc.tags['bullet_list'] || 0) > 0 && tag == 'list_item_open' && (tokens[idx+2].content.startsWith('[ ] ') || tokens[idx+2].content.startsWith('[x] '))) {
     token.attrPush(['class', 'task-list-item']);
-    tokens[idx+2].children[0].content = tokens[idx+2].children[0].content.substring(4);
-    if(tokens[idx+2].content.startsWith('[ ] ')) { // unfinished task
-      return mdc.renderer.constructor.prototype.renderToken.call(this, tokens, idx, options) + '<input type="checkbox" disabled /> ';
-    }
-    // finished task
-    return mdc.renderer.constructor.prototype.renderToken.call(this, tokens, idx, options) + '<input type="checkbox" disabled checked /> ';
   }
 
   return mdc.renderer.constructor.prototype.renderToken.call(this, tokens, idx, options);
+}
+
+
+mdc.renderer.renderInline = function (tokens, options, env) {
+  var result = mdc.renderer.constructor.prototype.renderInline.call(this, tokens, options, env);
+
+  // task list
+  if((mdc.tags['bullet_list'] || 0) > 0 && (mdc.tags['list_item'] || 0) > 0) {
+    if(tokens[0].content.startsWith('[ ] ')) {
+      return '<input type="checkbox" disabled /> ' + result.substr(4);
+    } else if(tokens[0].content.startsWith('[x] ')) {
+      return '<input type="checkbox" disabled checked /> ' + result.substr(4);
+    }
+  }
+
+  return result;
 }
 
 

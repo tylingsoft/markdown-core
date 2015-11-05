@@ -42,6 +42,13 @@ do_this_and_do_that_and_another_thing.
 - [ ] this is an incomplete item **test** [ ] again
 
 
+- [ ] a bigger project
+  - [x] first subtask
+  - [x] follow up subtask
+  - [ ] final subtask
+- [ ] a separate task
+
+
 ## Code blocks
 
 Before inline code `$(function(){ console.log('Hello world') });` after inline code.
