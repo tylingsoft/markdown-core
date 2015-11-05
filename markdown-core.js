@@ -41,8 +41,8 @@ mdc = mdc.use(window.markdownitMark);
 mdc = mdc.use(window.markdownitIcons);
 emojione.cacheBustParam = ''; // change this to invalidate emojione icons cache
 emojione.imagePathPNG = 'https://cdn.jsdelivr.net/emojione/assets/png/';
-mdc.renderer.rules.emoji = function(token, idx) {
-  var shortname = token[idx].markup;
+mdc.renderer.rules.emoji = function(tokens, idx) {
+  var shortname = tokens[idx].markup;
   if(shortname.startsWith('fa-')) { // fontawesome
     return '<i class="fa ' + shortname + '"></i>';
   }
@@ -82,8 +82,8 @@ mdc.renderer.renderToken = function(tokens, idx, options) {
 
 
 // inline math
-mdc.renderer.rules.code_inline = function(token, idx) {
-  var code = token[idx].content;
+mdc.renderer.rules.code_inline = function(tokens, idx) {
+  var code = tokens[idx].content;
   if(code.startsWith('$') && code.endsWith('$')) { // inline math
     code = code.substr(1, code.length-2);
     try{
@@ -127,26 +127,28 @@ mdc.mermaid_charts = function(code) {
 
 
 // fence block
-mdc.renderer.rules.fence = function(token, idx) {
-  var code = token[idx].content.trim();
-  if(token[idx].info == 'math') { // math
+mdc.renderer.rules.fence = function(tokens, idx) {
+  var token = tokens[idx];
+  var code = token.content.trim();
+  if(token.info == 'math') { // math
     return mdc.math_block(code);
   }
-  if(token[idx].info.length > 0) { // programming language
-    return '<pre><code class="hljs">' + hljs.highlightAuto(code, [token[idx].info]).value + '</code></pre>';
+  if(token.info.length > 0) { // programming language
+    return '<pre data-source-line="' + (token.map[0] + 1) + '"><code class="hljs">' + hljs.highlightAuto(code, [token.info]).value + '</code></pre>';
   }
   var firstLine = code.split(/\n/)[0].trim();
   if(firstLine === 'gantt' || firstLine === 'sequenceDiagram' || firstLine.match(/^graph (?:TB|BT|RL|LR|TD);?$/)) {
     return mdc.mermaid_charts(code) // mermaid
   }
-  return '<pre><code class="hljs">' + hljs.highlightAuto(code).value + '</code></pre>'; // unknown programming language
+  return '<pre data-source-line="' + (token.map[0] + 1) + '"><code class="hljs">' + hljs.highlightAuto(code).value + '</code></pre>'; // unknown programming language
 }
 
 
 // code block
-mdc.renderer.rules.code_block = function(token, idx) {
-  var code = token[idx].content.trim();
-  return '<pre><code class="hljs">' + hljs.highlightAuto(code).value + '</code></pre>';
+mdc.renderer.rules.code_block = function(tokens, idx) {
+  var token = tokens[idx];
+  var code = token.content.trim();
+  return '<pre data-source-line="' + (token.map[0] + 1) + '"><code class="hljs">' + hljs.highlightAuto(code).value + '</code></pre>';
 }
 
 

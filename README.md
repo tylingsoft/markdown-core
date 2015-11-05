@@ -5,6 +5,7 @@
 
 1. source map feature? 左右同步滚动需要这个
     1. markdown-it 的很多对象有 map 这个属性，应该可以直接用。
+    1. 目前还不能支持source map的有：katex, mermaid.
 1. https://www.npmjs.com/package/markdown-it-sanitizer
     1. 可以修正用户输入的 html 的错误
 1. this feature is really interesting: https://www.npmjs.com/package/markdown-it-decorate
