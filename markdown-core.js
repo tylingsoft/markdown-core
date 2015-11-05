@@ -114,14 +114,14 @@ mdc.math_block = function(code) {
 mermaid.parseError = function(err, hash){
   mdc.mermaidError = err;
 };
-mdc.mermaid_charts = function(code) {
+mdc.mermaid_charts = function(code, line) {
   if(code.startsWith('sequenceDiagram')) {
     code += '\n'; // append empty line to the end, otherwise syntax error. It's a bug of mermaid.
   }
   if(mermaid.parse(code)) {
-    return '<div class="mermaid">' + code + '</div>';
+    return '<div data-source-line="' + line + '" class="mermaid">' + code + '</div>';
   } else {
-    return '<pre>' + mdc.mermaidError + '</pre>';
+    return '<pre data-source-line="' + line + '">' + mdc.mermaidError + '</pre>';
   }
 }
 
@@ -138,7 +138,7 @@ mdc.renderer.rules.fence = function(tokens, idx) {
   }
   var firstLine = code.split(/\n/)[0].trim();
   if(firstLine === 'gantt' || firstLine === 'sequenceDiagram' || firstLine.match(/^graph (?:TB|BT|RL|LR|TD);?$/)) {
-    return mdc.mermaid_charts(code) // mermaid
+    return mdc.mermaid_charts(code, token.map[0] + 1) // mermaid
   }
   return '<pre data-source-line="' + (token.map[0] + 1) + '"><code class="hljs">' + hljs.highlightAuto(code).value + '</code></pre>'; // unknown programming language
 }
