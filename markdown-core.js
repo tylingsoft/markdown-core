@@ -54,48 +54,29 @@ mdc.renderer.rules.emoji = function(token, idx) {
 
 
 // task list
-mdc.bullet_list = false
-mdc.renderer.rules.bullet_list_open = function(token, idx) {
-  mdc.bullet_list = true;
-  return '<ul>';
+mdc.tokens = {};
+mdc.renderer.renderToken = function(tokens, idx, options) {
+  var tag = tokens[idx].type;
+  if (tag.endsWith('_open')) {
+    mdc.tokens[tag.substr(0, tag.length - 5)] = true;
+  } else if (tag.endsWith('_close')) {
+    mdc.tokens[tag.substr(0, tag.length - 6)] = false;
+  }
+  if(mdc.tokens['bullet_list'] == true && tag == 'list_item_open' && (tokens[idx+2].content.startsWith('[ ] ')||tokens[idx+2].content.startsWith('[x] '))) {
+    tokens[idx].attrPush(['class', 'task-list-item']);
+  }
+  return mdc.renderer.constructor.prototype.renderToken.call(this, tokens, idx, options);
 }
-mdc.renderer.rules.bullet_list_close = function(token, idx) {
-  mdc.bullet_list = false;
-  return '</ul>';
-}
-mdc.task_list_item = false;
-mdc.renderer.rules.list_item_open = function(token, idx) {
-  if(!mdc.bullet_list) {
-    mdc.task_list_item = false;
-    return '<li>';
+mdc.renderer.renderInline = function(tokens, options, env) {
+  var result = mdc.renderer.constructor.prototype.renderInline.call(this, tokens, options, env);
+  if(mdc.tokens['bullet_list'] == true && mdc.tokens['list_item'] == true) {
+    if(result.startsWith('[ ] ')) {
+      result = '<input type="checkbox" disabled /> ' + result.substring(4);
+    } else if(result.startsWith('[x] ')) {
+      result = '<input type="checkbox" disabled checked /> ' + result.substring(4);
+    }
   }
-  var content = token[idx+2].content;
-  if(content.startsWith('[ ] ') || content.startsWith('[x] ')) {
-    mdc.task_list_item = true;
-    return '<li class="task-list-item">';
-  }
-  mdc.task_list_item = false;
-  return '<li>';
-}
-mdc.renderer.rules.list_item_close = function(token, idx) {
-  mdc.task_list_item = false;
-  return '</li>';
-}
-mdc.renderer.rules.text = function(token, idx) {
-  var content = token[idx].content;
-  if(!mdc.task_list_item) {
-    return content;
-  }
-  if(idx !== 0) {
-    return content;
-  }
-  if(content.startsWith('[ ] ')) {
-    return '<input type="checkbox" disabled /> ' + content.substring(4);
-  }
-  if(content.startsWith('[x] ')) {
-    return '<input type="checkbox" disabled checked /> ' + content.substring(4);
-  }
-  return content;
+  return result;
 }
 
 
