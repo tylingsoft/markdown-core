@@ -16,14 +16,12 @@ def deploy():
     local('rm -rf /tmp/markdown-core/index.js')
     local('rm -rf /tmp/markdown-core/README.md')
     local('rm -rf /tmp/markdown-core/sample.md')
+    local('rm -rf /tmp/markdown-core/dist')
 
     # compress and mangle
     local('mv /tmp/markdown-core/markdown-core.js /tmp/markdown-core/markdown-core.js.temp')
     local('uglifyjs /tmp/markdown-core/markdown-core.js.temp -m -c --screw-ie8 -o /tmp/markdown-core/markdown-core.js')
     local('rm -rf /tmp/markdown-core/markdown-core.js.temp')
-    local('mv /tmp/markdown-core/markdown-it-emoji-plus.js /tmp/markdown-core/markdown-it-emoji-plus.js.temp')
-    local('uglifyjs /tmp/markdown-core/markdown-it-emoji-plus.js.temp -m -c --screw-ie8 -o /tmp/markdown-core/markdown-it-emoji-plus.js')
-    local('rm -rf /tmp/markdown-core/markdown-it-emoji-plus.js.temp')
 
     # copy file to Markdown Mate project
     local('cp -r /tmp/markdown-core ~/src/swift/Markdown\ Mate/Markdown\ Mate/')

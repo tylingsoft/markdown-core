@@ -15,6 +15,7 @@
 1. 包管理改成 npm + browserify ＋ uglify
     1. http://dontkry.com/posts/code/using-npm-on-the-client-side.html
     1. 一个重要的意义是混淆代码
+    1. 还有就是能把多个文件最终合并为一个
 1. GitHub heading, hover to show quick anchor link
     1. 貌似有第三方的插件可以实现。这个很简单，第三方也应该足够了。
 1. 提供labels： http://getbootstrap.com/components/#labels
