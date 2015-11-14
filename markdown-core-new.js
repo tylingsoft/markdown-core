@@ -1,9 +1,12 @@
+// markdown-it
 var mdc = require('markdown-it')({
   html: true,
   xhtmlOut: true, // <br /> instead of <br>
   linkify: true
 });
 
+
+// markdown-it plugins
 mdc = mdc.use(require('markdown-it-mark'));
 mdc = mdc.use(require('markdown-it-ins'));
 mdc = mdc.use(require('markdown-it-sub'));
@@ -33,11 +36,24 @@ mdc.renderer.rules.emoji = function(tokens, idx) {
   return emojione.shortnameToImage(':' + shortname + ':'); // emojione
 };
 
+
+// Configuration for Gantt diagrams
+var mermaid = require('mermaid');
+mermaid.ganttConfig = {
+  axisFormatter: [
+    ["%-m/%-d", function (d) {
+        return d.getDay() == 1;
+    }]
+  ]
+};
+
+
 mdc.init = function(markdown, debug) {
 	var result = mdc.render(markdown);
 	if(debug === true) {
 	  console.log(result);
 	}
 }
+
 
 module.exports = mdc;
