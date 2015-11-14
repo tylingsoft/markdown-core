@@ -4,6 +4,11 @@ var mdc = require('markdown-it')({
   linkify: true
 });
 
+mdc = mdc.use(require('markdown-it-mark'));
+mdc = mdc.use(require('markdown-it-ins'));
+mdc = mdc.use(require('markdown-it-sub'));
+mdc = mdc.use(require('markdown-it-sup'));
+
 
 mdc.init = function(markdown, debug) {
 	var result = mdc.render(markdown);

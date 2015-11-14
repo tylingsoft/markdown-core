@@ -5,6 +5,10 @@
   "repository": "tylingsoft/markdown-core",
   "license": "MIT",
   "dependencies": {
-    "markdown-it": "^5.0.1"
+    "markdown-it": "^5.0.1",
+    "markdown-it-ins": "^2.0.0",
+    "markdown-it-mark": "^2.0.0",
+    "markdown-it-sub": "^1.0.0",
+    "markdown-it-sup": "^1.0.0"
   }
 }
