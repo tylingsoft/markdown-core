@@ -29,4 +29,7 @@ def deploy():
 
 def dist():
     local('cp markdown-core.css dist/')
-    local('uglifyjs markdown-core.js -o dist/markdown-core.min.js')
+    local('browserify markdown-core.js -s mdc > dist/markdown-core.js')
+    local('uglifyjs dist/markdown-core.js -cmo dist/markdown-core.min.js')
+    local('cp markdown-core-browser.js dist/markdown-core-browser.js')
+    local('uglifyjs dist/markdown-core-browser.js -cmo dist/markdown-core-browser.min.js')
