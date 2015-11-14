@@ -1,44 +1,28 @@
 // markdown-it
-window.mdc = window.markdownit({
+var mdc = require('markdown-it')({
   html: true,
   xhtmlOut: true, // <br /> instead of <br>
   linkify: true
 });
 
-// Configuration for Gantt diagrams
-mermaid.ganttConfig = {
-  axisFormatter: [
-    ["%-m/%-d", function (d) {
-        return d.getDay() == 1;
-    }]
-  ]
-};
 
-// subscript & superscript
-mdc = mdc.use(window.markdownitSub);
-mdc = mdc.use(window.markdownitSup);
+// markdown-it plugins
+mdc = mdc.use(require('markdown-it-mark'));
+mdc = mdc.use(require('markdown-it-ins'));
+mdc = mdc.use(require('markdown-it-sub'));
+mdc = mdc.use(require('markdown-it-sup'));
+mdc = mdc.use(require('markdown-it-footnote'));
+mdc = mdc.use(require('markdown-it-abbr'));
+mdc = mdc.use(require('markdown-it-deflist'));
 
-// footnote
-mdc = mdc.use(window.markdownitFootnote);
+var markdownitContainer = require('markdown-it-container');
+mdc = mdc.use(markdownitContainer, 'success');
+mdc = mdc.use(markdownitContainer, 'info');
+mdc = mdc.use(markdownitContainer, 'warning');
+mdc = mdc.use(markdownitContainer, 'danger');
 
-// containers
-mdc = mdc.use(window.markdownitContainer, 'success');
-mdc = mdc.use(window.markdownitContainer, 'info');
-mdc = mdc.use(window.markdownitContainer, 'warning');
-mdc = mdc.use(window.markdownitContainer, 'danger');
-
-// abbreviations
-mdc = mdc.use(window.markdownitAbbr);
-
-// definition list
-mdc = mdc.use(window.markdownitDeflist);
-
-// insert & mark
-mdc = mdc.use(window.markdownitIns);
-mdc = mdc.use(window.markdownitMark);
-
-// icons
-mdc = mdc.use(window.markdownitIcons);
+mdc = mdc.use(require('markdown-it-icon'));
+var emojione =require('emojione');
 emojione.cacheBustParam = ''; // change this to invalidate emojione icons cache
 emojione.imagePathPNG = 'https://cdn.jsdelivr.net/emojione/assets/png/';
 mdc.renderer.rules.emoji = function(tokens, idx) {
@@ -96,6 +80,7 @@ mdc.renderer.renderInline = function (tokens, options, env) {
 }
 
 
+var katex = require('katex');
 // inline math
 mdc.renderer.rules.code_inline = function(tokens, idx) {
   var code = tokens[idx].content;
@@ -125,22 +110,13 @@ mdc.math_block = function(code, line) {
 }
 
 
-// mermaid charts
-mermaid.parseError = function(err, hash){
-  mdc.mermaidError = err;
-};
+// placeholder for mermaid
 mdc.mermaid_charts = function(code, line) {
-  if(code.startsWith('sequenceDiagram')) {
-    code += '\n'; // append empty line to the end, otherwise syntax error. It's a bug of mermaid.
-  }
-  if(mermaid.parse(code)) {
-    return '<div data-source-line="' + line + '" class="mermaid">' + code + '</div>';
-  } else {
-    return '<pre data-source-line="' + line + '">' + mdc.mermaidError + '</pre>';
-  }
+	return '<div data-source-line="' + line + '" class="mermaid">' + code + '</div>';
 }
 
 
+var hljs = require('highlight.js');
 // fence block
 mdc.renderer.rules.fence = function(tokens, idx) {
   var token = tokens[idx];
@@ -167,14 +143,4 @@ mdc.renderer.rules.code_block = function(tokens, idx) {
 }
 
 
-// convert markdown into HTML
-mdc.init = function(markdown, debug) {
-  var result = mdc.render(markdown);
-  if(debug === true) {
-    console.log(result);
-  }
-  $('article.markdown-body').html(result);
-  if($('.mermaid').length > 0) {
-    mermaid.init();
-  }
-}
+module.exports = mdc;
