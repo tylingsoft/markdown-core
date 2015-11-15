@@ -119,5 +119,5 @@ https://cdn.jsdelivr.net/katex/0.5.1/fonts/KaTeX_Typewriter-Regular.woff2""".spl
 
 
 def mdm(): # copy dist code to Markdown Mate project
-    local('cp index.html "~/src/swift/markdown-mate/Markdown Mate/markdown-core/"')
-    local('cp -r dist "~/src/swift/markdown-mate/Markdown Mate/markdown-core/"')
+    local('cp index.html ~/src/swift/markdown-mate/Markdown\ Mate/markdown-core/')
+    local('cp -r dist ~/src/swift/markdown-mate/Markdown\ Mate/markdown-core/')
