@@ -28,7 +28,9 @@ def deploy():
 
 
 def dist():
-    local('cp markdown-core.css dist/')
+    local('curl https://cdn.jsdelivr.net/mermaid/0.5.5/mermaid.css > dist/markdown-core.css')
+    local('cat markdown-core.css >> dist/markdown-core.css')
     local('browserify markdown-core-node.js -s mdc > dist/markdown-core.js')
+    local('curl https://cdn.jsdelivr.net/mermaid/0.5.5/mermaid.min.js >> dist/markdown-core.js')
     local('cat markdown-core-browser.js >> dist/markdown-core.js')
     local('uglifyjs dist/markdown-core.js -cmo dist/markdown-core.min.js')
