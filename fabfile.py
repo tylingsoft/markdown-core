@@ -8,6 +8,16 @@ def dist():
     local('curl https://cdn.jsdelivr.net/mermaid/0.5.5/mermaid.css >> dist/markdown-core.css')
     local('cat markdown-core.css >> dist/markdown-core.css')
     local('browserify markdown-core-node.js -s mdc > dist/markdown-core.js')
+    local('echo "\n" >> dist/markdown-core.js')
+    local('curl https://cdn.jsdelivr.net/jquery/2.1.4/jquery.min.js >> dist/markdown-core.js')
+    local('echo "\n" >> dist/markdown-core.js')
     local('curl https://cdn.jsdelivr.net/mermaid/0.5.5/mermaid.min.js >> dist/markdown-core.js')
+    local('echo "\n" >> dist/markdown-core.js')
     local('cat markdown-core-browser.js >> dist/markdown-core.js')
     local('uglifyjs dist/markdown-core.js -cmo dist/markdown-core.min.js')
+
+
+# copy code to Markdown Mate project
+def mdm():
+    local('cp index.html "~/src/swift/markdown-mate/Markdown Mate/markdown-core/"')
+    local('cp -r dist "~/src/swift/markdown-mate/Markdown Mate/markdown-core/"')
