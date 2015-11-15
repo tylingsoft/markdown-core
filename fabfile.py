@@ -115,6 +115,7 @@ https://cdn.jsdelivr.net/katex/0.5.1/fonts/KaTeX_Typewriter-Regular.woff2""".spl
     local('echo "\n" >> dist/markdown-core.js')
     local('cat markdown-core-browser.js >> dist/markdown-core.js')
     local('uglifyjs dist/markdown-core.js -cmo dist/markdown-core.min.js')
+    local('rm dist/markdown-core.js')
 
 
 def mdm(): # copy dist code to Markdown Mate project
