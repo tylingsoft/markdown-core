@@ -34444,4 +34444,39 @@ module.exports=/[\0-\uD7FF\uDC00-\uFFFF]|[\uD800-\uDBFF][\uDC00-\uDFFF]|[\uD800-
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 },{}]},{},[1])(1)
-});
+});// this file contains code which requires browser, thus not compatible with node.js
+
+
+// mermaid charts
+mermaid.ganttConfig = {
+  axisFormatter: [
+    ["%-m/%-d", function (d) {
+        return d.getDay() == 1;
+    }]
+  ]
+};
+mermaid.parseError = function(err, hash){
+  mdc.mermaidError = err;
+};
+mdc.mermaid_charts = function(code, line) {
+  if(code.startsWith('sequenceDiagram')) {
+    code += '\n'; // append empty line to the end, otherwise syntax error. It's a bug of mermaid.
+  }
+  if(mermaid.parse(code)) {
+    return '<div data-source-line="' + line + '" class="mermaid">' + code + '</div>';
+  } else {
+    return '<pre data-source-line="' + line + '">' + mdc.mermaidError + '</pre>';
+  }
+}
+
+
+mdc.init = function(markdown, debug) {
+	var result = mdc.render(markdown);
+	if(debug === true) {
+	  console.log(result);
+	}
+    $('article.markdown-body').html(result);
+    if($('.mermaid').length > 0) {
+      mermaid.init();
+    }
+}
