@@ -1,0 +1,27 @@
+{
+  "name": "markdown-core",
+  "description": "A versatile markdown engine based on markdown-it.",
+  "main": "dist/markdown-core.min.js",
+  "authors": [
+    "Tyler Long <tyler4long@gmail.com>"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "markdown"
+  ],
+  "homepage": "https://github.com/tylingsoft/markdown-core",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+	"*.js",
+	"*.py",
+	"*.html",
+	"*.md",
+	"*.css",
+	"package.json"
+  ]
+}
