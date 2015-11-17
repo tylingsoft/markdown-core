@@ -17,11 +17,11 @@
     "bower_components",
     "test",
     "tests",
-	"*.js",
-	"*.py",
-	"*.html",
-	"*.md",
-	"*.css",
+	"/*.js",
+	"/*.py",
+	"/*.html",
+	"/*.md",
+	"/*.css",
 	"package.json"
   ]
 }
