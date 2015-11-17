@@ -10,7 +10,6 @@
     "markdown"
   ],
   "homepage": "https://github.com/tylingsoft/markdown-core",
-  "moduleType": [],
   "ignore": [
     "**/.*",
     "node_modules",
