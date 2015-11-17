@@ -22,6 +22,7 @@
 	"/*.html",
 	"/*.md",
 	"/*.css",
-	"package.json"
+	"package.json",
+    "LICENSE"
   ]
 }
