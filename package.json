@@ -6,6 +6,7 @@
   "license": "MIT",
   "dependencies": {
     "emojione": "^1.5.2",
+    "es6-shim": "^0.33.13",
     "highlight.js": "^8.9.1",
     "katex": "^0.5.1",
     "markdown-it": "^5.0.1",

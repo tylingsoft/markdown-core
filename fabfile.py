@@ -1,11 +1,10 @@
 from fabric.api import local
 
 
-def dist():
+def css():
     local('rm -rf dist/css/*.css')
     local('rm -rf dist/css/fonts/*')
     local('rm -rf dist/fonts/*')
-    local('rm -rf dist/*.js')
     local('curl https://cdn.jsdelivr.net/github-markdown-css/2.1.0/github-markdown.css > dist/css/markdown-core.css')
     local('curl https://cdn.jsdelivr.net/highlight.js/8.9.1/styles/github.min.css >> dist/css/markdown-core.css')
     local('curl https://cdn.jsdelivr.net/emojione/1.5.2/assets/css/emojione.min.css >> dist/css/markdown-core.css')
@@ -107,6 +106,10 @@ https://cdn.jsdelivr.net/katex/0.5.1/fonts/KaTeX_Typewriter-Regular.woff
 https://cdn.jsdelivr.net/katex/0.5.1/fonts/KaTeX_Typewriter-Regular.woff2""".split('\n'):
         local('cd dist/css/fonts/ && wget ' + font)
     local('cat markdown-core.css >> dist/css/markdown-core.css')
+
+
+def js():
+    local('rm -rf dist/*.js')
     local('browserify markdown-core-node.js -s mdc > dist/markdown-core.js')
     local('echo "\n" >> dist/markdown-core.js')
     local('curl https://cdn.jsdelivr.net/jquery/2.1.4/jquery.min.js >> dist/markdown-core.js')
@@ -116,6 +119,11 @@ https://cdn.jsdelivr.net/katex/0.5.1/fonts/KaTeX_Typewriter-Regular.woff2""".spl
     local('cat markdown-core-browser.js >> dist/markdown-core.js')
     local('uglifyjs dist/markdown-core.js -cmo dist/markdown-core.min.js')
     local('rm dist/markdown-core.js')
+
+
+def dist():
+    css()
+    js()
 
 
 def mdm(): # copy dist code to Markdown Mate project

@@ -1,3 +1,6 @@
+require('es6-shim');
+
+
 // markdown-it
 var mdc = require('markdown-it')({
   html: true,
