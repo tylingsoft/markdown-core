@@ -13,9 +13,6 @@ mermaid.parseError = function(err, hash){
   mdc.mermaidError = err;
 };
 mdc.mermaid_charts = function(code, line) {
-  if(code.startsWith('sequenceDiagram')) {
-    code += '\n'; // append empty line to the end, otherwise syntax error. It's a bug of mermaid.
-  }
   if(mermaid.parse(code)) {
     return '<div data-source-line="' + line + '" class="mermaid">' + code + '</div>';
   } else {
