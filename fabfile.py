@@ -8,7 +8,7 @@ def css():
     local('curl https://cdn.jsdelivr.net/github-markdown-css/2.1.0/github-markdown.css > dist/css/markdown-core.css')
     local('curl https://cdn.jsdelivr.net/highlight.js/8.9.1/styles/github.min.css >> dist/css/markdown-core.css')
     local('curl https://cdn.jsdelivr.net/emojione/1.5.2/assets/css/emojione.min.css >> dist/css/markdown-core.css')
-    local('curl https://cdn.jsdelivr.net/mermaid/0.5.5/mermaid.css >> dist/css/markdown-core.css')
+    local('curl https://cdn.jsdelivr.net/mermaid/0.5.6/mermaid.css >> dist/css/markdown-core.css')
     local('curl https://cdn.jsdelivr.net/fontawesome/4.4.0/css/font-awesome.min.css >> dist/css/markdown-core.css')
     for font in """https://cdn.jsdelivr.net/fontawesome/4.4.0/fonts/FontAwesome.otf
 https://cdn.jsdelivr.net/fontawesome/4.4.0/fonts/fontawesome-webfont.eot
@@ -114,7 +114,7 @@ def js():
     local('echo "\n" >> dist/markdown-core.js')
     local('curl https://cdn.jsdelivr.net/jquery/2.1.4/jquery.min.js >> dist/markdown-core.js')
     local('echo "\n" >> dist/markdown-core.js')
-    local('curl https://cdn.jsdelivr.net/mermaid/0.5.5/mermaid.min.js >> dist/markdown-core.js')
+    local('curl https://cdn.jsdelivr.net/mermaid/0.5.6/mermaid.min.js >> dist/markdown-core.js')
     local('echo "\n" >> dist/markdown-core.js')
     local('cat markdown-core-browser.js >> dist/markdown-core.js')
     local('uglifyjs dist/markdown-core.js -cmo dist/markdown-core.min.js')
@@ -122,6 +122,7 @@ def js():
 
 
 def dist():
+    local('npm install')
     css()
     js()
 
