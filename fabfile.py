@@ -130,3 +130,8 @@ def dist():
 def mdm(): # copy dist code to Markdown Mate project
     local('cp index.html ~/src/swift/markdown-mate/Markdown\ Mate/markdown-core/')
     local('cp -r dist ~/src/swift/markdown-mate/Markdown\ Mate/markdown-core/')
+
+
+def mdp(): # copy dist code to Markdown Plus project
+    local('cp index.html ~/src/swift/markdown-plus/Markdown\ Plus/markdown-core/')
+    local('cp -r dist ~/src/swift/markdown-plus/Markdown\ Plus/markdown-core/')
