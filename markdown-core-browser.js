@@ -21,13 +21,17 @@ mdc.mermaid_charts = function(code, line) {
 }
 
 
+mdc.inited = function() {
+  // this is a hook method
+}
 mdc.init = function(markdown, debug) {
-	var result = mdc.render(markdown);
-	if(debug === true) {
-	  console.log(result);
-	}
-    $('article.markdown-body').html(result);
-    if($('.mermaid').length > 0) {
-      mermaid.init();
-    }
+  var result = mdc.render(markdown);
+  if(debug === true) {
+    console.log(result);
+  }
+  $('article.markdown-body').html(result);
+  if($('.mermaid').length > 0) {
+    mermaid.init();
+  }
+  mdc.inited();
 }
