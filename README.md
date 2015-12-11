@@ -16,4 +16,3 @@ MIT
 ## todo
 
 1. echarts: http://www.oschina.net/news/68671/echarts-3-beta
-1. let user choose gantt chart x-axis label format

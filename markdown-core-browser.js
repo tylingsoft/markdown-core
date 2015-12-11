@@ -2,13 +2,20 @@
 
 
 // mermaid charts
-mermaid.ganttConfig = {
-  axisFormatter: [
-    ["%-m/%-d", function (d) {
-        return d.getDay() == 1;
-    }]
-  ]
+mdc.mermaid = {
+    gantt: {
+        axisFormat: function(format) {
+            mermaid.ganttConfig = {
+              axisFormatter: [
+                [format, function (d) {
+                    return d.getDay() == 1;
+                }]
+              ]
+            };
+        }
+    }
 };
+mdc.mermaid.gantt.axisFormat('%-m/%-d');
 mermaid.parseError = function(err, hash){
   mdc.mermaidError = err;
 };
