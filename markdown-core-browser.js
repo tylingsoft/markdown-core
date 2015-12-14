@@ -1,13 +1,42 @@
 // this file contains code which requires browser, thus not compatible with node.js
 
 
+// convert svg image to png image
+function SVGtoPNG(id, callback) {
+    var svg = document.getElementById(id);
+    var svgData = new XMLSerializer().serializeToString(svg);
+    var img = document.createElement("img");
+    img.setAttribute("src", "data:image/svg+xml;base64," + btoa(svgData));
+
+    var canvas = document.createElement("canvas");
+    var svgSize = svg.getBoundingClientRect();
+    canvas.width = svgSize.width;
+    canvas.height = svgSize.height;
+    var ctx = canvas.getContext("2d");
+
+    img.onload = function() {
+        ctx.drawImage(img, 0, 0);
+        var png = canvas.toDataURL("image/png");
+        callback(png);
+    };
+}
+
+
 // mermaid charts
 mdc.mermaid = {
+    toPng: function() {
+        $('div.mermaid > svg').each(function() {
+            var id = $(this).attr('id');
+            SVGtoPNG(id, function(png) {
+                $('#' + id).replaceWith('<img src="' + png + '"/>');
+            });
+        });
+    },
     gantt: {
         axisFormat: function(format) {
             mermaid.ganttConfig = {
               axisFormatter: [
-                [format, function (d) {
+                [format, function(d) {
                     return d.getDay() == 1;
                 }]
               ]
@@ -16,7 +45,7 @@ mdc.mermaid = {
     }
 };
 mdc.mermaid.gantt.axisFormat('%-m/%-d');
-mermaid.parseError = function(err, hash){
+mermaid.parseError = function(err, hash) {
   mdc.mermaidError = err;
 };
 mdc.mermaid_charts = function(code, line) {
