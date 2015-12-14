@@ -1,8 +1,11 @@
 // this file contains code which requires browser, thus not compatible with node.js
 
 
+mdc.svgToPng = function(id) {
+    return ''; // placeholder method.
+}
 // convert svg image to png image
-function SVGtoPNG(id, callback) {
+function svgToPng(id, callback) {
     var svg = document.getElementById(id);
     var svgData = new XMLSerializer().serializeToString(svg);
     var img = document.createElement("img");
@@ -16,7 +19,12 @@ function SVGtoPNG(id, callback) {
 
     img.onload = function() {
         ctx.drawImage(img, 0, 0);
-        var png = canvas.toDataURL("image/png");
+        var png = '';
+        try {
+            png = canvas.toDataURL("image/png");
+        } catch(e) { // doesn't work in Safari for flowchart
+            png = mdc.svgToPng(id); // hook method
+        }
         callback(png);
     };
 }
@@ -27,7 +35,7 @@ mdc.mermaid = {
     toPng: function() {
         $('div.mermaid > svg').each(function() {
             var id = $(this).attr('id');
-            SVGtoPNG(id, function(png) {
+            svgToPng(id, function(png) {
                 $('#' + id).replaceWith('<img src="' + png + '"/>');
             });
         });
