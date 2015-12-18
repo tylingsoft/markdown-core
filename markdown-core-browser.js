@@ -52,11 +52,15 @@ mdc.mermaid = {
         }
     }
 };
-var gantt_axis_format = Cookies.get('gantt-axis-format');
-if(gantt_axis_format == undefined) {
-    gantt_axis_format = '%-m/%-d';
-}
-mdc.mermaid.gantt.axisFormat(gantt_axis_format);
+mdc.loadPreferences = function() {
+    var gantt_axis_format = Cookies.get('gantt-axis-format');
+    if(gantt_axis_format == undefined) {
+        gantt_axis_format = '%-m/%-d';
+    }
+    mdc.mermaid.gantt.axisFormat(gantt_axis_format);
+    return { 'gantt-axis-format': gantt_axis_format };
+};
+mdc.loadPreferences();
 mermaid.parseError = function(err, hash) {
   mdc.mermaidError = err;
 };
