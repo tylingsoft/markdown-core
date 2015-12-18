@@ -114,6 +114,8 @@ def js():
     local('echo "\n" >> dist/markdown-core.js')
     local('curl https://cdn.jsdelivr.net/jquery/2.1.4/jquery.min.js >> dist/markdown-core.js')
     local('echo "\n" >> dist/markdown-core.js')
+    local('curl https://cdn.jsdelivr.net/js-cookie/2.0.4/js.cookie.js >> dist/markdown-core.js')
+    local('echo "\n" >> dist/markdown-core.js')
     local('curl https://cdn.jsdelivr.net/mermaid/0.5.6/mermaid.min.js >> dist/markdown-core.js')
     local('echo "\n" >> dist/markdown-core.js')
     local('cat markdown-core-browser.js >> dist/markdown-core.js')
