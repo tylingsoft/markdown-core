@@ -1,43 +1,16 @@
 // this file contains code which requires browser, thus not compatible with node.js
 
 
-mdc.svgToPng = function(id) {
-    return ''; // placeholder method.
+// convert an element to png image, aka screenshot an element
+mdc.elementToPng = function($element) {
+    return ''; // hook method, needs to be implemented in native code, such as Cocoa or WPF
 }
-// convert svg image to png image
-function svgToPng(id, callback) {
-    var svg = document.getElementById(id);
-    var svgData = new XMLSerializer().serializeToString(svg);
-    var img = document.createElement("img");
-    img.setAttribute("src", "data:image/svg+xml;base64," + btoa(svgData));
-
-    var canvas = document.createElement("canvas");
-    var svgSize = svg.getBoundingClientRect();
-    canvas.width = svgSize.width;
-    canvas.height = svgSize.height;
-    var ctx = canvas.getContext("2d");
-
-    img.onload = function() {
-        ctx.drawImage(img, 0, 0);
-        var png = '';
-        try {
-            png = canvas.toDataURL("image/png");
-        } catch(e) { // doesn't work in Safari for flowchart
-            png = mdc.svgToPng(id); // hook method
-        }
-        callback(png);
-    };
-}
-
-
 // mermaid charts
 mdc.mermaid = {
     toPng: function() {
         $('div.mermaid > svg').each(function() {
-            var id = $(this).attr('id');
-            svgToPng(id, function(png) {
-                $('#' + id).replaceWith('<img src="' + png + '"/>');
-            });
+            var png = mdc.elementToPng($(this));
+            $(this).replaceWith('<img src="' + png + '"/>');
         });
     },
     gantt: {
