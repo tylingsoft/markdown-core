@@ -64,3 +64,13 @@ ul.table-of-contents {
 ul.table-of-contents li {
   margin: 4px 0;
 }
+
+/*************************/
+/* below is for printing */
+/*************************/
+
+@media print {
+    article.markdown-body > * {
+        page-break-inside: avoid;
+    }
+}
