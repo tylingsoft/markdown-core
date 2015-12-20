@@ -5,14 +5,6 @@
 mdc.elementToPng = function($element) {
     return ''; // hook method, needs to be implemented in native code, such as Cocoa or WPF
 }
-mdc.backgrounds = {
-    toPng: function() {
-        $($('pre, code:not(.hljs), mark, div.success, div.warning, div.danger, div.info').get().reverse()).each(function() { // 倒序是为了前面的不影响后面的
-            var png = mdc.elementToPng($(this));
-            $(this).replaceWith('<img src="' + png + '"/>');
-        });
-    }
-};
 // mermaid charts
 mdc.mermaid = {
     toPng: function() {
