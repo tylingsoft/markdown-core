@@ -7,7 +7,7 @@ mdc.elementToPng = function($element) {
 }
 mdc.backgrounds = {
     toPng: function() {
-        $($('mark, div.success, div.warning, div.danger, div.info').get().reverse()).each(function() { // 倒序是为了前面的不影响后面的
+        $($('pre, code:not(.hljs), mark, div.success, div.warning, div.danger, div.info').get().reverse()).each(function() { // 倒序是为了前面的不影响后面的
             var png = mdc.elementToPng($(this));
             $(this).replaceWith('<img src="' + png + '"/>');
         });
