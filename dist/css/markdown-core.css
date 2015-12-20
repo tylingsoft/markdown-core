@@ -1006,6 +1006,12 @@ ul.table-of-contents li {
   margin: 4px 0;
 }
 
+mark {
+    color: black;
+    background-color: yellow;
+    border: 1px solid yellow;
+}
+
 /*************************/
 /* below is for printing */
 /*************************/
