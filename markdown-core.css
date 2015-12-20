@@ -1,3 +1,7 @@
+body {
+    background-color: white;
+}
+
 .markdown-body {
   min-width: 512px;
   max-width: 978px;
