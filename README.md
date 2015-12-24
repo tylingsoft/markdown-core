@@ -16,4 +16,7 @@ MIT
 ## todo
 
 1. echarts: http://www.oschina.net/news/68671/echarts-3-beta
+    1. this is the selling point
 1. multiple themes
+1. update libraries (emojione)
+1. togglable TOC by configuration：https://ruby-china.org/topics/28505
