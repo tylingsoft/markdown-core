@@ -1,13 +1,18 @@
 from fabric.api import local
 
 
+def update():
+    local('ncu -u')
+    local('npm install')
+
+
 def css():
     local('rm -rf dist/css/*.css')
     local('rm -rf dist/css/fonts/*')
     local('rm -rf dist/fonts/*')
     local('curl https://cdn.jsdelivr.net/github-markdown-css/2.1.1/github-markdown.css > dist/css/markdown-core.css')
     local('curl https://cdn.jsdelivr.net/highlight.js/9.0.0/styles/github.min.css >> dist/css/markdown-core.css')
-    local('curl https://cdn.jsdelivr.net/emojione/1.5.2/assets/css/emojione.min.css >> dist/css/markdown-core.css')
+    local('curl https://cdn.jsdelivr.net/emojione/2.0.0/assets/css/emojione.min.css >> dist/css/markdown-core.css')
     local('curl https://cdn.jsdelivr.net/mermaid/0.5.6/mermaid.css >> dist/css/markdown-core.css')
     local('curl https://cdn.jsdelivr.net/fontawesome/4.5.0/css/font-awesome.min.css >> dist/css/markdown-core.css')
     for font in """https://cdn.jsdelivr.net/fontawesome/4.5.0/fonts/FontAwesome.otf
