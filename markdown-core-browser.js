@@ -8,7 +8,7 @@ mdc.elementToPng = function($element) {
 // mermaid charts
 mdc.mermaid = {
     toPng: function() {
-        $($('div.mermaid > svg').get().reverse()).each(function() { // 倒序是为了前面的不影响后面的
+        $($('div.mermaid > svg').get().reverse()).each(function() { // reverse, so latter won't affect former
             var png = mdc.elementToPng($(this));
             $(this).replaceWith('<img src="' + png + '"/>');
         });
