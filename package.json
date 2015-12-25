@@ -5,8 +5,8 @@
   "repository": "tylingsoft/markdown-core",
   "license": "MIT",
   "dependencies": {
-    "emojione": "^1.5.2",
-    "es6-shim": "^0.34.0",
+    "emojione": "^2.0.0",
+    "es6-shim": "^0.33.13",
     "highlight.js": "^9.0.0",
     "katex": "^0.5.1",
     "markdown-it": "^5.0.2",
