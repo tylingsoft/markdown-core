@@ -19,3 +19,9 @@ MIT
     1. this is the selling point
 1. multiple themes
 1. togglable TOC by configuration：https://ruby-china.org/topics/28505
+
+
+## note
+
+- Upgrade es6-shim from 0.33.13 to 0.34.0 introduced a weird bug: Markdown Plus editor press enter auto insert the last character of previous line.
+    - Will take a look later
