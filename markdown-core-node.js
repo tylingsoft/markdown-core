@@ -18,7 +18,11 @@ mdc = mdc.use(require('markdown-it-footnote'));
 mdc = mdc.use(require('markdown-it-abbr'));
 mdc = mdc.use(require('markdown-it-deflist'));
 mdc = mdc.use(require('markdown-it-toc-and-anchor'), {
-  anchorLink: false
+  tocClassName: 'toc',
+  anchorLinkSymbol: '',
+  anchorLinkSpace: false,
+  anchorClassName: 'anchor',
+  anchorLinkSymbolClassName: 'octicon octicon-link',
 });
 
 var markdownitContainer = require('markdown-it-container');
