@@ -54,11 +54,11 @@ mdc.init = function(markdown, debug) {
   if(debug === true) {
     console.log(result);
   }
-  $('#hidden-content').html(result);
-  $('#hidden-content').show();
-  mermaid.init(undefined, $('#hidden-content .mermaid'));
-  $('#hidden-content').hide();
-  $('#main-content').html($('#hidden-content').html());
-  $('#hidden-content').html('');
+  $('#cache').html(result);
+  $('#cache').show();
+  mermaid.init(undefined, $('#cache .mermaid'));
+  $('#cache').hide();
+  $('#preview').html($('#cache').html());
+  $('#cache').html('');
   mdc.inited();
 }
