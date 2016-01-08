@@ -7,8 +7,19 @@ second line
 ## headings
 ### heading 3
 #### 标题 4
+#### 标题 4
+#### 标题 4
+#### 标题
+#### 标题
+#### 标题
 ##### heading 5
 ###### heading 6
+
+
+## Table of Contents
+
+@[toc]
+
 
 ## Github Flavored Markdown
 
@@ -47,6 +58,7 @@ do_this_and_do_that_and_another_thing.
   - [x] follow up subtask
   - [ ] final subtask
 - [ ] a separate task
+
 
 
 ## Code blocks
@@ -248,3 +260,8 @@ Term 2
 ## mark
 
 ==Marked text==
+
+
+## Table of Contents
+
+@[toc]
