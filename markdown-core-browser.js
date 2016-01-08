@@ -54,9 +54,11 @@ mdc.init = function(markdown, debug) {
   if(debug === true) {
     console.log(result);
   }
-  $('article.markdown-body').html(result);
-  if($('.mermaid').length > 0) {
-    mermaid.init();
-  }
+  $('#hidden-content').html(result);
+  $('#hidden-content').show();
+  mermaid.init(undefined, $('#hidden-content .mermaid'));
+  $('#hidden-content').hide();
+  $('#main-content').html($('#hidden-content').html());
+  $('#hidden-content').html('');
   mdc.inited();
 }
