@@ -19,7 +19,6 @@ MIT
     1. this is the selling point
 1. multiple themes
 1. togglable TOC by configuration：https://ruby-china.org/topics/28505
-1. use gulp to manage packages: https://github.com/murphydanger/gulp-minify-css
 1. toc
 
 

@@ -109,6 +109,8 @@ https://cdn.jsdelivr.net/katex/0.5.1/fonts/KaTeX_Typewriter-Regular.woff
 https://cdn.jsdelivr.net/katex/0.5.1/fonts/KaTeX_Typewriter-Regular.woff2""".split('\n'):
         local('cd dist/fonts/ && wget ' + font)
     local('cat markdown-core.css >> dist/markdown-core.css')
+    local('cleancss -o dist/markdown-core.min.css dist/markdown-core.css')
+    local('rm dist/markdown-core.css')
 
 
 def js():
