@@ -7,6 +7,7 @@ var mdc = require('markdown-it')({
   xhtmlOut: true, // <br /> instead of <br>
   linkify: true
 });
+mdc.linkify.set({ fuzzyLink: false });
 
 
 // markdown-it plugins

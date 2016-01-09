@@ -1,7 +1,12 @@
 # Markdown Core
 
-first line  
-second line
+website.com
+
+http://website.com
+
+https://website.com
+
+test@website.com
 
 
 ## headings

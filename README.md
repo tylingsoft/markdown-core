@@ -19,7 +19,8 @@ MIT
     1. this is the selling point
 1. multiple themes
 1. togglable TOC by configuration：https://ruby-china.org/topics/28505
-1. toc 中的一些东西并没有解析出来。 比如 emoji, fontawesome, superscript 等等
+1. toc doesn't support superscript, subscript, font awesome...etc.
+    1. hard, need to learn how markdown-it is implemented.
 
 
 ## note
