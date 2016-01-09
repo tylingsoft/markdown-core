@@ -26,3 +26,4 @@ MIT
 1. toc and heading anchor must be implemented in separate plugins
     1. necessary?
 1. support <kbd>: https://sindresorhus.com/github-markdown-css/
+    css already support it. Do we really need a markdown syntax?
