@@ -21,9 +21,11 @@ MIT
 1. toc doesn't support superscript, subscript, font awesome...etc.
     1. hard, need to learn how markdown-it is implemented.
     1. or it's not necessary?
+    1. created issue for the original GitHub project
 1. make source map configurable, disabed by default
 1. toc and heading anchor must be implemented in separate plugins
     1. necessary?
+1. support <kbd>: https://sindresorhus.com/github-markdown-css/
 
 
 ## note

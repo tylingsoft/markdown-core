@@ -62,7 +62,7 @@ abbr[title] {
 }
 
 ul.toc {
-  padding-left: 0;
+  padding-left: 2px;
 }
 
 ul.toc, ul.toc ul {
