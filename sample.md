@@ -265,8 +265,3 @@ Term 2
 ## mark
 
 ==Marked text==
-
-
-## Table of Contents
-
-@[toc]

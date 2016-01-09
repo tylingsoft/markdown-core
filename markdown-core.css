@@ -61,12 +61,16 @@ abbr[title] {
     border-bottom: 1px dotted #777;
 }
 
-ul.table-of-contents {
+ul.toc {
+  padding-left: 0;
+}
+
+ul.toc, ul.toc ul {
   list-style-type: none;
 }
 
-ul.table-of-contents li {
-  margin: 4px 0;
+ul.toc li {
+  margin: 2px 0;
 }
 
 mark {

@@ -6,27 +6,19 @@ def update():
     local('npm install')
 
 
-def css():
-    local('rm -rf dist/*.css')
+def fonts():
     local('rm -rf dist/fonts/*')
-    local('curl https://cdn.rawgit.com/tylerlong/github-markdown-css/gh-pages/github-markdown.css > dist/markdown-core.css')
-    local('curl https://cdn.jsdelivr.net/highlight.js/9.0.0/styles/github.min.css >> dist/markdown-core.css')
-    local('curl https://cdn.jsdelivr.net/emojione/2.0.0/assets/css/emojione.min.css >> dist/markdown-core.css')
-    local('curl https://cdn.jsdelivr.net/mermaid/0.5.6/mermaid.css >> dist/markdown-core.css')
-    local('curl https://cdn.jsdelivr.net/fontawesome/4.5.0/css/font-awesome.min.css | sed "s/..\/fonts\//fonts\//g" >> dist/markdown-core.css')
     for font in """https://cdn.jsdelivr.net/fontawesome/4.5.0/fonts/fontawesome-webfont.eot
 https://cdn.jsdelivr.net/fontawesome/4.5.0/fonts/fontawesome-webfont.svg
 https://cdn.jsdelivr.net/fontawesome/4.5.0/fonts/fontawesome-webfont.ttf
 https://cdn.jsdelivr.net/fontawesome/4.5.0/fonts/fontawesome-webfont.woff
 https://cdn.jsdelivr.net/fontawesome/4.5.0/fonts/fontawesome-webfont.woff2""".split('\n'):
         local('cd dist/fonts/ && wget ' + font)
-    local('curl https://cdn.jsdelivr.net/ionicons/2.0.1/css/ionicons.min.css | sed "s/..\/fonts\//fonts\//g" >> dist/markdown-core.css')
     for font in """https://cdn.jsdelivr.net/ionicons/2.0.1/fonts/ionicons.eot
 https://cdn.jsdelivr.net/ionicons/2.0.1/fonts/ionicons.svg
 https://cdn.jsdelivr.net/ionicons/2.0.1/fonts/ionicons.ttf
 https://cdn.jsdelivr.net/ionicons/2.0.1/fonts/ionicons.woff""".split('\n'):
         local('cd dist/fonts/ && wget ' + font)
-    local('curl https://cdn.jsdelivr.net/katex/0.5.1/katex.min.css >> dist/markdown-core.css')
     for font in """https://cdn.jsdelivr.net/katex/0.5.1/fonts/KaTeX_AMS-Regular.eot
 https://cdn.jsdelivr.net/katex/0.5.1/fonts/KaTeX_AMS-Regular.ttf
 https://cdn.jsdelivr.net/katex/0.5.1/fonts/KaTeX_AMS-Regular.woff
@@ -108,6 +100,17 @@ https://cdn.jsdelivr.net/katex/0.5.1/fonts/KaTeX_Typewriter-Regular.ttf
 https://cdn.jsdelivr.net/katex/0.5.1/fonts/KaTeX_Typewriter-Regular.woff
 https://cdn.jsdelivr.net/katex/0.5.1/fonts/KaTeX_Typewriter-Regular.woff2""".split('\n'):
         local('cd dist/fonts/ && wget ' + font)
+
+
+def css():
+    local('rm -rf dist/*.css')
+    local('curl https://cdn.rawgit.com/tylerlong/github-markdown-css/gh-pages/github-markdown.css > dist/markdown-core.css')
+    local('curl https://cdn.jsdelivr.net/highlight.js/9.0.0/styles/github.min.css >> dist/markdown-core.css')
+    local('curl https://cdn.jsdelivr.net/emojione/2.0.0/assets/css/emojione.min.css >> dist/markdown-core.css')
+    local('curl https://cdn.jsdelivr.net/mermaid/0.5.6/mermaid.css >> dist/markdown-core.css')
+    local('curl https://cdn.jsdelivr.net/fontawesome/4.5.0/css/font-awesome.min.css | sed "s/..\/fonts\//fonts\//g" >> dist/markdown-core.css')
+    local('curl https://cdn.jsdelivr.net/ionicons/2.0.1/css/ionicons.min.css | sed "s/..\/fonts\//fonts\//g" >> dist/markdown-core.css')
+    local('curl https://cdn.jsdelivr.net/katex/0.5.1/katex.min.css >> dist/markdown-core.css')
     local('cat markdown-core.css >> dist/markdown-core.css')
     local('cleancss -o dist/markdown-core.min.css dist/markdown-core.css')
     local('rm dist/markdown-core.css')
@@ -131,6 +134,7 @@ def js():
 def dist():
     local('npm install')
     css()
+    fonts()
     js()
 
 
