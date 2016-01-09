@@ -32,3 +32,4 @@ MIT
 
 - Upgrade es6-shim from 0.33.13 to 0.34.0 introduced a weird bug: Markdown Plus editor press enter auto insert the last character of previous line.
     - Will take a look later
+    - upgrade to 0.34.0 no problem. but mdp editor very slow. Does it cause performance issue?
