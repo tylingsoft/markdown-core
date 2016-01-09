@@ -26,10 +26,3 @@ MIT
 1. toc and heading anchor must be implemented in separate plugins
     1. necessary?
 1. support <kbd>: https://sindresorhus.com/github-markdown-css/
-
-
-## note
-
-- Upgrade es6-shim from 0.33.13 to 0.34.0 introduced a weird bug: Markdown Plus editor press enter auto insert the last character of previous line.
-    - Will take a look later
-    - upgrade to 0.34.0 no problem. but mdp editor very slow. Does it cause performance issue?
