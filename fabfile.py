@@ -9,7 +9,7 @@ def update():
 def css():
     local('rm -rf dist/*.css')
     local('rm -rf dist/fonts/*')
-    local('curl https://cdn.jsdelivr.net/github-markdown-css/2.1.1/github-markdown.css > dist/markdown-core.css')
+    local('curl https://cdn.rawgit.com/tylerlong/github-markdown-css/gh-pages/github-markdown.css > dist/markdown-core.css')
     local('curl https://cdn.jsdelivr.net/highlight.js/9.0.0/styles/github.min.css >> dist/markdown-core.css')
     local('curl https://cdn.jsdelivr.net/emojione/2.0.0/assets/css/emojione.min.css >> dist/markdown-core.css')
     local('curl https://cdn.jsdelivr.net/mermaid/0.5.6/mermaid.css >> dist/markdown-core.css')
