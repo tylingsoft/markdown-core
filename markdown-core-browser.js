@@ -54,9 +54,13 @@ mdc.init = function(markdown, debug) {
   if(debug === true) {
     console.log(result);
   }
+
+  // 通过 cache 来防止 mermaid init 造成页面抖动
+  // 通过 morphdom 来 patch dom，避免全部替换 dom 造成的性能损失 (可能并不值得这么做)
   morphdom($('#cache').get(0), `<article class="markdown-body" id="cache">${ result }</article>`);
   mermaid.init(undefined, $('#cache .mermaid'));
   $('#cache').hide();
-  morphdom($('#preview').get(0), `<article class="markdown-body" id="preview">${ $('#cache').html() }</article>`);
+  $('#preview').html($('#cache').html());
+
   mdc.inited();
 }
