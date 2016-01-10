@@ -10,7 +10,7 @@ mdc.mermaid = {
   toPng: function() {
     $($('div.mermaid > svg').get().reverse()).each(function() { // reverse, so latter won't affect former
       var png = mdc.elementToPng($(this));
-      $(this).replaceWith('<img src="' + png + '"/>');
+      $(this).replaceWith(`<img src="${ png }"/>`);
     });
   },
   gantt: {
@@ -37,20 +37,11 @@ mdc.loadPreferences();
 mermaid.parseError = function(err, hash) {
   mdc.mermaidError = err;
 };
-mdc.mermaid_charts = function(code, line) {
+mdc.mermaid_charts = function(code, map) {
   if(mermaid.parse(code)) {
-    if(mdc.map) {
-      return '<div data-source-line="' + line + '" class="mermaid">' + code + '</div>';
-    } else {
-      return '<div class="mermaid">' + code + '</div>';
-    }
+    return `<div${ map } class="mermaid">${ code }</div>`;
   } else {
-    if(mdc.map) {
-      return '<pre data-source-line="' + line + '">' + mdc.mermaidError + '</pre>';
-    }
-    else {
-      return '<pre>' + mdc.mermaidError + '</pre>';
-    }
+    return `<pre${ map }>${ mdc.mermaidError }</pre>`;
   }
 }
 

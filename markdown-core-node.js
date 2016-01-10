@@ -41,12 +41,12 @@ emojione.imagePathPNG = 'https://cdn.jsdelivr.net/emojione/assets/png/';
 mdc.renderer.rules.emoji = function(tokens, idx) {
   var shortname = tokens[idx].markup;
   if(shortname.startsWith('fa-')) { // fontawesome
-    return '<i class="fa ' + shortname + '"></i>';
+    return `<i class="fa ${ shortname }"></i>`;
   }
   if(shortname.startsWith('ion-')) { // ionicons
-    return '<i class="' + shortname + '"></i>';
+    return `<i class="${ shortname }"></i>`;
   }
-  return emojione.shortnameToImage(':' + shortname + ':'); // emojione
+  return emojione.shortnameToImage(`:${ shortname }:`); // emojione
 };
 
 
@@ -104,38 +104,30 @@ mdc.renderer.rules.code_inline = function(tokens, idx) {
     try{
       return katex.renderToString(code);
     } catch(err) {
-      return '<code>' + err + '</code>';
+      return `<code>${ err }</code>`;
     }
   }
-  return '<code>' + code + '</code>'; // not math
+  return `<code>${ code }</code>`; // not math
 }
 
 
 // math block
-mdc.math_block = function(code, line) {
+mdc.math_block = function(code, map) {
   var tex = '';
   code.split(/(?:\n\s*){2,}/).forEach(function(line) { // consecutive new lines means a new formula
     try {
       tex += katex.renderToString(line.trim(), { displayMode: true });
     } catch(err) {
-      tex += '<pre>' + err + '</pre>';
+      tex += `<pre>${ err }</pre>`;
     }
   });
-  if(mdc.map) {
-    return '<div data-source-line="' + line + '">' + tex + '</div>';
-  } else {
-    return '<div>' + tex + '</div>';
-  }
+  return `<div${ map }>${ tex }</div>`;
 }
 
 
 // placeholder for mermaid
-mdc.mermaid_charts = function(code, line) {
-  if(mdc.map) {
-    return '<div data-source-line="' + line + '" class="mermaid">' + code + '</div>';
-  } else {
-    return '<div class="mermaid">' + code + '</div>';
-  }
+mdc.mermaid_charts = function(code, map) {
+  return `<div${ map } class="mermaid">${ code }</div>`;
 }
 
 
@@ -146,14 +138,14 @@ mdc.renderer.rules.fence = function(tokens, idx) {
   var code = token.content.trim();
   var map = mdc.map ? ` data-source-line="${ token.map[0] + 1 }"` : '';
   if(token.info == 'math') { // math
-    return mdc.math_block(code, token.map[0] + 1);
+    return mdc.math_block(code, map);
   }
   if(token.info.length > 0) { // programming language
     return `<pre${ map }><code class="hljs">${ hljs.highlightAuto(code, [token.info]).value }</code></pre>`;
   }
   var firstLine = code.split(/\n/)[0].trim();
   if(firstLine === 'gantt' || firstLine === 'sequenceDiagram' || firstLine.match(/^graph (?:TB|BT|RL|LR|TD);?$/)) {
-    return mdc.mermaid_charts(code, token.map[0] + 1); // mermaid
+    return mdc.mermaid_charts(code, map); // mermaid
   }
   // unknown programming language
   return `<pre${ map }><code class="hljs">${ hljs.highlightAuto(code).value }</code></pre>`;
