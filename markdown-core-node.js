@@ -50,6 +50,7 @@ mdc.renderer.rules.emoji = function(tokens, idx) {
 };
 
 
+mdc.map = false;
 mdc.tags = {};
 mdc.renderer.renderToken = function(tokens, idx, options) {
   var token = tokens[idx];
@@ -59,7 +60,7 @@ mdc.renderer.renderToken = function(tokens, idx, options) {
     mdc.tags[_tag] = (mdc.tags[_tag] || 0) + 1;
 
     // source map
-    if(token.level == 0 && token.map != null) {
+    if(mdc.map && token.level == 0 && token.map != null) {
       token.attrPush(['data-source-line', token.map[0] + 1]);
     }
 
@@ -69,7 +70,8 @@ mdc.renderer.renderToken = function(tokens, idx, options) {
   }
 
   // task list
-  if((mdc.tags['bullet_list'] || 0) > 0 && tag == 'list_item_open' && (tokens[idx+2].content.startsWith('[ ] ') || tokens[idx+2].content.startsWith('[x] '))) {
+  if((mdc.tags['bullet_list'] || 0) > 0 && tag == 'list_item_open'
+      && (tokens[idx+2].content.startsWith('[ ] ') || tokens[idx+2].content.startsWith('[x] '))) {
     token.attrPush(['class', 'task-list-item']);
   }
 
@@ -116,16 +118,24 @@ mdc.math_block = function(code, line) {
     try {
       tex += katex.renderToString(line.trim(), { displayMode: true });
     } catch(err) {
-      tex += '<pre data-source-line="' + line + '">' + err + '</pre>';
+      tex += '<pre>' + err + '</pre>';
     }
   });
-  return '<div data-source-line="' + line + '">' + tex + '</div>';
+  if(mdc.map) {
+    return '<div data-source-line="' + line + '">' + tex + '</div>';
+  } else {
+    return '<div>' + tex + '</div>';
+  }
 }
 
 
 // placeholder for mermaid
 mdc.mermaid_charts = function(code, line) {
-	return '<div data-source-line="' + line + '" class="mermaid">' + code + '</div>';
+  if(mdc.map) {
+    return '<div data-source-line="' + line + '" class="mermaid">' + code + '</div>';
+  } else {
+    return '<div class="mermaid">' + code + '</div>';
+  }
 }
 
 
@@ -138,13 +148,24 @@ mdc.renderer.rules.fence = function(tokens, idx) {
     return mdc.math_block(code, token.map[0] + 1);
   }
   if(token.info.length > 0) { // programming language
-    return '<pre data-source-line="' + (token.map[0] + 1) + '"><code class="hljs">' + hljs.highlightAuto(code, [token.info]).value + '</code></pre>';
+    if(mdc.map) {
+      return '<pre data-source-line="' + (token.map[0] + 1) + '"><code class="hljs">'
+              + hljs.highlightAuto(code, [token.info]).value + '</code></pre>';
+    } else {
+      return '<pre><code class="hljs">' + hljs.highlightAuto(code, [token.info]).value + '</code></pre>';
+    }
   }
   var firstLine = code.split(/\n/)[0].trim();
   if(firstLine === 'gantt' || firstLine === 'sequenceDiagram' || firstLine.match(/^graph (?:TB|BT|RL|LR|TD);?$/)) {
     return mdc.mermaid_charts(code, token.map[0] + 1) // mermaid
   }
-  return '<pre data-source-line="' + (token.map[0] + 1) + '"><code class="hljs">' + hljs.highlightAuto(code).value + '</code></pre>'; // unknown programming language
+  // unknown programming language
+  if(mdc.map) {
+    return '<pre data-source-line="' + (token.map[0] + 1) + '"><code class="hljs">'
+            + hljs.highlightAuto(code).value + '</code></pre>';
+  } else {
+    return '<pre><code class="hljs">' + hljs.highlightAuto(code).value + '</code></pre>';
+  }
 }
 
 
@@ -152,7 +173,12 @@ mdc.renderer.rules.fence = function(tokens, idx) {
 mdc.renderer.rules.code_block = function(tokens, idx) {
   var token = tokens[idx];
   var code = token.content.trim();
-  return '<pre data-source-line="' + (token.map[0] + 1) + '"><code class="hljs">' + hljs.highlightAuto(code).value + '</code></pre>';
+  if(mdc.map) {
+    return '<pre data-source-line="' + (token.map[0] + 1) + '"><code class="hljs">'
+            + hljs.highlightAuto(code).value + '</code></pre>';
+  } else {
+    return '<pre><code class="hljs">' + hljs.highlightAuto(code).value + '</code></pre>';
+  }
 }
 
 

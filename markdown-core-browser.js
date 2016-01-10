@@ -39,9 +39,18 @@ mermaid.parseError = function(err, hash) {
 };
 mdc.mermaid_charts = function(code, line) {
   if(mermaid.parse(code)) {
-    return '<div data-source-line="' + line + '" class="mermaid">' + code + '</div>';
+    if(mdc.map) {
+      return '<div data-source-line="' + line + '" class="mermaid">' + code + '</div>';
+    } else {
+      return '<div class="mermaid">' + code + '</div>';
+    }
   } else {
-    return '<pre data-source-line="' + line + '">' + mdc.mermaidError + '</pre>';
+    if(mdc.map) {
+      return '<pre data-source-line="' + line + '">' + mdc.mermaidError + '</pre>';
+    }
+    else {
+      return '<pre>' + mdc.mermaidError + '</pre>';
+    }
   }
 }
 
