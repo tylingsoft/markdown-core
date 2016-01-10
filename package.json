@@ -18,7 +18,8 @@
     "markdown-it-mark": "^2.0.0",
     "markdown-it-sub": "^1.0.0",
     "markdown-it-sup": "^1.0.0",
-    "markdown-it-toc-and-anchor": "github:tylingsoft/markdown-it-toc-and-anchor"
+    "markdown-it-toc-and-anchor": "github:tylingsoft/markdown-it-toc-and-anchor",
+    "morphdom": "^1.0.4"
   },
   "devDependencies": {
     "babel-cli": "^6.4.0",

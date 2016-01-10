@@ -54,11 +54,9 @@ mdc.init = function(markdown, debug) {
   if(debug === true) {
     console.log(result);
   }
-  $('#cache').html(result);
-  $('#cache').show();
+  morphdom($('#cache').get(0), `<article class="markdown-body" id="cache">${ result }</article>`);
   mermaid.init(undefined, $('#cache .mermaid'));
   $('#cache').hide();
-  $('#preview').html($('#cache').html());
-  $('#cache').html('');
+  morphdom($('#preview').get(0), `<article class="markdown-body" id="preview">${ $('#cache').html() }</article>`);
   mdc.inited();
 }
