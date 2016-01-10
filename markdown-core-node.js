@@ -144,28 +144,19 @@ var hljs = require('highlight.js');
 mdc.renderer.rules.fence = function(tokens, idx) {
   var token = tokens[idx];
   var code = token.content.trim();
+  var map = mdc.map ? ` data-source-line="${ token.map[0] + 1 }"` : '';
   if(token.info == 'math') { // math
     return mdc.math_block(code, token.map[0] + 1);
   }
   if(token.info.length > 0) { // programming language
-    if(mdc.map) {
-      return '<pre data-source-line="' + (token.map[0] + 1) + '"><code class="hljs">'
-              + hljs.highlightAuto(code, [token.info]).value + '</code></pre>';
-    } else {
-      return '<pre><code class="hljs">' + hljs.highlightAuto(code, [token.info]).value + '</code></pre>';
-    }
+    return `<pre${ map }><code class="hljs">${ hljs.highlightAuto(code, [token.info]).value }</code></pre>`;
   }
   var firstLine = code.split(/\n/)[0].trim();
   if(firstLine === 'gantt' || firstLine === 'sequenceDiagram' || firstLine.match(/^graph (?:TB|BT|RL|LR|TD);?$/)) {
-    return mdc.mermaid_charts(code, token.map[0] + 1) // mermaid
+    return mdc.mermaid_charts(code, token.map[0] + 1); // mermaid
   }
   // unknown programming language
-  if(mdc.map) {
-    return '<pre data-source-line="' + (token.map[0] + 1) + '"><code class="hljs">'
-            + hljs.highlightAuto(code).value + '</code></pre>';
-  } else {
-    return '<pre><code class="hljs">' + hljs.highlightAuto(code).value + '</code></pre>';
-  }
+  return `<pre${ map }><code class="hljs">${ hljs.highlightAuto(code).value }</code></pre>`;
 }
 
 
@@ -173,12 +164,8 @@ mdc.renderer.rules.fence = function(tokens, idx) {
 mdc.renderer.rules.code_block = (tokens, idx) => {
   var token = tokens[idx];
   var code = token.content.trim();
-  if(mdc.map) {
-    return '<pre data-source-line="' + (token.map[0] + 1) + '"><code class="hljs">'
-            + hljs.highlightAuto(code).value + '</code></pre>';
-  } else {
-    return '<pre><code class="hljs">' + hljs.highlightAuto(code).value + '</code></pre>';
-  }
+  var map = mdc.map ? ` data-source-line="${ token.map[0] + 1 }"` : '';
+  return `<pre${ map }><code class="hljs">${ hljs.highlightAuto(code).value }</code></pre>`;
 }
 
 
