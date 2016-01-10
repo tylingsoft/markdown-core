@@ -3,35 +3,35 @@
 
 // convert an element to png image, aka screenshot an element
 mdc.elementToPng = function($element) {
-    return ''; // hook method, needs to be implemented in native code, such as Cocoa or WPF
+  return ''; // hook method, needs to be implemented in native code, such as Cocoa or WPF
 }
 // mermaid charts
 mdc.mermaid = {
-    toPng: function() {
-        $($('div.mermaid > svg').get().reverse()).each(function() { // reverse, so latter won't affect former
-            var png = mdc.elementToPng($(this));
-            $(this).replaceWith('<img src="' + png + '"/>');
-        });
-    },
-    gantt: {
-        axisFormat: function(format) {
-            mermaid.ganttConfig = {
-              axisFormatter: [
-                [format, function(d) {
-                    return d.getDay() == 1;
-                }]
-              ]
-            };
-        }
+  toPng: function() {
+    $($('div.mermaid > svg').get().reverse()).each(function() { // reverse, so latter won't affect former
+      var png = mdc.elementToPng($(this));
+      $(this).replaceWith('<img src="' + png + '"/>');
+    });
+  },
+  gantt: {
+    axisFormat: function(format) {
+      mermaid.ganttConfig = {
+        axisFormatter: [
+          [format, function(d) {
+            return d.getDay() == 1;
+          }]
+        ]
+      };
     }
+  }
 };
 mdc.loadPreferences = function() {
-    var gantt_axis_format = Cookies.get('gantt-axis-format');
-    if(gantt_axis_format == undefined) {
-        gantt_axis_format = '%-m/%-d';
-    }
-    mdc.mermaid.gantt.axisFormat(gantt_axis_format);
-    return { 'gantt-axis-format': gantt_axis_format };
+  var gantt_axis_format = Cookies.get('gantt-axis-format');
+  if(gantt_axis_format == undefined) {
+    gantt_axis_format = '%-m/%-d';
+  }
+  mdc.mermaid.gantt.axisFormat(gantt_axis_format);
+  return { 'gantt-axis-format': gantt_axis_format };
 };
 mdc.loadPreferences();
 mermaid.parseError = function(err, hash) {

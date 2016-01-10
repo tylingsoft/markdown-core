@@ -55,7 +55,7 @@ mdc.tags = {};
 mdc.renderer.renderToken = function(tokens, idx, options) {
   var token = tokens[idx];
   var tag = token.type;
-  if (tag.endsWith('_open')) {
+  if(tag.endsWith('_open')) {
     var _tag = tag.substr(0, tag.length - 5);
     mdc.tags[_tag] = (mdc.tags[_tag] || 0) + 1;
 
