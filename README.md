@@ -25,5 +25,4 @@ MIT
 1. make source map configurable, disabed by default
 1. toc and heading anchor must be implemented in separate plugins
     1. necessary?
-1. support <kbd>: https://sindresorhus.com/github-markdown-css/
-    css already support it. Do we really need a markdown syntax?
+1. because I am using node, so es6 is already supported? and browserify will translate to es5 automatically?
