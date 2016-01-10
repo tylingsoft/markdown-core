@@ -118,7 +118,9 @@ def css():
 
 def js():
     local('rm -rf dist/*.js')
-    local('browserify markdown-core-node.js -s mdc > dist/markdown-core.js')
+    local('./node_modules/babel-cli/bin/babel.js markdown-core-node.js > temp.js')
+    local('browserify temp.js -s mdc > dist/markdown-core.js')
+    local('rm temp.js')
     local('echo "\n" >> dist/markdown-core.js')
     local('curl https://cdn.jsdelivr.net/jquery/2.1.4/jquery.min.js >> dist/markdown-core.js')
     local('echo "\n" >> dist/markdown-core.js')
@@ -126,7 +128,7 @@ def js():
     local('echo "\n" >> dist/markdown-core.js')
     local('curl https://cdn.jsdelivr.net/mermaid/0.5.6/mermaid.min.js >> dist/markdown-core.js')
     local('echo "\n" >> dist/markdown-core.js')
-    local('cat markdown-core-browser.js >> dist/markdown-core.js')
+    local('./node_modules/babel-cli/bin/babel.js markdown-core-browser.js >> dist/markdown-core.js')
     local('uglifyjs dist/markdown-core.js -cmo dist/markdown-core.min.js')
     local('rm dist/markdown-core.js')
 

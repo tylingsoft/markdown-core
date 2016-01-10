@@ -1,4 +1,4 @@
-require('es6-shim');
+require('babel-polyfill');
 
 
 // markdown-it
@@ -170,7 +170,7 @@ mdc.renderer.rules.fence = function(tokens, idx) {
 
 
 // code block
-mdc.renderer.rules.code_block = function(tokens, idx) {
+mdc.renderer.rules.code_block = (tokens, idx) => {
   var token = tokens[idx];
   var code = token.content.trim();
   if(mdc.map) {
