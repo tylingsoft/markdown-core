@@ -25,7 +25,7 @@ Press <kbd>Ctrl</kbd> + <kbd>D</kbd>(or <kbd>Cmd</kbd> + <kbd>D</kbd> on Mac) to
 
 ## Table of Contents
 
-@[toc]
+[toc]
 
 
 ## Github Flavored Markdown
