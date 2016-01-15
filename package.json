@@ -3,6 +3,7 @@
   "description": "A versatile markdown engine based on markdown-it.",
   "repository": "tylingsoft/markdown-core",
   "license": "MIT",
+  "version": "0.5.0",
   "dependencies": {
     "babel-polyfill": "^6.3.14",
     "emojione": "^2.0.0",
