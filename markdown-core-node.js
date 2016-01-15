@@ -107,7 +107,7 @@ mdc.renderer.rules.code_inline = function(tokens, idx) {
       return `<code>${ err }</code>`;
     }
   }
-  return `<code>${ code }</code>`; // not math
+  return `<code>${ mdc.utils.escapeHtml(code) }</code>`; // not math
 }
 
 

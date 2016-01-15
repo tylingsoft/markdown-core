@@ -24,3 +24,4 @@ MIT
     1. created issue for the original GitHub project
 1. toc and heading anchor must be implemented in separate plugins
     1. necessary?
+1. heading anchors scroll with animation: http://stackoverflow.com/questions/7717527/jquery-smooth-scrolling-when-clicking-an-anchor-link
