@@ -104,9 +104,15 @@ https://cdn.jsdelivr.net/katex/0.5.1/fonts/KaTeX_Typewriter-Regular.woff2""".spl
 
 def css():
     local('rm -rf dist/*.css')
+    # todo: update
     local('curl https://cdn.rawgit.com/tylerlong/github-markdown-css/gh-pages/github-markdown.css > dist/markdown-core.css')
+
+    # todo update to 9.1.0
     local('curl https://cdn.jsdelivr.net/highlight.js/9.0.0/styles/github.min.css >> dist/markdown-core.css')
+    
+    # todo: update to 2.0.1
     local('curl https://cdn.jsdelivr.net/emojione/2.0.0/assets/css/emojione.min.css >> dist/markdown-core.css')
+    
     local('curl https://cdn.jsdelivr.net/mermaid/0.5.6/mermaid.css >> dist/markdown-core.css')
     local('curl https://cdn.jsdelivr.net/fontawesome/4.5.0/css/font-awesome.min.css | sed "s/..\/fonts\//fonts\//g" >> dist/markdown-core.css')
     local('curl https://cdn.jsdelivr.net/ionicons/2.0.1/css/ionicons.min.css | sed "s/..\/fonts\//fonts\//g" >> dist/markdown-core.css')
@@ -122,13 +128,15 @@ def js():
     local('browserify temp.js -s mdc > dist/markdown-core.js')
     local('rm temp.js')
     local('echo "\n" >> dist/markdown-core.js')
+    
+    # todo: update to 2.2.0
     local('curl https://cdn.jsdelivr.net/jquery/2.1.4/jquery.min.js >> dist/markdown-core.js')
     local('echo "\n" >> dist/markdown-core.js')
+    
+    # todo: update to 2.1.0
     local('curl https://cdn.jsdelivr.net/js-cookie/2.0.4/js.cookie.js >> dist/markdown-core.js')
     local('echo "\n" >> dist/markdown-core.js')
     local('curl https://cdn.jsdelivr.net/mermaid/0.5.6/mermaid.min.js >> dist/markdown-core.js')
-    local('echo "\n" >> dist/markdown-core.js')
-    local('cat node_modules/morphdom/dist/morphdom-umd.js >> dist/markdown-core.js')
     local('echo "\n" >> dist/markdown-core.js')
     local('./node_modules/babel-cli/bin/babel.js markdown-core-browser.js >> dist/markdown-core.js')
     local('uglifyjs dist/markdown-core.js -cmo dist/markdown-core.min.js')
