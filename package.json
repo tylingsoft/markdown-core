@@ -14,12 +14,12 @@
     "markdown-it-container": "^2.0.0",
     "markdown-it-deflist": "^2.0.0",
     "markdown-it-footnote": "^2.0.0",
-    "markdown-it-icon": "0.0.1",
+    "markdown-it-icon": "^0.0.1",
     "markdown-it-ins": "^2.0.0",
     "markdown-it-mark": "^2.0.0",
     "markdown-it-sub": "^1.0.0",
     "markdown-it-sup": "^1.0.0",
-    "markdown-it-toc-and-anchor": "github:tylingsoft/markdown-it-toc-and-anchor"
+    "markdown-it-github-toc": "^2.1.0"
   },
   "devDependencies": {
     "babel-cli": "^6.4.0",
