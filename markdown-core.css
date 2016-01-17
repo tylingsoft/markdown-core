@@ -1,5 +1,5 @@
 body {
-    background-color: white;
+  background-color: white;
 }
 
 .markdown-body {
@@ -57,8 +57,8 @@ li.footnote-item > p {
 }
 
 abbr[title] {
-    cursor: help;
-    border-bottom: 1px dotted #777;
+  cursor: help;
+  border-bottom: 1px dotted #777;
 }
 
 ul.toc {
@@ -74,9 +74,9 @@ ul.toc li {
 }
 
 mark {
-    color: black;
-    background-color: yellow;
-    border: 1px solid yellow;
+  color: black;
+  background-color: yellow;
+  border: 1px solid yellow;
 }
 
 /*************************/
@@ -84,7 +84,7 @@ mark {
 /*************************/
 
 @media print {
-    article.markdown-body > * {
-        page-break-inside: avoid;
-    }
+  article.markdown-body > * {
+    page-break-inside: avoid;
+  }
 }
