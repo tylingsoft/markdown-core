@@ -2,7 +2,8 @@ from fabric.api import local
 
 
 def update():
-    local('ncu -u')
+    local('rm -rf node_modules')
+    local('ncu -ua')
     local('npm install')
 
 
