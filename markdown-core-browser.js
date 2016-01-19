@@ -1,6 +1,3 @@
-// this file contains code which requires browser, thus not compatible with node.js
-
-
 // convert an element to png image, aka screenshot an element
 mdc.elementToPng = function($element) {
   return ''; // hook method, needs to be implemented in native code, such as Cocoa or WPF

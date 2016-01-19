@@ -1,9 +1,8 @@
 {
   "name": "markdown-core",
   "description": "A versatile markdown engine based on markdown-it.",
-  "repository": "tylingsoft/markdown-core",
   "license": "MIT",
-  "version": "0.4.8",
+  "version": "0.4.9",
   "dependencies": {
     "babel-polyfill": "^6.3.14",
     "emojione": "^2.0.1",
@@ -24,5 +23,13 @@
   "devDependencies": {
     "babel-cli": "^6.4.0",
     "babel-preset-es2015": "^6.3.13"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tylingsoft/markdown-core.git"
+  },
+  "bugs": {
+    "url": "https://github.com/tylingsoft/markdown-core/issues"
+  },
+  "homepage": "https://github.com/tylingsoft/markdown-core#readme"
 }

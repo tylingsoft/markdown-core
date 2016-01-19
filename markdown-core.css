@@ -18,10 +18,11 @@ hr.footnotes-sep {
   height: 1px;
 }
 .footnotes {
-  font-size: 90%;
   padding-left: 16px;
 }
-
+.footnotes * {
+  font-size: 14px;
+}
 li.footnote-item > p {
   margin: 8px 0;
 }
@@ -64,11 +65,9 @@ abbr[title] {
 ul.toc {
   padding-left: 4px;
 }
-
 ul.toc, ul.toc ul {
   list-style-type: none;
 }
-
 ul.toc li {
   margin: 2px 0;
 }
@@ -78,6 +77,7 @@ mark {
   background-color: yellow;
   border: 1px solid yellow;
 }
+
 
 /*************************/
 /* below is for printing */
