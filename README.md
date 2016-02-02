@@ -39,5 +39,7 @@ MIT
     1. created issue for the original GitHub project
 1. toc and heading anchor must be implemented in separate plugins
     1. necessary?
-1. one click scoll to top
+1. one click scroll to top
     1. http://es6.ruanyifeng.com/
+1. resetIds doesn't work
+    1. https://github.com/MoOx/markdown-it-toc-and-anchor/issues/8
