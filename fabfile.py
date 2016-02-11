@@ -106,7 +106,7 @@ https://cdn.jsdelivr.net/katex/0.5.1/fonts/KaTeX_Typewriter-Regular.woff2""".spl
 def css():
     local('rm -rf dist/*.css')
     local('curl https://rawgit.com/sindresorhus/github-markdown-css/gh-pages/github-markdown.css > dist/markdown-core.css')
-    local('curl https://cdn.jsdelivr.net/highlight.js/9.1.0/styles/github.min.css >> dist/markdown-core.css')
+    local('curl https://cdn.jsdelivr.net/highlight.js/9.1.0/styles/tomorrow.min.css >> dist/markdown-core.css')
     local('curl https://cdn.jsdelivr.net/emojione/2.1.0/assets/css/emojione.min.css >> dist/markdown-core.css')
     local('curl https://cdn.jsdelivr.net/mermaid/0.5.8/mermaid.css >> dist/markdown-core.css')
     local('curl https://cdn.jsdelivr.net/fontawesome/4.5.0/css/font-awesome.min.css | sed "s/..\/fonts\//fonts\//g" >> dist/markdown-core.css')
