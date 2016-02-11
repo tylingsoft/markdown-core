@@ -1,9 +1,10 @@
 body {
-  background: #323232;
+  background: #2d2d2d;
 }
 
 .markdown-body {
   color: #c0c0c0;
+  font-size: 14px;
 }
 
 .markdown-body table tr {
@@ -225,4 +226,21 @@ text.actor {
 .danger {
   color: #f2dede;
   background-color: #a94442;
+}
+
+.footnotes * {
+  font-size: 12px;
+}
+
+.markdown-body h1,
+.markdown-body h2 {
+  border-bottom: 1px solid #424242;
+}
+
+.markdown-body hr {
+  background: #424242;
+}
+
+hr.footnotes-sep {
+  background: #424242;
 }
