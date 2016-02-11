@@ -229,15 +229,15 @@ text.actor {
 
 .markdown-body h1,
 .markdown-body h2 {
-  border-bottom: 1px dashed #b5e853;
+  border-bottom: 1px dashed #98C379;
 }
 
 .markdown-body hr {
-  background: #b5e853;
+  background: #98C379;
 }
 
 hr.footnotes-sep {
-  background: #b5e853;
+  background: #98C379;
 }
 
 .markdown-body blockquote {
@@ -254,11 +254,11 @@ hr.footnotes-sep {
 .markdown-body h4 .octicon-link,
 .markdown-body h5 .octicon-link,
 .markdown-body h6 .octicon-link {
-  color: #fff;
+  color: #eaeaea;
 }
 
 .markdown-body a {
-  color: #63c0f5;
+  color: #61AFEF;
 }
 
 .markdown-body h1,
@@ -267,5 +267,5 @@ hr.footnotes-sep {
 .markdown-body h4,
 .markdown-body h5,
 .markdown-body h6 {
-  color: #b5e853;
+  color: #98C379;
 }
