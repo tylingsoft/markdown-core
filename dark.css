@@ -244,3 +244,7 @@ text.actor {
 hr.footnotes-sep {
   background: #424242;
 }
+
+.markdown-body blockquote {
+  border-left: 4px solid #424242
+}
