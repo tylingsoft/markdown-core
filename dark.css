@@ -1,10 +1,9 @@
 body {
-  background: #2d2d2d;
+  background: #151515;
 }
 
 .markdown-body {
-  color: #c0c0c0;
-  font-size: 14px;
+  color: #eaeaea;
 }
 
 .markdown-body table tr {
@@ -228,21 +227,17 @@ text.actor {
   background-color: #a94442;
 }
 
-.footnotes * {
-  font-size: 12px;
-}
-
 .markdown-body h1,
 .markdown-body h2 {
-  border-bottom: 1px solid #424242;
+  border-bottom: 1px dashed #b5e853;
 }
 
 .markdown-body hr {
-  background: #424242;
+  background: #b5e853;
 }
 
 hr.footnotes-sep {
-  background: #424242;
+  background: #b5e853;
 }
 
 .markdown-body blockquote {
@@ -260,4 +255,17 @@ hr.footnotes-sep {
 .markdown-body h5 .octicon-link,
 .markdown-body h6 .octicon-link {
   color: #fff;
+}
+
+.markdown-body a {
+  color: #63c0f5;
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  color: #b5e853;
 }
