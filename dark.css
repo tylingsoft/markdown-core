@@ -248,3 +248,16 @@ hr.footnotes-sep {
 .markdown-body blockquote {
   border-left: 4px solid #424242
 }
+
+.markdown-body img {
+  background-color: transparent;
+}
+
+.markdown-body h1 .octicon-link,
+.markdown-body h2 .octicon-link,
+.markdown-body h3 .octicon-link,
+.markdown-body h4 .octicon-link,
+.markdown-body h5 .octicon-link,
+.markdown-body h6 .octicon-link {
+  color: #fff;
+}
