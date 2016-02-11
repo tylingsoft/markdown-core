@@ -233,11 +233,11 @@ text.actor {
 }
 
 .markdown-body hr {
-  background: #98C379;
+  background: #c0c0c0;
 }
 
 hr.footnotes-sep {
-  background: #98C379;
+  background: #c0c0c0;
 }
 
 .markdown-body blockquote {
@@ -267,5 +267,5 @@ hr.footnotes-sep {
 .markdown-body h4,
 .markdown-body h5,
 .markdown-body h6 {
-  color: #98C379;
+  color: #c0c0c0;
 }
