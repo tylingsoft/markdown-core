@@ -1,0 +1,44 @@
+.markdown-body {
+  background: #323232;
+  color: #c0c0c0;
+}
+
+.markdown-body table tr {
+  background: #282828;
+}
+
+.markdown-body table tr:nth-child(2n) {
+  background: #2a2a2a;
+}
+
+.markdown-body .highlight pre,
+.markdown-body pre {
+  background-color: #202020;
+}
+
+.markdown-body pre code {
+  color: #a0a0a0;
+}
+
+.markdown-body .pl-s .pl-s1,
+.markdown-body .pl-smi {
+  color: #f33;
+}
+
+.markdown-body .pl-mi {
+  color: #f33;
+}
+
+.markdown-body .pl-mb {
+  color: #f33;
+}
+
+.hljs {
+  color: #f33;
+}
+
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-subst {
+  color: #c06050;
+}
