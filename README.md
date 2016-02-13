@@ -32,6 +32,5 @@ MIT
 
 1. echarts: http://www.oschina.net/news/68671/echarts-3-beta
     1. this is the selling point
-1. multiple themes
 1. bug: resetIds doesn't work
     1. https://github.com/MoOx/markdown-it-toc-and-anchor/issues/8
