@@ -9,6 +9,10 @@ body {
   padding: 30px;
 }
 
+.markdown-body img {
+  background-color: transparent;
+}
+
 div.mermaid {
   text-align: center;
 }
