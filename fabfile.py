@@ -9,11 +9,11 @@ def update():
 
 def fonts():
     local('rm -rf dist/fonts/*')
-    for font in """https://cdn.jsdelivr.net/fontawesome/4.6.1/fonts/fontawesome-webfont.eot
-https://cdn.jsdelivr.net/fontawesome/4.6.1/fonts/fontawesome-webfont.svg
-https://cdn.jsdelivr.net/fontawesome/4.6.1/fonts/fontawesome-webfont.ttf
-https://cdn.jsdelivr.net/fontawesome/4.6.1/fonts/fontawesome-webfont.woff
-https://cdn.jsdelivr.net/fontawesome/4.6.1/fonts/fontawesome-webfont.woff2""".split('\n'):
+    for font in """https://cdn.jsdelivr.net/fontawesome/4.6.3/fonts/fontawesome-webfont.eot
+https://cdn.jsdelivr.net/fontawesome/4.6.3/fonts/fontawesome-webfont.svg
+https://cdn.jsdelivr.net/fontawesome/4.6.3/fonts/fontawesome-webfont.ttf
+https://cdn.jsdelivr.net/fontawesome/4.6.3/fonts/fontawesome-webfont.woff
+https://cdn.jsdelivr.net/fontawesome/4.6.3/fonts/fontawesome-webfont.woff2""".split('\n'):
         local('cd dist/fonts/ && wget ' + font)
     for font in """https://cdn.jsdelivr.net/ionicons/2.0.1/fonts/ionicons.eot
 https://cdn.jsdelivr.net/ionicons/2.0.1/fonts/ionicons.svg
@@ -106,10 +106,10 @@ https://cdn.jsdelivr.net/katex/0.6.0/fonts/KaTeX_Typewriter-Regular.woff2""".spl
 def css():
     local('rm -rf dist/*.css')
     local('curl https://rawgit.com/sindresorhus/github-markdown-css/gh-pages/github-markdown.css > dist/markdown-core.css')
-    local('curl https://cdn.jsdelivr.net/highlight.js/9.3.0/styles/tomorrow.min.css >> dist/markdown-core.css')
+    local('curl https://cdn.jsdelivr.net/highlight.js/9.4.0/styles/tomorrow.min.css >> dist/markdown-core.css')
     local('curl https://cdn.jsdelivr.net/emojione/2.1.4/assets/css/emojione.min.css >> dist/markdown-core.css')
     local('curl https://cdn.jsdelivr.net/mermaid/0.5.8/mermaid.css >> dist/markdown-core.css')
-    local('curl https://cdn.jsdelivr.net/fontawesome/4.6.1/css/font-awesome.min.css | sed "s/..\/fonts\//fonts\//g" >> dist/markdown-core.css')
+    local('curl https://cdn.jsdelivr.net/fontawesome/4.6.3/css/font-awesome.min.css | sed "s/..\/fonts\//fonts\//g" >> dist/markdown-core.css')
     local('curl https://cdn.jsdelivr.net/ionicons/2.0.1/css/ionicons.min.css | sed "s/..\/fonts\//fonts\//g" >> dist/markdown-core.css')
     local('curl https://cdn.jsdelivr.net/katex/0.6.0/katex.min.css >> dist/markdown-core.css')
     local('cat markdown-core.css >> dist/markdown-core.css')
@@ -123,7 +123,7 @@ def js():
     local('browserify temp.js -s mdc > dist/markdown-core.js')
     local('rm temp.js')
     local('echo "\n" >> dist/markdown-core.js')
-    local('curl https://cdn.jsdelivr.net/jquery/2.2.3/jquery.min.js >> dist/markdown-core.js')
+    local('curl https://cdn.jsdelivr.net/jquery/2.2.4/jquery.min.js >> dist/markdown-core.js')
     local('echo "\n" >> dist/markdown-core.js')
     local('curl https://cdn.jsdelivr.net/js-cookie/2.2.0/js.cookie.js >> dist/markdown-core.js')
     local('echo "\n" >> dist/markdown-core.js')
