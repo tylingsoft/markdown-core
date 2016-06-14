@@ -105,10 +105,11 @@ https://cdn.jsdelivr.net/katex/0.6.0/fonts/KaTeX_Typewriter-Regular.woff2""".spl
 
 def css():
     local('rm -rf dist/*.css')
-    local('curl https://rawgit.com/sindresorhus/github-markdown-css/gh-pages/github-markdown.css > dist/markdown-core.css')
+    # github-markdown-css/2.3.0 heading anchor hover style incorrect. didn't upgrade
+    local('curl https://cdn.jsdelivr.net/github-markdown-css/2.2.1/github-markdown.css > dist/markdown-core.css')
     local('curl https://cdn.jsdelivr.net/highlight.js/9.4.0/styles/tomorrow.min.css >> dist/markdown-core.css')
-    local('curl https://cdn.jsdelivr.net/emojione/2.1.4/assets/css/emojione.min.css >> dist/markdown-core.css')
-    local('curl https://cdn.jsdelivr.net/mermaid/0.5.8/mermaid.css >> dist/markdown-core.css')
+    local('curl https://cdn.jsdelivr.net/emojione/2.2.2/assets/css/emojione.min.css >> dist/markdown-core.css')
+    local('curl https://cdn.jsdelivr.net/mermaid/6.0.0/mermaid.css >> dist/markdown-core.css')
     local('curl https://cdn.jsdelivr.net/fontawesome/4.6.3/css/font-awesome.min.css | sed "s/..\/fonts\//fonts\//g" >> dist/markdown-core.css')
     local('curl https://cdn.jsdelivr.net/ionicons/2.0.1/css/ionicons.min.css | sed "s/..\/fonts\//fonts\//g" >> dist/markdown-core.css')
     local('curl https://cdn.jsdelivr.net/katex/0.6.0/katex.min.css >> dist/markdown-core.css')
@@ -127,7 +128,7 @@ def js():
     local('echo "\n" >> dist/markdown-core.js')
     local('curl https://cdn.jsdelivr.net/js-cookie/2.2.0/js.cookie.js >> dist/markdown-core.js')
     local('echo "\n" >> dist/markdown-core.js')
-    local('curl https://cdn.jsdelivr.net/mermaid/0.5.8/mermaid.min.js >> dist/markdown-core.js')
+    local('curl https://cdn.jsdelivr.net/mermaid/6.0.0/mermaid.min.js >> dist/markdown-core.js')
     local('echo "\n" >> dist/markdown-core.js')
     local('./node_modules/babel-cli/bin/babel.js markdown-core-browser.js >> dist/markdown-core.js')
     local('uglifyjs dist/markdown-core.js -cmo dist/markdown-core.min.js')
