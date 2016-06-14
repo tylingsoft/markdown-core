@@ -10,6 +10,8 @@ test@website.com
 
 Press <kbd>Ctrl</kbd> + <kbd>D</kbd>(or <kbd>Cmd</kbd> + <kbd>D</kbd> on Mac) to bookmark this page.
 
+std::string
+
 ---
 
 ## headings
