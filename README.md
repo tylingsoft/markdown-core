@@ -30,5 +30,4 @@ MIT
 
 ## todo
 
-1. charts
 1. PPT

@@ -18,8 +18,6 @@ std::string
 
 ```chart
 {
-  "width": 400,
-  "height": 400,
   "type": "bar",
   "data": {
     "labels": [

@@ -60,5 +60,10 @@ mdc.init = function(markdown, debug) {
   $('#preview').html($('#cache').html());
   $('#cache').empty();
 
+  // charts
+  $('#preview .chartjs').each(function() {
+    new Chart($(this), JSON.parse($(this).text()));
+  });
+
   mdc.inited();
 }

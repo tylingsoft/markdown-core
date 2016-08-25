@@ -1,4 +1,5 @@
 require('babel-polyfill');
+var Chart = require('chart.js');
 
 
 // markdown-it
@@ -127,18 +128,12 @@ mdc.math_block = function(code, map) {
 
 // chart block
 mdc.chart_block = function(code, map) {
-  var json = false;
   try {
-    json = JSON.parse(code);
-  } catch (e) {}
-  if(json === false) {
+    var json = JSON.parse(code);
+    return `<canvas${ map } class="chartjs">${ JSON.stringify(json) }</canvas>`;
+  } catch (e) { // JSON.parse exception
     return `<pre>Invalid JSON string</pre>`;
   }
-  var width = json.width;
-  var height = json.height;
-  delete json.width;
-  delete json.height;
-  return `<pre${ map } data-width="${ width }" data-height="${ height }"><code class="hljs">${ hljs.highlightAuto(JSON.stringify(json, null, '  '), ['json']).value }</code></pre>`
 }
 
 
