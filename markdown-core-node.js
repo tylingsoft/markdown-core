@@ -125,6 +125,23 @@ mdc.math_block = function(code, map) {
 }
 
 
+// chart block
+mdc.chart_block = function(code, map) {
+  var json = false;
+  try {
+    json = JSON.parse(code);
+  } catch (e) {}
+  if(json === false) {
+    return `<pre>Invalid JSON string</pre>`;
+  }
+  var width = json.width;
+  var height = json.height;
+  delete json.width;
+  delete json.height;
+  return `<pre${ map } data-width="${ width }" data-height="${ height }"><code class="hljs">${ hljs.highlightAuto(JSON.stringify(json, null, '  '), ['json']).value }</code></pre>`
+}
+
+
 // placeholder for mermaid
 mdc.mermaid_charts = function(code, map) {
   return `<div${ map } class="mermaid">${ code }</div>`;
@@ -139,6 +156,9 @@ mdc.renderer.rules.fence = function(tokens, idx) {
   var map = mdc.map ? ` data-source-line="${ token.map[0] + 1 }"` : '';
   if(token.info == 'math') { // math
     return mdc.math_block(code, map);
+  }
+  if(token.info == 'chart') { // chart
+    return mdc.chart_block(code, map);
   }
   if(token.info.length > 0) { // programming language
     return `<pre${ map }><code class="hljs">${ hljs.highlightAuto(code, [token.info]).value }</code></pre>`;
