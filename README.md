@@ -32,3 +32,5 @@ MIT
 
 1. charts
 1. PPT
+1. Replace babel with TypeScript
+1. bug: highlight.js is broken
