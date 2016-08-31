@@ -132,7 +132,7 @@ mdc.chart_block = function(code, map) {
     var json = JSON.parse(code);
     return `<canvas${ map } class="chartjs">${ JSON.stringify(json) }</canvas>`;
   } catch (e) { // JSON.parse exception
-    return `<pre>Invalid JSON string</pre>`;
+    return `<pre>${ e }</pre>`;
   }
 }
 

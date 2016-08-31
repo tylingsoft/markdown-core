@@ -62,7 +62,11 @@ mdc.init = function(markdown, debug) {
 
   // charts
   $('#preview .chartjs').each(function() {
-    new Chart($(this), JSON.parse($(this).text()));
+    try {
+      new Chart($(this), JSON.parse($(this).text()));
+    } catch (e) {
+      $(this).replaceWith(`<pre>Chart.js complains: "${ e }"</pre>`);
+    }
   });
 
   mdc.inited();
