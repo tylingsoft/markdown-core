@@ -33,7 +33,7 @@ std::string
     ],
     "datasets": [
       {
-        "label": "Sales volume",
+        "label": "# of bugs",
         "fill": false,
         "lineTension": 0.1,
         "backgroundColor": "rgba(75,192,192,0.4)",
