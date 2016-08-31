@@ -163,7 +163,7 @@ mdc.renderer.rules.fence = function(tokens, idx) {
     return mdc.mermaid_charts(code, map); // mermaid
   }
   // unknown programming language
-  return `<pre${ map }><code class="hljs">${ hljs.highlightAuto(code).value }</code></pre>`;
+  return `<pre${ map }><code class="hljs">${ hljs.highlightAuto(code, ['unknown']).value }</code></pre>`;
 }
 
 
@@ -172,7 +172,7 @@ mdc.renderer.rules.code_block = (tokens, idx) => {
   var token = tokens[idx];
   var code = token.content.trim();
   var map = mdc.map ? ` data-source-line="${ token.map[0] + 1 }"` : '';
-  return `<pre${ map }><code class="hljs">${ hljs.highlightAuto(code).value }</code></pre>`;
+  return `<pre${ map }><code class="hljs">${ hljs.highlightAuto(code, ['unknown']).value }</code></pre>`;
 }
 
 

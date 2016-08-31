@@ -5,7 +5,7 @@
   "version": "0.5.8",
   "dependencies": {
     "babel-polyfill": "^6.13.0",
-    "chart.js": "^2.2.1",
+    "chart.js": "^2.2.2",
     "emojione": "^2.2.6",
     "highlight.js": "^9.6.0",
     "katex": "^0.6.0",
