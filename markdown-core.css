@@ -9,6 +9,10 @@ body {
   padding: 30px;
 }
 
+iframe.chartjs-hidden-iframe + * {
+  margin-top: 0!important;
+}
+
 .markdown-body img {
   background-color: transparent;
 }
