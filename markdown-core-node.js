@@ -155,6 +155,9 @@ mdc.renderer.rules.fence = function(tokens, idx) {
   if(token.info == 'chart') { // chart
     return mdc.chart_block(code, map);
   }
+  if(token.info == 'mermaid') { // mermaid
+    return mdc.mermaid_charts(code, map); // mermaid
+  }
   if(token.info.length > 0) { // programming language
     return `<pre${ map }><code class="hljs">${ hljs.highlightAuto(code, [token.info]).value }</code></pre>`;
   }
