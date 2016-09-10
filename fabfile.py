@@ -124,7 +124,7 @@ def js():
     local('browserify temp.js -s mdc > dist/markdown-core.js')
     local('rm temp.js')
     local('echo "\n" >> dist/markdown-core.js')
-    local('curl https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js >> dist/markdown-core.js')
+    local('curl https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js >> dist/markdown-core.js')
     local('echo "\n" >> dist/markdown-core.js')
     local('curl https://cdn.jsdelivr.net/js-cookie/2.2.0/js.cookie.js >> dist/markdown-core.js')
     local('echo "\n" >> dist/markdown-core.js')
