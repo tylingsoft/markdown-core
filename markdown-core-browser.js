@@ -22,6 +22,15 @@ mdc.mermaid = {
     }
   }
 };
+// charts
+mdc.charts = {
+  toPng: function() {
+    $($('canvas.chartjs').get().reverse()).each(function() { // reverse, so latter won't affect former
+      var png = mdc.elementToPng($(this));
+      $(this).replaceWith(`<img src="${ png }"/>`);
+    });
+  }
+};
 mdc.loadPreferences = function() {
   var gantt_axis_format = Cookies.get('gantt-axis-format');
   if(gantt_axis_format == undefined) {
