@@ -405,7 +405,7 @@ $(document).ready(function() {
 Inline math: `$E = mc^2$`, another one: `$\dfrac{ \tfrac{1}{2}[1-(\tfrac{1}{2})^n] }{ 1-\tfrac{1}{2} } = s_n$`.
 
 
-```math
+```katex
 \oint_C x^3\, dx + 4y^2\, dy
 
 2 = \left(
@@ -414,7 +414,9 @@ Inline math: `$E = mc^2$`, another one: `$\dfrac{ \tfrac{1}{2}[1-(\tfrac{1}{2})^
 
 \sum_{m=1}^\infty\sum_{n=1}^\infty\frac{m^2\,n}
  {3^m\left(m\,3^n+n\,3^m\right)}
+```
 
+```math
 \phi_n(\kappa) =
  \frac{1}{4\pi^2\kappa^2} \int_0^\infty
  \frac{\sin(\kappa R)}{\kappa R}

@@ -149,7 +149,7 @@ mdc.renderer.rules.fence = function(tokens, idx) {
   var token = tokens[idx];
   var code = token.content.trim();
   var map = mdc.map ? ` data-source-line="${ token.map[0] + 1 }"` : '';
-  if(token.info == 'math') { // math
+  if(token.info == 'math' || token.info == 'katex') { // math
     return mdc.math_block(code, map);
   }
   if(token.info == 'chart') { // chart
