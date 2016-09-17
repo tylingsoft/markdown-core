@@ -152,6 +152,9 @@ mdc.renderer.rules.fence = function(tokens, idx) {
   if(token.info == 'math' || token.info == 'katex') { // math
     return mdc.math_block(code, map);
   }
+  if(/^ascii-?math/i.test(token.info)) {
+    return mdc.math_block(AMTparseAMtoTeX(code), map);
+  }
   if(token.info == 'chart') { // chart
     return mdc.chart_block(code, map);
   }
