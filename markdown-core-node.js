@@ -100,6 +100,9 @@ var katex = require('katex');
 // inline math
 mdc.renderer.rules.code_inline = function(tokens, idx) {
   var code = tokens[idx].content;
+  if(code.startsWith('@') && code.endsWith('@')) {
+    code = '$' + AMTparseAMtoTeX(code.substr(1, code.length-2)) + '$';
+  }
   if(code.startsWith('$') && code.endsWith('$')) { // inline math
     code = code.substr(1, code.length-2);
     try{
@@ -153,7 +156,8 @@ mdc.renderer.rules.fence = function(tokens, idx) {
     return mdc.math_block(code, map);
   }
   if(/^ascii-?math/i.test(token.info)) {
-    return mdc.math_block(AMTparseAMtoTeX(code), map);
+    code = code.split(/(?:\n\s*){2,}/).map(function(item){ return AMTparseAMtoTeX(item); }).join('\n\n');
+    return mdc.math_block(code, map);
   }
   if(token.info == 'chart') { // chart
     return mdc.chart_block(code, map);

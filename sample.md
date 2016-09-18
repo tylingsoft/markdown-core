@@ -427,7 +427,7 @@ Inline math: `$E = mc^2$`, another one: `$\dfrac{ \tfrac{1}{2}[1-(\tfrac{1}{2})^
 
 ## AsciiMath
 
-Inline AsciiMath: `@$(1/2[1-(1/2)^n])/(1-(1/2))=s_n@$`
+Inline AsciiMath: `@(1/2[1-(1/2)^n])/(1-(1/2))=s_n@`
 
 ```AsciiMath
 oint_Cx^3 dx+4y^2 dy
