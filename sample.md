@@ -447,7 +447,7 @@ phi_n(kappa) = 1/(4pi^2 kappa^2)
 
 ## Flowcharts
 
-```
+```mermaid
 graph TD
     A[Hard edge] -->|Link text| B(Round edge)
     B --> C{Decision}
@@ -455,7 +455,7 @@ graph TD
     C -->|Two| E[Result two]
 ```
 
-```mermaid
+```
 graph TD
     A[Hard edge] -->|Link text| B(Round edge)
     B --> C{Decision}
@@ -466,7 +466,7 @@ graph TD
 
 ## Sequence diagrams
 
-```
+```mermaid
 sequenceDiagram
     Alice->>Bob: Hello Bob, how are you?
     alt is sick
@@ -482,7 +482,7 @@ sequenceDiagram
 
 ## Gantt diagrams
 
-```
+```mermaid
 gantt
     title A Gantt Diagram
     dateFormat  YYYY-MM-DD
