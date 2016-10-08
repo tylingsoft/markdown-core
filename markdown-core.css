@@ -9,6 +9,10 @@ body {
   padding: 30px;
 }
 
+.markdown-body p {
+  text-align: justify;
+}
+
 iframe.chartjs-hidden-iframe + * {
   margin-top: 0!important;
 }
