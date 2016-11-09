@@ -2,7 +2,7 @@
   "name": "markdown-core",
   "description": "A versatile markdown engine based on markdown-it.",
   "license": "MIT",
-  "version": "0.7.0",
+  "version": "0.8.0",
   "dependencies": {
     "babel-polyfill": "^6.16.0",
     "chart.js": "^2.3.0",
