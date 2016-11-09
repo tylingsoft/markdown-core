@@ -2,7 +2,7 @@
   "name": "markdown-core",
   "description": "A versatile markdown engine based on markdown-it.",
   "license": "MIT",
-  "version": "0.8.1",
+  "version": "0.8.2",
   "dependencies": {
     "babel-polyfill": "^6.16.0",
     "chart.js": "^2.3.0",
@@ -14,7 +14,7 @@
     "markdown-it-container": "^2.0.0",
     "markdown-it-deflist": "^2.0.1",
     "markdown-it-footnote": "^3.0.1",
-    "markdown-it-github-toc": "^3.0.2",
+    "markdown-it-github-toc": "^3.0.3",
     "markdown-it-icon": "^0.0.2",
     "markdown-it-ins": "^2.0.0",
     "markdown-it-mark": "^2.0.0",
