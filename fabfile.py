@@ -9,11 +9,11 @@ def update():
 
 def fonts():
     local('rm -rf dist/fonts/*')
-    for font in """https://cdn.jsdelivr.net/fontawesome/4.6.3/fonts/fontawesome-webfont.eot
-https://cdn.jsdelivr.net/fontawesome/4.6.3/fonts/fontawesome-webfont.svg
-https://cdn.jsdelivr.net/fontawesome/4.6.3/fonts/fontawesome-webfont.ttf
-https://cdn.jsdelivr.net/fontawesome/4.6.3/fonts/fontawesome-webfont.woff
-https://cdn.jsdelivr.net/fontawesome/4.6.3/fonts/fontawesome-webfont.woff2""".split('\n'):
+    for font in """https://cdn.jsdelivr.net/fontawesome/4.7.0/fonts/fontawesome-webfont.eot
+https://cdn.jsdelivr.net/fontawesome/4.7.0/fonts/fontawesome-webfont.svg
+https://cdn.jsdelivr.net/fontawesome/4.7.0/fonts/fontawesome-webfont.ttf
+https://cdn.jsdelivr.net/fontawesome/4.7.0/fonts/fontawesome-webfont.woff
+https://cdn.jsdelivr.net/fontawesome/4.7.0/fonts/fontawesome-webfont.woff2""".split('\n'):
         local('cd dist/fonts/ && wget ' + font)
     for font in """https://cdn.jsdelivr.net/ionicons/2.0.1/fonts/ionicons.eot
 https://cdn.jsdelivr.net/ionicons/2.0.1/fonts/ionicons.svg
@@ -107,10 +107,10 @@ def css():
     local('rm -rf dist/*.css')
     # github-markdown-css/2.3.0 heading anchor hover style incorrect. didn't upgrade
     local('curl https://cdn.jsdelivr.net/github-markdown-css/2.2.1/github-markdown.css > dist/markdown-core.css')
-    local('curl https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/styles/atom-one-light.min.css >> dist/markdown-core.css')
+    local('curl https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/styles/atom-one-light.min.css >> dist/markdown-core.css')
     local('curl https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.6/assets/css/emojione.min.css >> dist/markdown-core.css')
     local('curl https://cdn.jsdelivr.net/mermaid/6.0.0/mermaid.css >> dist/markdown-core.css')
-    local('curl https://cdn.jsdelivr.net/fontawesome/4.6.3/css/font-awesome.min.css | sed "s/..\/fonts\//fonts\//g" >> dist/markdown-core.css')
+    local('curl https://cdn.jsdelivr.net/fontawesome/4.7.0/css/font-awesome.min.css | sed "s/..\/fonts\//fonts\//g" >> dist/markdown-core.css')
     local('curl https://cdn.jsdelivr.net/ionicons/2.0.1/css/ionicons.min.css | sed "s/..\/fonts\//fonts\//g" >> dist/markdown-core.css')
     local('curl https://cdn.jsdelivr.net/katex/0.6.0/katex.min.css >> dist/markdown-core.css')
     local('cat markdown-core.css >> dist/markdown-core.css')
