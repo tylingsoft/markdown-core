@@ -1,5 +1,4 @@
 require('babel-polyfill');
-var Chart = require('chart.js');
 
 
 // markdown-it

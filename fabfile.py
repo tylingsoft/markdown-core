@@ -132,6 +132,8 @@ def js():
     local('echo "\n" >> dist/markdown-core.js')
     local('curl https://rawgit.com/asciimath/asciimathml/master/asciimath-based/ASCIIMathTeXImg.js >> dist/markdown-core.js')
     local('echo "\n" >> dist/markdown-core.js')
+    local('cat ./node_modules/chart.js/dist/Chart.min.js >> dist/markdown-core.js')
+    local('echo "\n" >> dist/markdown-core.js')
     local('./node_modules/babel-cli/bin/babel.js markdown-core-browser.js >> dist/markdown-core.js')
     local('uglifyjs dist/markdown-core.js -cmo dist/markdown-core.min.js')
     local('rm dist/markdown-core.js')
