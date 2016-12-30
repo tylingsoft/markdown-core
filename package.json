@@ -8,6 +8,7 @@
     "build": "webpack --progress --colors"
   },
   "dependencies": {
+    "asciimath-to-latex": "^0.3.0",
     "chart.js": "^2.3.0",
     "emojione": "^2.2.6",
     "highlight.js": "^9.8.0",
