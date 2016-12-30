@@ -1,7 +1,12 @@
 const asciimath2latex = require('asciimath-to-latex')
+const emojione =require('emojione')
+const katex = require('katex')
+const hljs = require('highlight.js')
+const markdownIt = require('markdown-it')
+const markdownItMark = require('markdown-it-mark')
 
 // markdown-it
-var mdc = require('markdown-it')({
+var mdc = markdownIt({
   html: true,
   xhtmlOut: true, // <br /> instead of <br>
   linkify: true
@@ -10,7 +15,7 @@ mdc.linkify.set({ fuzzyLink: false });
 
 
 // markdown-it plugins
-mdc = mdc.use(require('markdown-it-mark'));
+mdc = mdc.use(markdownItMark);
 mdc = mdc.use(require('markdown-it-ins'));
 mdc = mdc.use(require('markdown-it-sub'));
 mdc = mdc.use(require('markdown-it-sup'));
@@ -34,7 +39,6 @@ mdc = mdc.use(markdownitContainer, 'warning');
 mdc = mdc.use(markdownitContainer, 'danger');
 
 mdc = mdc.use(require('markdown-it-icon'));
-var emojione =require('emojione');
 emojione.cacheBustParam = ''; // change this to invalidate emojione icons cache
 emojione.imagePathPNG = 'https://cdn.jsdelivr.net/emojione/assets/png/';
 mdc.renderer.rules.emoji = function(tokens, idx) {
@@ -94,7 +98,6 @@ mdc.renderer.renderInline = function (tokens, options, env) {
 }
 
 
-var katex = require('katex');
 // inline math
 mdc.renderer.rules.code_inline = function(tokens, idx) {
   var code = tokens[idx].content;
@@ -144,7 +147,6 @@ mdc.mermaid_charts = function(code, map) {
 }
 
 
-var hljs = require('highlight.js');
 // fence block
 mdc.renderer.rules.fence = function(tokens, idx) {
   var token = tokens[idx];
