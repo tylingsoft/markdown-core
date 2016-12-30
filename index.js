@@ -1,3 +1,5 @@
+const $ = require('jquery')
+
 $(function() {
   mdc.map = true;
   $.get('sample.md', function(data) {

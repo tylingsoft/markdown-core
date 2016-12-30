@@ -11,6 +11,7 @@
     "chart.js": "^2.3.0",
     "emojione": "^2.2.6",
     "highlight.js": "^9.8.0",
+    "jquery": "2.2.4",
     "katex": "^0.6.0",
     "markdown-it": "^8.1.0",
     "markdown-it-abbr": "^1.0.4",

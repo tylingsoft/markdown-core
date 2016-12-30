@@ -21,15 +21,27 @@ const loaders = [
   }
 ]
 
-module.exports = [{
-  entry: {
-    'markdown-core': './markdown-core-browser.js'
+module.exports = [
+  {
+    entry: {
+      'markdown-core': './markdown-core-browser.js'
+    },
+    output: {
+      path: path.join(__dirname, 'build'),
+      filename: '[name].bundle.js',
+      library: "mdc",
+      libraryTarget: "umd"
+    },
+    module: { loaders }
   },
-  output: {
-    path: path.join(__dirname, 'build'),
-    filename: '[name].bundle.js',
-    library: "mdc",
-    libraryTarget: "umd"
+  {
+    entry: {
+      'index': './index.js'
+    },
+    output: {
+      path: path.join(__dirname, 'build'),
+      filename: '[name].bundle.js',
+    },
+    module: { loaders }
   },
-  module: { loaders }
-}]
+]

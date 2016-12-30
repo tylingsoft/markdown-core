@@ -1,5 +1,6 @@
 const mdc = require('./markdown-core-node')
 require('chart.js')
+const $ = require('jquery')
 
 // convert an element to png image, aka screenshot an element
 mdc.elementToPng = function($element) {

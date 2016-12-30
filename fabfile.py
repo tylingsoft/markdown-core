@@ -122,8 +122,6 @@ def js():
     local('rm -rf dist/*.js')
     local('echo " " >> dist/markdown-core.js')
     local('echo "\n" >> dist/markdown-core.js')
-    local('curl https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js >> dist/markdown-core.js')
-    local('echo "\n" >> dist/markdown-core.js')
     local('curl https://cdn.jsdelivr.net/js-cookie/2.2.0/js.cookie.js >> dist/markdown-core.js')
     local('echo "\n" >> dist/markdown-core.js')
     local('curl https://cdn.jsdelivr.net/mermaid/6.0.0/mermaid.min.js >> dist/markdown-core.js')
