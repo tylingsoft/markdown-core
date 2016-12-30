@@ -4,6 +4,15 @@ const katex = require('katex')
 const hljs = require('highlight.js')
 const markdownIt = require('markdown-it')
 const markdownItMark = require('markdown-it-mark')
+const markdownItIns = require('markdown-it-ins')
+const markdownItSub = require('markdown-it-sub')
+const markdownItSup = require('markdown-it-sup')
+const markdownItFootnote = require('markdown-it-footnote')
+const markdownItAbbr = require('markdown-it-abbr')
+const markdownItDeflist = require('markdown-it-deflist')
+const markdownItGithubToc = require('markdown-it-github-toc')
+const markdownitContainer = require('markdown-it-container')
+const markdownitIcon = require('markdown-it-icon')
 
 // markdown-it
 var mdc = markdownIt({
@@ -13,16 +22,15 @@ var mdc = markdownIt({
 });
 mdc.linkify.set({ fuzzyLink: false });
 
-
 // markdown-it plugins
 mdc = mdc.use(markdownItMark);
-mdc = mdc.use(require('markdown-it-ins'));
-mdc = mdc.use(require('markdown-it-sub'));
-mdc = mdc.use(require('markdown-it-sup'));
-mdc = mdc.use(require('markdown-it-footnote'));
-mdc = mdc.use(require('markdown-it-abbr'));
-mdc = mdc.use(require('markdown-it-deflist'));
-mdc = mdc.use(require('markdown-it-github-toc'), {
+mdc = mdc.use(markdownItIns);
+mdc = mdc.use(markdownItSub);
+mdc = mdc.use(markdownItSup);
+mdc = mdc.use(markdownItFootnote);
+mdc = mdc.use(markdownItAbbr);
+mdc = mdc.use(markdownItDeflist);
+mdc = mdc.use(markdownItGithubToc, {
   tocFirstLevel: 2,
   tocLastLevel: 3,
   tocClassName: 'toc',
@@ -32,13 +40,12 @@ mdc = mdc.use(require('markdown-it-github-toc'), {
   anchorLinkSymbolClassName: 'octicon octicon-link',
 });
 
-var markdownitContainer = require('markdown-it-container');
 mdc = mdc.use(markdownitContainer, 'success');
 mdc = mdc.use(markdownitContainer, 'info');
 mdc = mdc.use(markdownitContainer, 'warning');
 mdc = mdc.use(markdownitContainer, 'danger');
 
-mdc = mdc.use(require('markdown-it-icon'));
+mdc = mdc.use(markdownitIcon);
 emojione.cacheBustParam = ''; // change this to invalidate emojione icons cache
 emojione.imagePathPNG = 'https://cdn.jsdelivr.net/emojione/assets/png/';
 mdc.renderer.rules.emoji = function(tokens, idx) {
@@ -51,7 +58,6 @@ mdc.renderer.rules.emoji = function(tokens, idx) {
   }
   return emojione.shortnameToImage(`:${ shortname }:`); // emojione
 };
-
 
 mdc.map = false;
 mdc.tags = {};
@@ -81,7 +87,6 @@ mdc.renderer.renderToken = function(tokens, idx, options) {
   return mdc.renderer.constructor.prototype.renderToken.call(this, tokens, idx, options);
 }
 
-
 mdc.renderer.renderInline = function (tokens, options, env) {
   var result = mdc.renderer.constructor.prototype.renderInline.call(this, tokens, options, env);
 
@@ -96,7 +101,6 @@ mdc.renderer.renderInline = function (tokens, options, env) {
 
   return result;
 }
-
 
 // inline math
 mdc.renderer.rules.code_inline = function(tokens, idx) {
@@ -115,7 +119,6 @@ mdc.renderer.rules.code_inline = function(tokens, idx) {
   return `<code>${ mdc.utils.escapeHtml(code) }</code>`; // not math
 }
 
-
 // math block
 mdc.math_block = function(code, map) {
   var tex = '';
@@ -129,7 +132,6 @@ mdc.math_block = function(code, map) {
   return `<div${ map }>${ tex }</div>`;
 }
 
-
 // chart block
 mdc.chart_block = function(code, map) {
   try {
@@ -140,12 +142,10 @@ mdc.chart_block = function(code, map) {
   }
 }
 
-
 // placeholder for mermaid
 mdc.mermaid_charts = function(code, map) {
   return `<div${ map } class="mermaid">${ code }</div>`;
 }
-
 
 // fence block
 mdc.renderer.rules.fence = function(tokens, idx) {
@@ -176,7 +176,6 @@ mdc.renderer.rules.fence = function(tokens, idx) {
   return `<pre${ map }><code class="hljs">${ hljs.highlightAuto(code, ['unknown']).value }</code></pre>`;
 }
 
-
 // code block
 mdc.renderer.rules.code_block = (tokens, idx) => {
   var token = tokens[idx];
@@ -184,6 +183,5 @@ mdc.renderer.rules.code_block = (tokens, idx) => {
   var map = mdc.map ? ` data-source-line="${ token.map[0] + 1 }"` : '';
   return `<pre${ map }><code class="hljs">${ hljs.highlightAuto(code, ['unknown']).value }</code></pre>`;
 }
-
 
 module.exports = mdc;
