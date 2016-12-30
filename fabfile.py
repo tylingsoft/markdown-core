@@ -122,8 +122,6 @@ def js():
     local('rm -rf dist/*.js')
     local('echo " " >> dist/markdown-core.js')
     local('echo "\n" >> dist/markdown-core.js')
-    local('curl https://cdn.jsdelivr.net/mermaid/6.0.0/mermaid.min.js >> dist/markdown-core.js')
-    local('echo "\n" >> dist/markdown-core.js')
     local('curl https://rawgit.com/asciimath/asciimathml/master/asciimath-based/ASCIIMathTeXImg.js >> dist/markdown-core.js')
     local('echo "\n" >> dist/markdown-core.js')
     local('cat ./build/markdown-core.bundle.js >> dist/markdown-core.js')
