@@ -6,7 +6,9 @@ and used in the [Markdown Plus](https://github.com/tylingsoft/markdown-plus) pro
 
 ## Installation
 
-`npm install --save markdown-core`
+```
+yarn add markdown-core
+```
 
 
 ## Usage
@@ -14,13 +16,26 @@ and used in the [Markdown Plus](https://github.com/tylingsoft/markdown-plus) pro
 ### Node.js
 
 ```javascript
-var mdc = require('markdown-core/markdown-core-node');
+var mdc = require('markdown-core');
 var html = mdc.render('# hello world');
 ```
 
 ### Browser
 
-Please refer to `index.html` and `index.js`.
+Please refer to [the example](./test).
+
+
+## Delopment
+
+### Build
+
+```
+yarn run build
+```
+
+### Test
+
+Host and open test/index.html in browser
 
 
 ## License
