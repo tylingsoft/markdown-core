@@ -1,6 +1,3 @@
-require('babel-polyfill');
-
-
 // markdown-it
 var mdc = require('markdown-it')({
   html: true,

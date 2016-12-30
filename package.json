@@ -4,10 +4,10 @@
   "license": "MIT",
   "version": "0.8.2",
   "scripts": {
-    "upgrade": "ncu -ua && yarn upgrade"
+    "upgrade": "ncu -ua && yarn upgrade",
+    "build": "webpack --progress --colors"
   },
   "dependencies": {
-    "babel-polyfill": "^6.16.0",
     "chart.js": "^2.3.0",
     "emojione": "^2.2.6",
     "highlight.js": "^9.8.0",
@@ -25,9 +25,12 @@
     "markdown-it-sup": "^1.0.0"
   },
   "devDependencies": {
-    "babel-cli": "^6.18.0",
-    "babel-preset-es2015": "^6.18.0",
-    "npm-check-updates": "^2.8.9"
+    "babel-core": "^6.21.0",
+    "babel-loader": "^6.2.10",
+    "babel-preset-env": "^1.1.4",
+    "json-loader": "^0.5.4",
+    "npm-check-updates": "^2.8.9",
+    "webpack": "^1.14.0"
   },
   "repository": {
     "type": "git",
