@@ -1,12 +1,6 @@
 from fabric.api import local
 
 
-def update():
-    local('rm -rf node_modules')
-    local('ncu -ua')
-    local('npm install')
-
-
 def fonts():
     local('rm -rf dist/fonts/*')
     for font in """https://cdn.jsdelivr.net/fontawesome/4.7.0/fonts/fontawesome-webfont.eot
