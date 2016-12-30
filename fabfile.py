@@ -120,9 +120,7 @@ def css():
 
 def js():
     local('rm -rf dist/*.js')
-    local('./node_modules/babel-cli/bin/babel.js markdown-core-node.js > temp.js')
-    local('browserify temp.js -s mdc > dist/markdown-core.js')
-    local('rm temp.js')
+    local('cat build/node.bundle.js >> dist/markdown-core.js')
     local('echo "\n" >> dist/markdown-core.js')
     local('curl https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js >> dist/markdown-core.js')
     local('echo "\n" >> dist/markdown-core.js')
@@ -134,8 +132,8 @@ def js():
     local('echo "\n" >> dist/markdown-core.js')
     local('cat ./node_modules/chart.js/dist/Chart.min.js >> dist/markdown-core.js')
     local('echo "\n" >> dist/markdown-core.js')
-    local('./node_modules/babel-cli/bin/babel.js markdown-core-browser.js >> dist/markdown-core.js')
-    local('uglifyjs dist/markdown-core.js -cmo dist/markdown-core.min.js')
+    local('cat ./build/browser.bundle.js >> dist/markdown-core.js')
+    local('cat dist/markdown-core.js >> dist/markdown-core.min.js')
     local('rm dist/markdown-core.js')
 
 

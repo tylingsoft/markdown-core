@@ -1,33 +1,47 @@
 const path = require('path')
 
-module.exports = {
-  entry: {
-    'index': './markdown-core-node.js'
+const loaders = [
+  {
+    test: /\.json$/,
+    loader: 'json-loader'
   },
-  output: {
-    path: path.join(__dirname, 'build'),
-    filename: '[name].bundle.js'
-  },
-  module: {
-    loaders: [
-      {
-        test: /\.json$/,
-        loader: 'json-loader'
-      },
-      {
-        test: /\.js$/,
-        loader: 'babel-loader',
-        exclude: /node_modules/,
-        query: {
-          presets: [
-            ['env', {
-              'targets': {
-                'browsers': ['last 2 versions']
-              }
-            }]
-          ]
-        }
-      }
-    ]
+  {
+    test: /\.js$/,
+    loader: 'babel-loader',
+    exclude: /node_modules/,
+    query: {
+      presets: [
+        ['env', {
+          'targets': {
+            'browsers': ['last 2 versions']
+          }
+        }]
+      ]
+    }
   }
-}
+]
+
+module.exports = [
+  {
+    entry: {
+      'node': './markdown-core-node.js',
+    },
+    output: {
+      path: path.join(__dirname, 'build'),
+      filename: '[name].bundle.js',
+      library: "mdc",
+      libraryTarget: "umd"
+    },
+    module: { loaders }
+  },
+  {
+    entry: {
+      'browser': './markdown-core-browser.js'
+    },
+    output: {
+      path: path.join(__dirname, 'build'),
+      filename: '[name].bundle.js',
+    },
+    module: { loaders }
+  }
+]
