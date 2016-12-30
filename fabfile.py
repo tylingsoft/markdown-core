@@ -120,7 +120,8 @@ def css():
 
 def js():
     local('rm -rf dist/*.js')
-    local('cat build/node.bundle.js >> dist/markdown-core.js')
+    # local('cat build/node.bundle.js >> dist/markdown-core.js')
+    local('echo " " >> dist/markdown-core.js')
     local('echo "\n" >> dist/markdown-core.js')
     local('curl https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js >> dist/markdown-core.js')
     local('echo "\n" >> dist/markdown-core.js')
@@ -132,7 +133,7 @@ def js():
     local('echo "\n" >> dist/markdown-core.js')
     local('cat ./node_modules/chart.js/dist/Chart.min.js >> dist/markdown-core.js')
     local('echo "\n" >> dist/markdown-core.js')
-    local('cat ./build/browser.bundle.js >> dist/markdown-core.js')
+    local('cat ./build/markdown-core.bundle.js >> dist/markdown-core.js')
     local('cat dist/markdown-core.js >> dist/markdown-core.min.js')
     local('rm dist/markdown-core.js')
 

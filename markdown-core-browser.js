@@ -1,3 +1,5 @@
+const mdc = require('./markdown-core-node')
+
 // convert an element to png image, aka screenshot an element
 mdc.elementToPng = function($element) {
   return ''; // hook method, needs to be implemented in native code, such as Cocoa or WPF
@@ -80,3 +82,5 @@ mdc.init = function(markdown, debug) {
 
   mdc.inited();
 }
+
+module.exports = mdc;
