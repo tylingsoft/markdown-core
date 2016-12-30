@@ -27,8 +27,8 @@ module.exports = [
       'markdown-core': './markdown-core-browser.js'
     },
     output: {
-      path: path.join(__dirname, 'build'),
-      filename: '[name].bundle.js',
+      path: path.join(__dirname, 'dist'),
+      filename: '[name].min.js',
       library: "mdc",
       libraryTarget: "umd"
     },

@@ -118,20 +118,10 @@ def css():
     local('rm dist/markdown-core.css')
 
 
-def js():
-    local('rm -rf dist/*.js')
-    local('echo " " >> dist/markdown-core.js')
-    local('echo "\n" >> dist/markdown-core.js')
-    local('cat ./build/markdown-core.bundle.js >> dist/markdown-core.js')
-    local('cat dist/markdown-core.js >> dist/markdown-core.min.js')
-    local('rm dist/markdown-core.js')
-
-
 def dist():
     local('npm install')
     css()
     fonts()
-    js()
 
 
 def mdm(): # copy dist code to Markdown Mate project
