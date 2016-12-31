@@ -1,5 +1,5 @@
 const mdc = require('./markdown-core-node')
-require('chart.js')
+const Chart = require('chart.js')
 const $ = require('jquery')
 const Cookies = require('js-cookie')
 
@@ -84,7 +84,10 @@ mdc.init = function (markdown, debug) {
   // charts
   $('#preview .chartjs').each(function () {
     try {
-      new Chart($(this), JSON.parse($(this).text()))
+      let chart = new Chart($(this), JSON.parse($(this).text()))
+      if (process.env.NODE_ENV === 'development') {
+        console.log(chart.generateLegend())
+      }
     } catch (e) {
       $(this).replaceWith(`<pre>Chart.js complains: "${e}"</pre>`)
     }
