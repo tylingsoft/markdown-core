@@ -1,7 +1,6 @@
 # Markdown Core
 
-Markdown engine based on [markdown-it](https://github.com/markdown-it/markdown-it)
-and used in the [Markdown Plus](https://github.com/tylingsoft/markdown-plus) project.
+An extensible markdown engine used in the [Markdown Plus](https://github.com/tylingsoft/markdown-plus) project.
 
 
 ## Installation
@@ -35,7 +34,7 @@ yarn run build
 
 ### Verify
 
-Host and open public/index.html in browser
+Host and open `public/index.html` in browser
 
 
 ## License
@@ -51,3 +50,5 @@ MIT
 1. get rid of ionicons because this project is not active
 1. Optional
     1. change require/module.exports to import/export
+1. Create a website for this project
+    1. GitHub pages
