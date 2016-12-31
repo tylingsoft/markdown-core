@@ -99,9 +99,6 @@ https://cdn.jsdelivr.net/katex/0.6.0/fonts/KaTeX_Typewriter-Regular.woff2""".spl
 
 def css():
     local('rm -rf dist/*.css')
-    # github-markdown-css/2.3.0 heading anchor hover style incorrect. didn't upgrade
-    # local('curl https://cdn.jsdelivr.net/github-markdown-css/2.2.1/github-markdown.css > dist/markdown-core.css')
-    local('curl https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/styles/atom-one-light.min.css >> dist/markdown-core.css')
     local('curl https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.6/assets/css/emojione.min.css >> dist/markdown-core.css')
     local('curl https://cdn.jsdelivr.net/mermaid/6.0.0/mermaid.css >> dist/markdown-core.css')
     local('curl https://cdn.jsdelivr.net/fontawesome/4.7.0/css/font-awesome.min.css | sed "s/..\/fonts\//fonts\//g" >> dist/markdown-core.css')
@@ -109,8 +106,6 @@ def css():
     local('curl https://cdn.jsdelivr.net/katex/0.6.0/katex.min.css >> dist/markdown-core.css')
     local('cat markdown-core.css >> dist/markdown-core.css')
     local('mv dist/markdown-core.css dist/markdown-core.min.css')
-    # local('cleancss -o dist/markdown-core.min.css dist/markdown-core.css')
-    # local('rm dist/markdown-core.css')
 
 
 def dist():
