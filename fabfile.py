@@ -99,8 +99,6 @@ https://cdn.jsdelivr.net/katex/0.6.0/fonts/KaTeX_Typewriter-Regular.woff2""".spl
 
 def css():
     local('rm -rf dist/*.css')
-    local('curl https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.6/assets/css/emojione.min.css >> dist/markdown-core.css')
-    local('curl https://cdn.jsdelivr.net/mermaid/6.0.0/mermaid.css >> dist/markdown-core.css')
     local('curl https://cdn.jsdelivr.net/fontawesome/4.7.0/css/font-awesome.min.css | sed "s/..\/fonts\//fonts\//g" >> dist/markdown-core.css')
     local('curl https://cdn.jsdelivr.net/ionicons/2.0.1/css/ionicons.min.css | sed "s/..\/fonts\//fonts\//g" >> dist/markdown-core.css')
     local('curl https://cdn.jsdelivr.net/katex/0.6.0/katex.min.css >> dist/markdown-core.css')
