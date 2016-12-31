@@ -29,7 +29,7 @@ const loaders = [
   }
 ]
 
-module.exports = [
+const configurations = [
   {
     entry: {
       'index': './public/index.js'
@@ -41,3 +41,5 @@ module.exports = [
     module: { loaders }
   }
 ]
+
+module.exports = configurations

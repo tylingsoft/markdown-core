@@ -15,8 +15,8 @@ yarn add markdown-core
 ### Node.js
 
 ```javascript
-const mdc = require('markdown-core');
-const html = mdc.render('# hello world');
+import mdc from 'markdown-core'
+const html = mdc.render('# hello world')
 ```
 
 ### Browser
@@ -48,7 +48,5 @@ MIT
 1. Extensions: easy to add and configure extensions. by default only core markdown features.
     1. create a class named Extension
 1. get rid of ionicons because this project is not active
-1. Optional
-    1. change require/module.exports to import/export
 1. Create a website for this project
     1. GitHub pages

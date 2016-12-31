@@ -1,5 +1,5 @@
-const mdc = require('../src/index-browser')
-const $ = require('jquery')
+import mdc from '../src/index-browser'
+import $ from 'jquery'
 
 $(function () {
   mdc.map = true

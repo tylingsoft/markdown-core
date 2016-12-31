@@ -1,18 +1,18 @@
-const asciimath2latex = require('asciimath-to-latex')
-const emojione = require('emojione')
-const katex = require('katex')
-const hljs = require('highlight.js')
-const markdownIt = require('markdown-it')
-const markdownItMark = require('markdown-it-mark')
-const markdownItIns = require('markdown-it-ins')
-const markdownItSub = require('markdown-it-sub')
-const markdownItSup = require('markdown-it-sup')
-const markdownItFootnote = require('markdown-it-footnote')
-const markdownItAbbr = require('markdown-it-abbr')
-const markdownItDeflist = require('markdown-it-deflist')
-const markdownItGithubToc = require('markdown-it-github-toc')
-const markdownitContainer = require('markdown-it-container')
-const markdownitIcon = require('markdown-it-icon')
+import asciimath2latex from 'asciimath-to-latex'
+import emojione from 'emojione'
+import katex from 'katex'
+import hljs from 'highlight.js'
+import markdownIt from 'markdown-it'
+import markdownItMark from 'markdown-it-mark'
+import markdownItIns from 'markdown-it-ins'
+import markdownItSub from 'markdown-it-sub'
+import markdownItSup from 'markdown-it-sup'
+import markdownItFootnote from 'markdown-it-footnote'
+import markdownItAbbr from 'markdown-it-abbr'
+import markdownItDeflist from 'markdown-it-deflist'
+import markdownItGithubToc from 'markdown-it-github-toc'
+import markdownitContainer from 'markdown-it-container'
+import markdownitIcon from 'markdown-it-icon'
 
 // markdown-it
 let mdc = markdownIt({
@@ -183,4 +183,4 @@ mdc.renderer.rules.code_block = (tokens, idx) => {
   return `<pre${map}><code class="hljs">${hljs.highlightAuto(code, ['unknown']).value}</code></pre>`
 }
 
-module.exports = mdc
+export default mdc

@@ -1,15 +1,15 @@
-const mdc = require('./index-node')
-const Chart = require('chart.js')
-const $ = require('jquery')
-const Cookies = require('js-cookie')
+import mdc from './index-node'
+import Chart from 'chart.js'
+import $ from 'jquery'
+import Cookies from 'js-cookie'
 
-require('github-css/index.css')
-require('highlight.js/styles/atom-one-light.css')
-require('emojione/assets/css/emojione.css')
-require('./index.css')
-require('font-awesome/css/font-awesome.css')
-require('ionicons/css/ionicons.css')
-require('katex/dist/katex.min.css')
+import 'github-css/index.css'
+import 'highlight.js/styles/atom-one-light.css'
+import 'emojione/assets/css/emojione.css'
+import './index.css'
+import 'font-awesome/css/font-awesome.css'
+import 'ionicons/css/ionicons.css'
+import 'katex/dist/katex.min.css'
 
 // convert an element to png image, aka screenshot an element
 mdc.elementToPng = function ($element) {
@@ -96,4 +96,4 @@ mdc.init = function (markdown, debug) {
   mdc.inited()
 }
 
-module.exports = mdc
+export default mdc
