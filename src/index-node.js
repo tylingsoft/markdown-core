@@ -1,4 +1,3 @@
-import markdownItGithubToc from 'markdown-it-github-toc'
 import markdownitIcon from 'markdown-it-icon'
 
 import asciimath2latex from 'asciimath-to-latex'
@@ -10,16 +9,7 @@ import core from './index-core'
 
 let mdc = core
 
-mdc = mdc.use(markdownItGithubToc, {
-  tocFirstLevel: 2,
-  tocLastLevel: 3,
-  tocClassName: 'toc',
-  anchorLinkSymbol: '',
-  anchorLinkSpace: false,
-  anchorClassName: 'anchor',
-  anchorLinkSymbolClassName: 'octicon octicon-link'
-})
-
+// todo: make each font icons set an extension. User can add or disable.
 mdc = mdc.use(markdownitIcon)
 emojione.cacheBustParam = '' // change this to invalidate emojione icons cache
 emojione.imagePathPNG = 'https://cdn.jsdelivr.net/emojione/assets/png/'

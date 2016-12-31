@@ -51,3 +51,4 @@ MIT
     1. Or make it an optional extension
 1. Create a website for this project
     1. GitHub pages
+1. emojione as font instead of images on CDN

@@ -7,6 +7,7 @@ import markdownitContainer from 'markdown-it-container'
 import markdownItDeflist from 'markdown-it-deflist'
 import markdownItAbbr from 'markdown-it-abbr'
 import markdownItFootnote from 'markdown-it-footnote'
+import markdownItGithubToc from 'markdown-it-github-toc'
 
 let mdc = markdownIt({
   html: true,
@@ -26,5 +27,15 @@ mdc = mdc.use(markdownitContainer, 'danger')
 mdc = mdc.use(markdownItDeflist)
 mdc = mdc.use(markdownItAbbr)
 mdc = mdc.use(markdownItFootnote)
+
+mdc = mdc.use(markdownItGithubToc, {
+  tocFirstLevel: 2,
+  tocLastLevel: 3,
+  tocClassName: 'toc',
+  anchorLinkSymbol: '',
+  anchorLinkSpace: false,
+  anchorClassName: 'anchor',
+  anchorLinkSymbolClassName: 'octicon octicon-link'
+})
 
 export default mdc
