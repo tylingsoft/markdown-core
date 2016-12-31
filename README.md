@@ -46,3 +46,5 @@ MIT
 ## todo
 
 1. PPT
+1. plugins: easy to add and configure plugins. by default only core markdown features.
+    1. create a class named Plugin / Extension
