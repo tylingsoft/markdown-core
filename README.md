@@ -22,7 +22,7 @@ const html = mdc.render('# hello world');
 
 ### Browser
 
-Please refer to [the example](./test).
+Please refer to [the example](./public).
 
 
 ## Delopment
@@ -33,9 +33,9 @@ Please refer to [the example](./test).
 yarn run build
 ```
 
-### Test
+### Verify
 
-Host and open test/index.html in browser
+Host and open public/index.html in browser
 
 
 ## License
@@ -46,6 +46,8 @@ MIT
 ## todo
 
 1. PPT
-1. plugins: easy to add and configure plugins. by default only core markdown features.
-    1. create a class named Plugin / Extension
+1. Extensions: easy to add and configure extensions. by default only core markdown features.
+    1. create a class named Extension
 1. get rid of ionicons because this project is not active
+1. Optional
+    1. change require/module.exports to import/export

@@ -32,18 +32,6 @@ const loaders = [
 module.exports = [
   {
     entry: {
-      'markdown-core': './index-browser.js'
-    },
-    output: {
-      path: path.join(__dirname, 'public'),
-      filename: '[name].bundle.js',
-      library: 'mdc',
-      libraryTarget: 'umd'
-    },
-    module: { loaders }
-  },
-  {
-    entry: {
       'index': './public/index.js'
     },
     output: {
