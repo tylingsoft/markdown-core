@@ -1,35 +1,15 @@
+import markdownItGithubToc from 'markdown-it-github-toc'
+import markdownitIcon from 'markdown-it-icon'
+
 import asciimath2latex from 'asciimath-to-latex'
 import emojione from 'emojione'
 import katex from 'katex'
 import hljs from 'highlight.js'
-import markdownIt from 'markdown-it'
-import markdownItMark from 'markdown-it-mark'
-import markdownItIns from 'markdown-it-ins'
-import markdownItSub from 'markdown-it-sub'
-import markdownItSup from 'markdown-it-sup'
-import markdownItFootnote from 'markdown-it-footnote'
-import markdownItAbbr from 'markdown-it-abbr'
-import markdownItDeflist from 'markdown-it-deflist'
-import markdownItGithubToc from 'markdown-it-github-toc'
-import markdownitContainer from 'markdown-it-container'
-import markdownitIcon from 'markdown-it-icon'
 
-// markdown-it
-let mdc = markdownIt({
-  html: true,
-  xhtmlOut: true, // <br /> instead of <br>
-  linkify: true
-})
-mdc.linkify.set({ fuzzyLink: false })
+import core from './index-core'
 
-// markdown-it plugins
-mdc = mdc.use(markdownItMark)
-mdc = mdc.use(markdownItIns)
-mdc = mdc.use(markdownItSub)
-mdc = mdc.use(markdownItSup)
-mdc = mdc.use(markdownItFootnote)
-mdc = mdc.use(markdownItAbbr)
-mdc = mdc.use(markdownItDeflist)
+let mdc = core
+
 mdc = mdc.use(markdownItGithubToc, {
   tocFirstLevel: 2,
   tocLastLevel: 3,
@@ -39,11 +19,6 @@ mdc = mdc.use(markdownItGithubToc, {
   anchorClassName: 'anchor',
   anchorLinkSymbolClassName: 'octicon octicon-link'
 })
-
-mdc = mdc.use(markdownitContainer, 'success')
-mdc = mdc.use(markdownitContainer, 'info')
-mdc = mdc.use(markdownitContainer, 'warning')
-mdc = mdc.use(markdownitContainer, 'danger')
 
 mdc = mdc.use(markdownitIcon)
 emojione.cacheBustParam = '' // change this to invalidate emojione icons cache
