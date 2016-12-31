@@ -5,6 +5,7 @@ const Cookies = require('js-cookie')
 require('github-css/index.css')
 require('highlight.js/styles/atom-one-light.css')
 require('emojione/assets/css/emojione.css')
+require('./markdown-core.css')
 
 // convert an element to png image, aka screenshot an element
 mdc.elementToPng = function ($element) {
