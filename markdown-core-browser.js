@@ -7,6 +7,7 @@ require('highlight.js/styles/atom-one-light.css')
 require('emojione/assets/css/emojione.css')
 require('./markdown-core.css')
 require('font-awesome/css/font-awesome.css')
+require('ionicons/css/ionicons.css')
 
 // convert an element to png image, aka screenshot an element
 mdc.elementToPng = function ($element) {

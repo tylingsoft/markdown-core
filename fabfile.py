@@ -9,11 +9,11 @@ def fonts():
 # https://cdn.jsdelivr.net/fontawesome/4.7.0/fonts/fontawesome-webfont.woff
 # https://cdn.jsdelivr.net/fontawesome/4.7.0/fonts/fontawesome-webfont.woff2""".split('\n'):
 #         local('cd dist/fonts/ && wget ' + font)
-    for font in """https://cdn.jsdelivr.net/ionicons/2.0.1/fonts/ionicons.eot
-https://cdn.jsdelivr.net/ionicons/2.0.1/fonts/ionicons.svg
-https://cdn.jsdelivr.net/ionicons/2.0.1/fonts/ionicons.ttf
-https://cdn.jsdelivr.net/ionicons/2.0.1/fonts/ionicons.woff""".split('\n'):
-        local('cd dist/fonts/ && wget ' + font)
+#     for font in """https://cdn.jsdelivr.net/ionicons/2.0.1/fonts/ionicons.eot
+# https://cdn.jsdelivr.net/ionicons/2.0.1/fonts/ionicons.svg
+# https://cdn.jsdelivr.net/ionicons/2.0.1/fonts/ionicons.ttf
+# https://cdn.jsdelivr.net/ionicons/2.0.1/fonts/ionicons.woff""".split('\n'):
+#         local('cd dist/fonts/ && wget ' + font)
     for font in """https://cdn.jsdelivr.net/katex/0.6.0/fonts/KaTeX_AMS-Regular.eot
 https://cdn.jsdelivr.net/katex/0.6.0/fonts/KaTeX_AMS-Regular.ttf
 https://cdn.jsdelivr.net/katex/0.6.0/fonts/KaTeX_AMS-Regular.woff
@@ -100,7 +100,7 @@ https://cdn.jsdelivr.net/katex/0.6.0/fonts/KaTeX_Typewriter-Regular.woff2""".spl
 def css():
     local('rm -rf dist/*.css')
     # local('curl https://cdn.jsdelivr.net/fontawesome/4.7.0/css/font-awesome.min.css | sed "s/..\/fonts\//fonts\//g" >> dist/markdown-core.css')
-    local('curl https://cdn.jsdelivr.net/ionicons/2.0.1/css/ionicons.min.css | sed "s/..\/fonts\//fonts\//g" >> dist/markdown-core.css')
+    # local('curl https://cdn.jsdelivr.net/ionicons/2.0.1/css/ionicons.min.css | sed "s/..\/fonts\//fonts\//g" >> dist/markdown-core.css')
     local('curl https://cdn.jsdelivr.net/katex/0.6.0/katex.min.css >> dist/markdown-core.css')
     local('mv dist/markdown-core.css dist/markdown-core.min.css')
 
