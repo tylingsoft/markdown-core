@@ -16,8 +16,8 @@ yarn add markdown-core
 ### Node.js
 
 ```javascript
-var mdc = require('markdown-core');
-var html = mdc.render('# hello world');
+const mdc = require('markdown-core');
+const html = mdc.render('# hello world');
 ```
 
 ### Browser

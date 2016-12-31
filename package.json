@@ -3,7 +3,7 @@
   "description": "A versatile markdown engine based on markdown-it.",
   "license": "MIT",
   "version": "0.9.0",
-  "main": "markdown-core-node.js",
+  "main": "index-node.js",
   "scripts": {
     "upgrade": "ncu -ua && yarn upgrade",
     "build": "webpack --progress --colors --watch"

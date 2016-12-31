@@ -32,7 +32,7 @@ const loaders = [
 module.exports = [
   {
     entry: {
-      'markdown-core': './markdown-core-browser.js'
+      'markdown-core': './index-browser.js'
     },
     output: {
       path: path.join(__dirname, 'public'),
