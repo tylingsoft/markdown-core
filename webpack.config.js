@@ -35,8 +35,8 @@ module.exports = [
       'markdown-core': './markdown-core-browser.js'
     },
     output: {
-      path: path.join(__dirname, 'dist'),
-      filename: '[name].min.js',
+      path: path.join(__dirname, 'public'),
+      filename: '[name].bundle.js',
       library: 'mdc',
       libraryTarget: 'umd'
     },
@@ -44,10 +44,10 @@ module.exports = [
   },
   {
     entry: {
-      'index': './test/index.js'
+      'index': './public/index.js'
     },
     output: {
-      path: path.join(__dirname, 'test'),
+      path: path.join(__dirname, 'public'),
       filename: '[name].bundle.js'
     },
     module: { loaders }
