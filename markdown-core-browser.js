@@ -45,12 +45,12 @@ mdc.charts = {
   }
 }
 mdc.loadPreferences = function () {
-  let gantt_axis_format = Cookies.get('gantt-axis-format')
-  if (gantt_axis_format === undefined) {
-    gantt_axis_format = '%Y-%m-%d'
+  let ganttAxisFormat = Cookies.get('gantt-axis-format')
+  if (ganttAxisFormat === undefined) {
+    ganttAxisFormat = '%Y-%m-%d'
   }
-  mdc.mermaid.gantt.axisFormat(gantt_axis_format)
-  return { 'gantt-axis-format': gantt_axis_format }
+  mdc.mermaid.gantt.axisFormat(ganttAxisFormat)
+  return { 'gantt-axis-format': ganttAxisFormat }
 }
 mdc.loadPreferences()
 mermaid.parseError = function (err, hash) {
