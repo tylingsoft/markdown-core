@@ -22,6 +22,10 @@ const loaders = [
   {
     test: /\.css$/,
     loader: 'style-loader!css-loader'
+  },
+  {
+    test: /\.(ttf|eot|svg|woff2?)(\?v=.+?)?$/,
+    loader: 'url-loader?limit=1000000'
   }
 ]
 
