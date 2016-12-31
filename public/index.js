@@ -1,4 +1,4 @@
-const mdc = require('../index-browser')
+const mdc = require('../src/index-browser')
 const $ = require('jquery')
 
 $(function () {
