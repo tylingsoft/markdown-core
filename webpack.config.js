@@ -29,8 +29,8 @@ module.exports = [
     output: {
       path: path.join(__dirname, 'dist'),
       filename: '[name].min.js',
-      library: "mdc",
-      libraryTarget: "umd"
+      library: 'mdc',
+      libraryTarget: 'umd'
     },
     module: { loaders }
   },
@@ -40,8 +40,8 @@ module.exports = [
     },
     output: {
       path: path.join(__dirname, 'test'),
-      filename: '[name].bundle.js',
+      filename: '[name].bundle.js'
     },
     module: { loaders }
-  },
+  }
 ]
