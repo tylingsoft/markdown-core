@@ -8,6 +8,7 @@ import markdownItDeflist from 'markdown-it-deflist'
 import markdownItAbbr from 'markdown-it-abbr'
 import markdownItFootnote from 'markdown-it-footnote'
 import markdownItGithubToc from 'markdown-it-github-toc'
+import markdownitIcon from 'markdown-it-icon'
 
 class Engine {
   constructor (options = {}, extensions = []) {
@@ -56,6 +57,24 @@ class Engine {
           })
           break
         default:
+          switch (extension.name) {
+            case 'icon':
+              const options = extension.options || {}
+              this.mdc = this.mdc.use(markdownitIcon)
+              this.mdc.renderer.rules.emoji = function (tokens, idx) {
+                let shortname = tokens[idx].markup
+                if (shortname.startsWith('fa-')) { // fontawesome
+                  return options.fontawesome ? `<i class="fa ${shortname}"></i>` : `:${shortname}:`
+                }
+                if (shortname.startsWith('ion-')) { // ionicons
+                  return options.ionicons ? `<i class="${shortname}"></i>` : `:${shortname}:`
+                }
+                return `<i class="e1a-${shortname}"></i>`
+              }
+              break
+            default:
+              break
+          }
           break
       }
     })

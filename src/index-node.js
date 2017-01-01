@@ -1,5 +1,3 @@
-import markdownitIcon from 'markdown-it-icon'
-
 import asciimath2latex from 'asciimath-to-latex'
 import katex from 'katex'
 import hljs from 'highlight.js'
@@ -11,21 +9,11 @@ let options = {
   xhtmlOut: true, // <br /> instead of <br>
   linkify: true
 }
-let extensions = ['mark', 'ins', 'sub', 'sup', 'deflist', 'abbr', 'footnote', 'container', 'github-toc']
+let extensions = [
+  'mark', 'ins', 'sub', 'sup', 'deflist', 'abbr', 'footnote', 'container', 'github-toc',
+  { name: 'icon', options: { fontawesome: true, ionicons: true } }
+]
 let mdc = new Engine(options, extensions).mdc
-
-// todo: make each font icons set an extension. User can add or disable.
-mdc = mdc.use(markdownitIcon)
-mdc.renderer.rules.emoji = function (tokens, idx) {
-  let shortname = tokens[idx].markup
-  if (shortname.startsWith('fa-')) { // fontawesome
-    return `<i class="fa ${shortname}"></i>`
-  }
-  if (shortname.startsWith('ion-')) { // ionicons
-    return `<i class="${shortname}"></i>`
-  }
-  return `<i class="e1a-${shortname}"></i>`
-}
 
 mdc.map = false
 mdc.tags = {}
