@@ -21,7 +21,7 @@ mdc.renderer.rules.emoji = function (tokens, idx) {
   if (shortname.startsWith('ion-')) { // ionicons
     return `<i class="${shortname}"></i>`
   }
-  return emojione.shortnameToImage(`:${shortname}:`) // emojione
+  return `<i class="e1a-${shortname}"></i>`
 }
 
 mdc.map = false

@@ -347,11 +347,17 @@ do_this_and_do_that_and_another_thing.
 
 ## Fontawesome: :fa-cab: :fa-flag: :fa-bicycle: :fa-leaf: :fa-heart:
 
+:fa-cab: :fa-flag: :fa-bicycle: :fa-leaf: :fa-heart:
+
 
 ## Ionicons: :ion-printer: :ion-social-tux: :ion-lock-combination: :ion-ios-medkit: :ion-coffee:
 
+:ion-printer: :ion-social-tux: :ion-lock-combination: :ion-ios-medkit: :ion-coffee:
+
 
 ## Emoji: :panda_face: :sparkles: :camel: :boom: :pig:
+
+:panda_face: :sparkles: :camel: :boom: :pig:
 
 
 ## Task lists
