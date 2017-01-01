@@ -4,9 +4,15 @@ import asciimath2latex from 'asciimath-to-latex'
 import katex from 'katex'
 import hljs from 'highlight.js'
 
-import core from './index-core'
+import Engine from './engine'
 
-let mdc = core
+let options = {
+  html: true,
+  xhtmlOut: true, // <br /> instead of <br>
+  linkify: true
+}
+let extensions = ['mark', 'ins', 'sub', 'sup', 'deflist', 'abbr', 'footnote', 'container', 'github-toc']
+let mdc = new Engine(options, extensions).mdc
 
 // todo: make each font icons set an extension. User can add or disable.
 mdc = mdc.use(markdownitIcon)

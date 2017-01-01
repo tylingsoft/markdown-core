@@ -355,9 +355,9 @@ do_this_and_do_that_and_another_thing.
 :ion-printer: :ion-social-tux: :ion-lock-combination: :ion-ios-medkit: :ion-coffee:
 
 
-## Emoji: :panda_face: :sparkles: :camel: :boom: :pig:
+## Emoji: :panda_face: :sparkles: :camel: :boom: :pig: :does_not_exist:
 
-:panda_face: :sparkles: :camel: :boom: :pig:
+:panda_face: :sparkles: :camel: :boom: :pig: :does_not_exist:
 
 
 ## Task lists
