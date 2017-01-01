@@ -1,7 +1,6 @@
 import markdownitIcon from 'markdown-it-icon'
 
 import asciimath2latex from 'asciimath-to-latex'
-import emojione from 'emojione'
 import katex from 'katex'
 import hljs from 'highlight.js'
 
@@ -11,8 +10,6 @@ let mdc = core
 
 // todo: make each font icons set an extension. User can add or disable.
 mdc = mdc.use(markdownitIcon)
-emojione.cacheBustParam = '' // change this to invalidate emojione icons cache
-emojione.imagePathPNG = 'https://cdn.jsdelivr.net/emojione/assets/png/'
 mdc.renderer.rules.emoji = function (tokens, idx) {
   let shortname = tokens[idx].markup
   if (shortname.startsWith('fa-')) { // fontawesome
