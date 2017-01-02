@@ -15,31 +15,17 @@ let extensions = [
 ]
 let mdc = new Engine(options, extensions).mdc
 
+// source map
 mdc.map = false
-mdc.tags = {}
+const temp1 = mdc.renderer.renderToken.bind(mdc.renderer)
 mdc.renderer.renderToken = function (tokens, idx, options) {
   let token = tokens[idx]
-  let tag = token.type
-  if (tag.endsWith('_open')) {
-    let _tag = tag.substr(0, tag.length - 5)
-    mdc.tags[_tag] = (mdc.tags[_tag] || 0) + 1
-
-    // source map
+  if (token.type.endsWith('_open')) {
     if (mdc.map && token.level === 0 && token.map != null) {
       token.attrPush(['data-source-line', token.map[0] + 1])
     }
-  } else if (tag.endsWith('_close')) {
-    let _tag = tag.substr(0, tag.length - 6)
-    mdc.tags[_tag] = (mdc.tags[_tag] || 0) - 1
   }
-
-  // task list
-  if ((mdc.tags['bullet_list'] || 0) > 0 && tag === 'list_item_open' &&
-    (tokens[idx + 2].content.startsWith('[ ] ') || tokens[idx + 2].content.startsWith('[x] '))) {
-    token.attrPush(['class', 'task-list-item'])
-  }
-
-  return mdc.renderer.constructor.prototype.renderToken.call(this, tokens, idx, options)
+  return temp1(tokens, idx, options)
 }
 
 // inline math
