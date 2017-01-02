@@ -345,14 +345,9 @@ http://example.com
 do_this_and_do_that_and_another_thing.
 
 
-## Fontawesome: :fa-cab: :fa-flag: :fa-bicycle: :fa-leaf: :fa-heart:
+## Fontawesome: :fa-cab: :fa-flag: :fa-bicycle: :fa-leaf: :fa-heart: :fa-does-not-exist:
 
-:fa-cab: :fa-flag: :fa-bicycle: :fa-leaf: :fa-heart:
-
-
-## Ionicons: :ion-printer: :ion-social-tux: :ion-lock-combination: :ion-ios-medkit: :ion-coffee:
-
-:ion-printer: :ion-social-tux: :ion-lock-combination: :ion-ios-medkit: :ion-coffee:
+:fa-cab: :fa-flag: :fa-bicycle: :fa-leaf: :fa-heart: :fa-does-not-exist:
 
 
 ## Emoji: :panda_face: :sparkles: :camel: :boom: :pig: :does_not_exist:

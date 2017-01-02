@@ -11,7 +11,7 @@ let options = {
 }
 let extensions = [
   'mark', 'ins', 'sub', 'sup', 'deflist', 'abbr', 'footnote', 'container', 'github-toc',
-  { name: 'icon', options: { fontawesome: true, ionicons: true } }
+  'emoji', 'font-awesome'
 ]
 let mdc = new Engine(options, extensions).mdc
 
