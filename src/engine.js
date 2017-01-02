@@ -19,34 +19,34 @@ class Engine {
     extensions.forEach((extension) => {
       switch (extension) {
         case 'mark':
-          this.mdc = this.mdc.use(markdownItMark)
+          this.mdc.use(markdownItMark)
           break
         case 'ins':
-          this.mdc = this.mdc.use(markdownItIns)
+          this.mdc.use(markdownItIns)
           break
         case 'sub':
-          this.mdc = this.mdc.use(markdownItSub)
+          this.mdc.use(markdownItSub)
           break
         case 'sup':
-          this.mdc = this.mdc.use(markdownItSup)
+          this.mdc.use(markdownItSup)
           break
         case 'deflist':
-          this.mdc = this.mdc.use(markdownItDeflist)
+          this.mdc.use(markdownItDeflist)
           break
         case 'abbr':
-          this.mdc = this.mdc.use(markdownItAbbr)
+          this.mdc.use(markdownItAbbr)
           break
         case 'footnote':
-          this.mdc = this.mdc.use(markdownItFootnote)
+          this.mdc.use(markdownItFootnote)
           break
         case 'container':
-          this.mdc = this.mdc.use(markdownitContainer, 'success')
-          this.mdc = this.mdc.use(markdownitContainer, 'info')
-          this.mdc = this.mdc.use(markdownitContainer, 'warning')
-          this.mdc = this.mdc.use(markdownitContainer, 'danger')
+          this.mdc.use(markdownitContainer, 'success')
+          this.mdc.use(markdownitContainer, 'info')
+          this.mdc.use(markdownitContainer, 'warning')
+          this.mdc.use(markdownitContainer, 'danger')
           break
         case 'github-toc':
-          this.mdc = this.mdc.use(markdownItGithubToc, {
+          this.mdc.use(markdownItGithubToc, {
             tocFirstLevel: 2,
             tocLastLevel: 3,
             tocClassName: 'toc',
@@ -58,7 +58,7 @@ class Engine {
           break
         case 'emoji':
         case 'font-awesome':
-          this.mdc = this.mdc.use(markdownitIcons, extension)
+          this.mdc.use(markdownitIcons, extension)
           break
         default:
           break
