@@ -60,6 +60,20 @@ class Engine {
         case 'font-awesome':
           this.mdc.use(markdownitIcons, extension)
           break
+        case 'task-list':
+          const mdc = this.mdc
+          mdc.renderer.renderInline = function (tokens, options, env) {
+            let result = mdc.renderer.constructor.prototype.renderInline.call(this, tokens, options, env)
+            if ((mdc.tags['bullet_list'] || 0) > 0 && (mdc.tags['list_item'] || 0) > 0) {
+              if (tokens[0].content.startsWith('[ ] ')) {
+                return '<input type="checkbox" disabled /> ' + result.substr(4)
+              } else if (tokens[0].content.startsWith('[x] ')) {
+                return '<input type="checkbox" disabled checked /> ' + result.substr(4)
+              }
+            }
+            return result
+          }
+          break
         default:
           break
       }
