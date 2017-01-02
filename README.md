@@ -47,8 +47,6 @@ MIT
 1. PPT
 1. Extensions: easy to add and configure extensions. by default only core markdown features.
     1. create a class named Extension
-1. get rid of ionicons because this project is not active
-    1. Or make it an optional extension
 1. Create a website for this project
     1. GitHub pages
 1. update markdown-it-icon library

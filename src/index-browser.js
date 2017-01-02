@@ -8,7 +8,6 @@ import 'highlight.js/styles/atom-one-light.css'
 import 'emojione/assets/css/emojione-awesome.css'
 import './index.css'
 import 'font-awesome/css/font-awesome.css'
-import 'ionicons/css/ionicons.css'
 import 'katex/dist/katex.min.css'
 
 // convert an element to png image, aka screenshot an element
