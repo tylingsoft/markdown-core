@@ -24,7 +24,7 @@ const html = mdc.render('# hello world')
 Please refer to [the example](./public).
 
 
-## Delopment
+## Development
 
 ### Build
 
