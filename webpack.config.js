@@ -1,11 +1,18 @@
-const path = require('path')
+const rules = []
 
-const loaders = [
-  {
-    test: /\.js$/,
+rules.push({
+  test: /\.css$/,
+  use: [
+    { loader: 'style-loader' },
+    { loader: 'css-loader' }
+  ]
+})
+
+rules.push({
+  test: /\.js$/,
+  use: {
     loader: 'babel-loader',
-    exclude: /node_modules/,
-    query: {
+    options: {
       presets: [
         ['env', {
           'targets': {
@@ -14,28 +21,54 @@ const loaders = [
         }]
       ]
     }
-  },
-  {
-    test: /\.css$/,
-    loader: 'style-loader!css-loader'
-  },
-  {
-    test: /\.(ttf|eot|svg|woff2?)(\?v=.+?)?$/,
-    loader: 'url-loader?limit=1000000'
   }
-]
+})
 
-const configurations = [
-  {
-    entry: {
-      'index': './public/index.js'
-    },
-    output: {
-      path: path.join(__dirname, 'public'),
-      filename: '[name].bundle.js'
-    },
-    module: { loaders }
+rules.push({
+  test: /\.(ttf|eot|svg|woff2?)(\?v=.+?)?$/,
+  use: {
+    loader: 'url-loader',
+    options: {
+      limit: 1000000
+    }
   }
-]
+})
 
-module.exports = configurations
+// const loaders = [
+//   {
+//     test: /\.js$/,
+//     loader: 'babel-loader',
+//     exclude: /node_modules/,
+//     query: {
+//       presets: [
+//         ['env', {
+//           'targets': {
+//             'browsers': ['last 2 versions']
+//           }
+//         }]
+//       ]
+//     }
+//   },
+//   {
+//     test: /\.css$/,
+//     loader: 'style-loader!css-loader'
+//   },
+//   {
+//     test: /\.(ttf|eot|svg|woff2?)(\?v=.+?)?$/,
+//     loader: 'url-loader?limit=1000000'
+//   }
+// ]
+
+const config = {
+  target: 'web',
+  entry: {
+    'index': './public/index.js'
+  },
+  output: {
+    path: './public',
+    filename: '[name].bundle.js'
+  },
+  module: { rules }
+}
+
+module.exports = [config]
