@@ -29,7 +29,7 @@ Please refer to [the example](./public).
 ### Build
 
 ```
-yarn run build
+yarn build
 ```
 
 ### Verify
