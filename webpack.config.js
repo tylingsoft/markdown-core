@@ -46,4 +46,4 @@ const config = {
   module: { rules }
 }
 
-module.exports = [config]
+export default [config]
