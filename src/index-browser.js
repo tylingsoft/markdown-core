@@ -24,7 +24,7 @@ mdc.mermaid = {
   },
   gantt: {
     axisFormat: function (format) {
-      mermaid.ganttConfig = {
+      window.mermaid.ganttConfig = {
         axisFormatter: [
           [format, function (d) {
             return d.getDay() === 1
@@ -52,11 +52,11 @@ mdc.loadPreferences = function () {
   return { 'gantt-axis-format': ganttAxisFormat }
 }
 mdc.loadPreferences()
-mermaid.parseError = function (err, hash) {
+window.mermaid.parseError = function (err, hash) {
   mdc.mermaidError = err
 }
 mdc.mermaid_charts = function (code, map) {
-  if (mermaid.parse(code)) {
+  if (window.mermaid.parse(code)) {
     return `<div${map} class="mermaid">${code}</div>`
   } else {
     return `<pre${map}>${mdc.mermaidError}</pre>`
@@ -75,7 +75,7 @@ mdc.init = function (markdown, debug) {
   // 通过 cache 来防止 mermaid init 造成页面抖动
   $('#cache').show()
   $('#cache').html(result)
-  mermaid.init(undefined, $('#cache .mermaid'))
+  window.mermaid.init(undefined, $('#cache .mermaid'))
   $('#cache').hide()
   $('#preview').html($('#cache').html())
   $('#cache').empty()
