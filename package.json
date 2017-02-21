@@ -27,6 +27,7 @@
     "markdown-it-icons": "^0.1.0",
     "markdown-it-ins": "^2.0.0",
     "markdown-it-mark": "^2.0.0",
+    "markdown-it-source-map": "^0.1.0",
     "markdown-it-sub": "^1.0.0",
     "markdown-it-sup": "^1.0.0",
     "markdown-it-task-list": "^0.1.0"

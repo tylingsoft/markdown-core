@@ -10,6 +10,7 @@ import markdownItFootnote from 'markdown-it-footnote'
 import markdownItGithubToc from 'markdown-it-github-toc'
 import markdownitIcons from 'markdown-it-icons'
 import markdownItTaskList from 'markdown-it-task-list'
+import markdownItSourceMap from 'markdown-it-source-map'
 
 class Engine {
   constructor (options = {}, extensions = []) {
@@ -63,6 +64,9 @@ class Engine {
           break
         case 'task-list':
           this.mdc.use(markdownItTaskList)
+          break
+        case 'source-map':
+          this.mdc.use(markdownItSourceMap)
           break
         default:
           break

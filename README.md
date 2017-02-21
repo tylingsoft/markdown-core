@@ -49,4 +49,3 @@ MIT
     1. create a class named Extension
 1. Create a website for this project
     1. GitHub pages
-1. Extract source map as a plugin
