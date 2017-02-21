@@ -2,7 +2,6 @@ import mdc from '../src/index-browser'
 import $ from 'jquery'
 
 $(function () {
-  mdc.map = true
   $.get('sample.md', function (data) {
     mdc.init(data, false)
     window.addEventListener('hashchange', function () { window.scrollBy(0, -8) }) // a little gap to top

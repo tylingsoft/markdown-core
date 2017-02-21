@@ -55,11 +55,11 @@ mdc.loadPreferences()
 window.mermaid.parseError = function (err, hash) {
   mdc.mermaidError = err
 }
-mdc.mermaid_charts = function (code, map) {
+mdc.mermaid_charts = function (code) {
   if (window.mermaid.parse(code)) {
-    return `<div${map} class="mermaid">${code}</div>`
+    return `<div class="mermaid">${code}</div>`
   } else {
-    return `<pre${map}>${mdc.mermaidError}</pre>`
+    return `<pre>${mdc.mermaidError}</pre>`
   }
 }
 
