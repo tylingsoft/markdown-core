@@ -49,3 +49,5 @@ MIT
     1. create a class named Extension
 1. Create a website for this project
     1. GitHub pages
+1. `mdc.math_block` => `math_block`
+1. make `fence` and `code_block` plugins
