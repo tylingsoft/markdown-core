@@ -51,3 +51,4 @@ MIT
     1. GitHub pages
 1. `mdc.math_block` => `math_block`
 1. make `fence` and `code_block` plugins
+1. remove jquery and other unnecessary libraries

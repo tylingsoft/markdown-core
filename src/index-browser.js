@@ -72,13 +72,8 @@ mdc.init = function (markdown, debug) {
     console.log(result)
   }
 
-  // 通过 cache 来防止 mermaid init 造成页面抖动
-  $('#cache').show()
-  $('#cache').html(result)
-  window.mermaid.init(undefined, $('#cache .mermaid'))
-  $('#cache').hide()
-  $('#preview').html($('#cache').html())
-  $('#cache').empty()
+  $('#preview').html(result)
+  window.mermaid.init(undefined, $('#preview .mermaid'))
 
   // charts
   $('#preview .chartjs').each(function () {
