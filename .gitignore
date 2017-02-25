@@ -1,3 +1,8 @@
 node_modules/
 *.bundle.js
 *.log
+public/*.woff
+public/*.woff2
+public/*.ttf
+public/*.eot
+public/*.svg

@@ -6,7 +6,7 @@
   "main": "src/index-node.js",
   "scripts": {
     "upgrade": "ncu -ua && yarn upgrade",
-    "build": "node -r babel-register node_modules/.bin/webpack --progress --colors --watch"
+    "build": "node -r babel-register node_modules/.bin/webpack -p --progress --colors --watch"
   },
   "dependencies": {
     "asciimath-to-latex": "^0.3.0",
@@ -35,13 +35,13 @@
   "devDependencies": {
     "babel-core": "^6.23.1",
     "babel-loader": "^6.3.2",
-    "babel-preset-env": "^1.1.8",
-    "css-loader": "^0.26.1",
-    "file-loader": "^0.10.0",
+    "babel-preset-env": "^1.1.10",
+    "css-loader": "^0.26.2",
+    "file-loader": "^0.10.1",
     "npm-check-updates": "^2.10.3",
     "standard": "^8.6.0",
-    "style-loader": "^0.13.1",
-    "url-loader": "^0.5.7",
+    "style-loader": "^0.13.2",
+    "url-loader": "^0.5.8",
     "webpack": "^2.2.1"
   },
   "repository": {
