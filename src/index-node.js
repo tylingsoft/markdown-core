@@ -16,7 +16,7 @@ let extensions = [
 let mdc = new Engine(options, extensions).mdc
 
 // inline math
-mdc.renderer.rules.code_inline = function (tokens, idx) {
+mdc.renderer.rules.code_inline = (tokens, idx, options, env, slf) => {
   let code = tokens[idx].content
   if (code.startsWith('@') && code.endsWith('@')) {
     code = '$' + asciimath2latex(code.substr(1, code.length - 2)) + '$'
@@ -33,9 +33,9 @@ mdc.renderer.rules.code_inline = function (tokens, idx) {
 }
 
 // math block
-mdc.math_block = function (code) {
+mdc.math_block = (code) => {
   let tex = ''
-  code.split(/(?:\n\s*){2,}/).forEach(function (line) { // consecutive new lines means a new formula
+  code.split(/(?:\n\s*){2,}/).forEach((line) => { // consecutive new lines means a new formula
     try {
       tex += katex.renderToString(line.trim(), { displayMode: true })
     } catch (err) {
@@ -46,7 +46,7 @@ mdc.math_block = function (code) {
 }
 
 // chart block
-mdc.chart_block = function (code) {
+mdc.chart_block = (code) => {
   try {
     let json = JSON.parse(code)
     return `<canvas class="chartjs">${JSON.stringify(json)}</canvas>`
@@ -56,19 +56,19 @@ mdc.chart_block = function (code) {
 }
 
 // placeholder for mermaid
-mdc.mermaid_charts = function (code) {
+mdc.mermaid_charts = (code) => {
   return `<div class="mermaid">${code}</div>`
 }
 
 // fence block
-mdc.renderer.rules.fence = function (tokens, idx) {
+mdc.renderer.rules.fence = (tokens, idx, options, env, slf) => {
   let token = tokens[idx]
   let code = token.content.trim()
   if (token.info === 'math' || token.info === 'katex') { // math
     return mdc.math_block(code)
   }
   if (/^ascii-?math/i.test(token.info)) {
-    code = code.split(/(?:\n\s*){2,}/).map(function (item) { return asciimath2latex(item) }).join('\n\n')
+    code = code.split(/(?:\n\s*){2,}/).map((item) => { return asciimath2latex(item) }).join('\n\n')
     return mdc.math_block(code)
   }
   if (token.info === 'chart') { // chart
