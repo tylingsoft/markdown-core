@@ -51,3 +51,5 @@ MIT
     1. GitHub pages
 1. `mdc.math_block` => `math_block`
 1. make `fence` and `code_block` plugins
+1. move generate assets to public/assets folder
+1. use markdown-it provided code highlight

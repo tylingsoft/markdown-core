@@ -17,9 +17,9 @@ mdc.elementToPng = ($element) => {
 // mermaid charts
 mdc.mermaid = {
   toPng: () => {
-    $($('article#preview div.mermaid > svg').get().reverse()).each(() => { // reverse, so latter won't affect former
-      let png = mdc.elementToPng($(this))
-      $(this).replaceWith(`<img src="${png}"/>`)
+    $($('article#preview div.mermaid > svg').get().reverse()).each((index, element) => { // reverse, so latter won't affect former
+      let png = mdc.elementToPng($(element))
+      $(element).replaceWith(`<img src="${png}"/>`)
     })
   },
   gantt: {
@@ -37,9 +37,9 @@ mdc.mermaid = {
 // charts
 mdc.charts = {
   toPng: () => {
-    $($('canvas.chartjs').get().reverse()).each(() => { // reverse, so latter won't affect former
-      let png = mdc.elementToPng($(this))
-      $(this).replaceWith(`<img src="${png}"/>`)
+    $($('canvas.chartjs').get().reverse()).each((index, element) => { // reverse, so latter won't affect former
+      let png = mdc.elementToPng($(element))
+      $(element).replaceWith(`<img src="${png}"/>`)
     })
   }
 }
@@ -76,14 +76,14 @@ mdc.init = (markdown, debug) => {
   window.mermaid.init(undefined, $('#preview .mermaid'))
 
   // charts
-  $('#preview .chartjs').each(function () {
+  $('#preview .chartjs').each((index, element) => {
     try {
-      let chart = new Chart($(this), JSON.parse($(this).text()))
+      let chart = new Chart($(element), JSON.parse($(element).text()))
       if (process.env.NODE_ENV === 'development') {
         console.log(chart.generateLegend())
       }
     } catch (e) {
-      $(this).replaceWith(`<pre>Chart.js complains: "${e}"</pre>`)
+      $(element).replaceWith(`<pre>Chart.js complains: "${e}"</pre>`)
     }
   })
 
