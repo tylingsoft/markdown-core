@@ -11,22 +11,22 @@ import 'font-awesome/css/font-awesome.css'
 import 'katex/dist/katex.min.css'
 
 // convert an element to png image, aka screenshot an element
-mdc.elementToPng = function ($element) {
+mdc.elementToPng = ($element) => {
   return '' // hook method, needs to be implemented in native code, such as Cocoa or WPF
 }
 // mermaid charts
 mdc.mermaid = {
-  toPng: function () {
-    $($('article#preview div.mermaid > svg').get().reverse()).each(function () { // reverse, so latter won't affect former
+  toPng: () => {
+    $($('article#preview div.mermaid > svg').get().reverse()).each(() => { // reverse, so latter won't affect former
       let png = mdc.elementToPng($(this))
       $(this).replaceWith(`<img src="${png}"/>`)
     })
   },
   gantt: {
-    axisFormat: function (format) {
+    axisFormat: (format) => {
       window.mermaid.ganttConfig = {
         axisFormatter: [
-          [format, function (d) {
+          [format, (d) => {
             return d.getDay() === 1
           }]
         ]
@@ -36,14 +36,14 @@ mdc.mermaid = {
 }
 // charts
 mdc.charts = {
-  toPng: function () {
-    $($('canvas.chartjs').get().reverse()).each(function () { // reverse, so latter won't affect former
+  toPng: () => {
+    $($('canvas.chartjs').get().reverse()).each(() => { // reverse, so latter won't affect former
       let png = mdc.elementToPng($(this))
       $(this).replaceWith(`<img src="${png}"/>`)
     })
   }
 }
-mdc.loadPreferences = function () {
+mdc.loadPreferences = () => {
   let ganttAxisFormat = Cookies.get('gantt-axis-format')
   if (ganttAxisFormat === undefined) {
     ganttAxisFormat = '%Y-%m-%d'
@@ -52,10 +52,10 @@ mdc.loadPreferences = function () {
   return { 'gantt-axis-format': ganttAxisFormat }
 }
 mdc.loadPreferences()
-window.mermaid.parseError = function (err, hash) {
+window.mermaid.parseError = (err, hash) => {
   mdc.mermaidError = err
 }
-mdc.mermaid_charts = function (code) {
+mdc.mermaid_charts = (code) => {
   if (window.mermaid.parse(code)) {
     return `<div class="mermaid">${code}</div>`
   } else {
@@ -63,10 +63,10 @@ mdc.mermaid_charts = function (code) {
   }
 }
 
-mdc.inited = function () {
+mdc.inited = () => {
   // this is a hook method
 }
-mdc.init = function (markdown, debug) {
+mdc.init = (markdown, debug) => {
   let result = mdc.render(markdown)
   if (debug === true) {
     console.log(result)

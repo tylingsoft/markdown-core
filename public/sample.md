@@ -374,7 +374,7 @@ do_this_and_do_that_and_another_thing.
 
 ## Code blocks
 
-Before inline code `$(function(){ console.log('Hello world') });` after inline code.
+Before inline code `$(() => { console.log('Hello world') });` after inline code.
 
 ```ruby
 [1, 2, 3, 4, 5].collect do |item|
@@ -384,8 +384,8 @@ end
 
 
 ```js
-$(document).ready(function() {
-  $('pre code').each(function(i, block) {
+$(document).ready(() => {
+  $('pre code').each((i, block) => {
     hljs.highlightBlock(block);
   });
 });
