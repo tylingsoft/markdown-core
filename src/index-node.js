@@ -88,11 +88,4 @@ mdc.renderer.rules.fence = function (tokens, idx) {
   return `<pre><code class="hljs">${hljs.highlightAuto(code, ['unknown']).value}</code></pre>`
 }
 
-// code block
-mdc.renderer.rules.code_block = (tokens, idx) => {
-  let token = tokens[idx]
-  let code = token.content.trim()
-  return `<pre><code class="hljs">${hljs.highlightAuto(code, ['unknown']).value}</code></pre>`
-}
-
 export default mdc
