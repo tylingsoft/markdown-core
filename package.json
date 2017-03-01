@@ -39,7 +39,7 @@
     "css-loader": "^0.26.2",
     "file-loader": "^0.10.1",
     "npm-check-updates": "^2.10.3",
-    "standard": "^8.6.0",
+    "standard": "^9.0.0",
     "style-loader": "^0.13.2",
     "url-loader": "^0.5.8",
     "webpack": "^2.2.1"
