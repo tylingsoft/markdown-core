@@ -153,9 +153,9 @@ asap@^2.0.0, asap@~2.0.5:
   version "2.0.5"
   resolved "https://registry.yarnpkg.com/asap/-/asap-2.0.5.tgz#522765b50c3510490e52d7dcfe085ef9ba96958f"
 
-asciimath-to-latex@^0.3.0:
-  version "0.3.0"
-  resolved "https://registry.yarnpkg.com/asciimath-to-latex/-/asciimath-to-latex-0.3.0.tgz#71e62bee20443bac386863c2ae43db98eeeedac1"
+asciimath-to-latex@^0.3.1:
+  version "0.3.1"
+  resolved "https://registry.yarnpkg.com/asciimath-to-latex/-/asciimath-to-latex-0.3.1.tgz#b2f9414db2a48974bddeb197d786ba77fae240ff"
 
 asn1.js@^4.0.0:
   version "4.9.1"
