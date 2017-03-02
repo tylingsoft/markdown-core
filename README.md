@@ -50,3 +50,4 @@ MIT
 1. `mdc.math_block` => `math_block`
 1. move generate assets to public/assets folder
 1. check every plugin, make sure `externals: [nodeExternals()],`
+1. setup Travis CI and coveralls.io, add badges
