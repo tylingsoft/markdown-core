@@ -2698,9 +2698,9 @@ markdown-it-highlight@^0.1.0:
   dependencies:
     highlight.js "^9.9.0"
 
-markdown-it-icons@^0.1.0:
-  version "0.1.0"
-  resolved "https://registry.yarnpkg.com/markdown-it-icons/-/markdown-it-icons-0.1.0.tgz#66a2835e071bb07bacba051cfea72f8b8b354769"
+markdown-it-icons@^0.1.1:
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/markdown-it-icons/-/markdown-it-icons-0.1.1.tgz#62d3611bb952c5c45e42bdc33ad29a6f3e5aacb9"
   dependencies:
     markdown-it-regex "^0.1.4"
 
