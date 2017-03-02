@@ -1815,6 +1815,10 @@ flatten@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/flatten/-/flatten-1.0.2.tgz#dae46a9d78fbe25292258cc1e780a41d95c03782"
 
+font-awesome-icon-chars@^1.2.2:
+  version "1.2.2"
+  resolved "https://registry.yarnpkg.com/font-awesome-icon-chars/-/font-awesome-icon-chars-1.2.2.tgz#297495177aacbfbf49f40e4a023096da850ae006"
+
 font-awesome@^4.7.0:
   version "4.7.0"
   resolved "https://registry.yarnpkg.com/font-awesome/-/font-awesome-4.7.0.tgz#8fa8cf0411a1a31afd07b06d2902bb9fc815a133"
@@ -2698,10 +2702,12 @@ markdown-it-highlight@^0.1.0:
   dependencies:
     highlight.js "^9.9.0"
 
-markdown-it-icons@^0.1.1:
-  version "0.1.1"
-  resolved "https://registry.yarnpkg.com/markdown-it-icons/-/markdown-it-icons-0.1.1.tgz#62d3611bb952c5c45e42bdc33ad29a6f3e5aacb9"
+markdown-it-icons@^0.1.2:
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/markdown-it-icons/-/markdown-it-icons-0.1.2.tgz#907ea42749f80702ec8a3b1d59461476e5978d35"
   dependencies:
+    emojione "^2.2.7"
+    font-awesome-icon-chars "^1.2.2"
     markdown-it-regex "^0.1.4"
 
 markdown-it-ins@^2.0.0:
@@ -2840,9 +2846,13 @@ ms@0.7.2:
   version "0.7.2"
   resolved "https://registry.yarnpkg.com/ms/-/ms-0.7.2.tgz#ae25cf2512b3885a1d95d7f037868d8431124765"
 
-mute-stream@0.0.5, mute-stream@~0.0.4:
+mute-stream@0.0.5:
   version "0.0.5"
   resolved "https://registry.yarnpkg.com/mute-stream/-/mute-stream-0.0.5.tgz#8fbfabb0a98a253d3184331f9e8deb7372fac6c0"
+
+mute-stream@~0.0.4:
+  version "0.0.7"
+  resolved "https://registry.yarnpkg.com/mute-stream/-/mute-stream-0.0.7.tgz#3075ce93bc21b8fab43e1bc4da7e8115ed1e7bab"
 
 nan@^2.3.0:
   version "2.5.1"
