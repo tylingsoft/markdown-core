@@ -2722,9 +2722,9 @@ markdown-it-regex@^0.1.4:
   version "0.1.4"
   resolved "https://registry.yarnpkg.com/markdown-it-regex/-/markdown-it-regex-0.1.4.tgz#ca3209fca7665f7b80b23fecb6998c1d252a585a"
 
-markdown-it-source-map@^0.1.0:
-  version "0.1.0"
-  resolved "https://registry.yarnpkg.com/markdown-it-source-map/-/markdown-it-source-map-0.1.0.tgz#750e2c920647219333317b6fb7a82fe3de12e4e8"
+markdown-it-source-map@^0.1.1:
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/markdown-it-source-map/-/markdown-it-source-map-0.1.1.tgz#8d8c3eab35ed1eb5399ec71814a4b435e275556f"
 
 markdown-it-sub@^1.0.0:
   version "1.0.0"
