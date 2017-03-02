@@ -2734,9 +2734,9 @@ markdown-it-sup@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/markdown-it-sup/-/markdown-it-sup-1.0.0.tgz#cb9c9ff91a5255ac08f3fd3d63286e15df0a1fc3"
 
-markdown-it-task-list@^0.1.0:
-  version "0.1.0"
-  resolved "https://registry.yarnpkg.com/markdown-it-task-list/-/markdown-it-task-list-0.1.0.tgz#164e98f8d12fc13fab644d5fc82ccc3fc114e260"
+markdown-it-task-list@^0.1.2:
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/markdown-it-task-list/-/markdown-it-task-list-0.1.2.tgz#226cc00bfed82cc635c8feecd39eecba6accafcc"
 
 markdown-it@^8.3.0:
   version "8.3.0"
