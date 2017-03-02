@@ -11,6 +11,7 @@ import markdownItGithubToc from 'markdown-it-github-toc'
 import markdownitIcons from 'markdown-it-icons'
 import markdownItTaskList from 'markdown-it-task-list'
 import markdownItSourceMap from 'markdown-it-source-map'
+import markdownItHighlight from 'markdown-it-highlight'
 
 class Engine {
   constructor (options = {}, extensions = []) {
@@ -67,6 +68,9 @@ class Engine {
           break
         case 'source-map':
           this.mdc.use(markdownItSourceMap)
+          break
+        case 'highlight':
+          this.mdc.use(markdownItHighlight)
           break
         default:
           break
