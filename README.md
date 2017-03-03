@@ -50,3 +50,4 @@ MIT
 1. `mdc.math_block` => `math_block`
 1. move generated assets to public/assets folder
 1. setup Travis CI and coveralls.io, add badges
+1. move all the features into markdown-it plugin
