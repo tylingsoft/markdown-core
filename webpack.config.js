@@ -40,8 +40,9 @@ const config = {
     'index': './public/index.js'
   },
   output: {
-    path: './public',
-    filename: '[name].bundle.js'
+    path: './public/fonts/',
+    publicPath: 'fonts/',
+    filename: '../[name].bundle.js'
   },
   module: { rules }
 }
