@@ -1,3 +1,5 @@
+import path from 'path'
+
 const rules = []
 
 rules.push({
@@ -40,7 +42,7 @@ const config = {
     'index': './public/index.js'
   },
   output: {
-    path: './public/fonts/',
+    path: path.join(__dirname, './public/fonts/'),
     publicPath: 'fonts/',
     filename: '../[name].bundle.js'
   },
