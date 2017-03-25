@@ -21,7 +21,7 @@ const html = mdc.render('# hello world')
 
 ### Browser
 
-Please refer to [the example](./public).
+Please refer to [the example](./dist).
 
 
 ## Development
@@ -34,7 +34,7 @@ yarn build
 
 ### Verify
 
-Host and open `public/index.html` in browser
+Host and open `dist/index.html` in browser
 
 
 ## License

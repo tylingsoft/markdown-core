@@ -40,10 +40,10 @@ rules.push({
 const config = {
   target: 'web',
   entry: {
-    'index': './public/index.js'
+    'index': './dist/index.js'
   },
   output: {
-    path: path.join(__dirname, './public/fonts/'),
+    path: path.join(__dirname, './dist/fonts/'),
     publicPath: 'fonts/',
     filename: '../[name].bundle.js'
   },
