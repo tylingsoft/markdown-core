@@ -12,6 +12,7 @@ import markdownitIcons from 'markdown-it-icons'
 import markdownItTaskList from 'markdown-it-task-list'
 import markdownItSourceMap from 'markdown-it-source-map'
 import markdownItHighlight from 'markdown-it-highlight'
+import markdownItLatex from 'markdown-it-latex'
 
 class Engine {
   constructor (options = {}, extensions = []) {
@@ -71,6 +72,9 @@ class Engine {
           break
         case 'highlight':
           this.mdc.use(markdownItHighlight)
+          break
+        case 'latex':
+          this.mdc.use(markdownItLatex)
           break
         default:
           break

@@ -47,7 +47,6 @@ MIT
 - PPT
 - Create a website for this project
     - GitHub pages
-- `mdc.math_block` => `math_block`
+- `mdc.xxx` => `xxx`
 - setup Travis CI and coveralls.io, add badges
 - move all the features into markdown-it plugin
-- Reduce global varaibles (`window.xxx =` )
