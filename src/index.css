@@ -1,5 +1,6 @@
 body {
   background-color: white;
+  -webkit-print-color-adjust: exact !important;
 }
 
 .markdown-body {
@@ -96,7 +97,11 @@ mark {
 /*************************/
 
 @media print {
-  article.markdown-body > * {
+  .markdown-body { /* no scroll past end， saving paper */
+    padding-bottom: 0 !important;
+  }
+
+  .markdown-body > * { /* avoid line breaks in top level blocks */
     page-break-inside: avoid;
   }
 }
