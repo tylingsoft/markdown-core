@@ -10,18 +10,8 @@ import './index.css'
 import 'font-awesome/css/font-awesome.css'
 import 'katex/dist/katex.min.css'
 
-// convert an element to png image, aka screenshot an element
-mdc.elementToPng = ($element) => {
-  return '' // hook method, needs to be implemented in native code, such as Cocoa or WPF
-}
 // mermaid charts
 mdc.mermaid = {
-  toPng: () => {
-    $($('article#preview div.mermaid > svg').get().reverse()).each((index, element) => { // reverse, so latter won't affect former
-      let png = mdc.elementToPng($(element))
-      $(element).replaceWith(`<img src="${png}"/>`)
-    })
-  },
   gantt: {
     axisFormat: (format) => {
       window.mermaid.ganttConfig = {
@@ -34,15 +24,7 @@ mdc.mermaid = {
     }
   }
 }
-// charts
-mdc.charts = {
-  toPng: () => {
-    $($('canvas.chartjs').get().reverse()).each((index, element) => { // reverse, so latter won't affect former
-      let png = mdc.elementToPng($(element))
-      $(element).replaceWith(`<img src="${png}"/>`)
-    })
-  }
-}
+
 mdc.loadPreferences = () => {
   let ganttAxisFormat = Cookies.get('gantt-axis-format')
   if (ganttAxisFormat === undefined) {
