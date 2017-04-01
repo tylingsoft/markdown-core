@@ -16,13 +16,13 @@ import markdownItLatex from 'markdown-it-latex'
 import markdownItChart from 'markdown-it-chart'
 
 class Engine {
-  constructor (options = {}, extensions = []) {
+  constructor (options = {}, plugins = []) {
     this.mdc = markdownIt(options)
     if (options.linkify === true) {
       this.mdc.linkify.set({ fuzzyLink: false })
     }
-    extensions.forEach((extension) => {
-      switch (extension) {
+    plugins.forEach((plugin) => {
+      switch (plugin) {
         case 'mark':
           this.mdc.use(markdownItMark)
           break
@@ -63,7 +63,7 @@ class Engine {
           break
         case 'emoji':
         case 'font-awesome':
-          this.mdc.use(markdownitIcons, extension)
+          this.mdc.use(markdownitIcons, plugin)
           break
         case 'task-list':
           this.mdc.use(markdownItTaskList)

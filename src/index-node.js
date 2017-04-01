@@ -1,11 +1,11 @@
 import Engine from './engine'
 
 const options = { html: true, linkify: true }
-const extensions = [
+const plugins = [
   'mark', 'ins', 'sub', 'sup', 'deflist', 'abbr', 'footnote', 'container', 'github-toc',
   'emoji', 'font-awesome', 'task-list', 'source-map', 'highlight', 'latex', 'chart'
 ]
-let mdc = new Engine(options, extensions).mdc
+let mdc = new Engine(options, plugins).mdc
 
 // placeholder for mermaid
 mdc.mermaid_charts = (code) => {
