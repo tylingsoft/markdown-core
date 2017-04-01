@@ -14,6 +14,7 @@ import markdownItSourceMap from 'markdown-it-source-map'
 import markdownItHighlight from 'markdown-it-highlight'
 import markdownItLatex from 'markdown-it-latex'
 import markdownItChart from 'markdown-it-chart'
+import markdownItMermaid from 'markdown-it-mermaid'
 
 class Engine {
   constructor (options = {}, plugins = []) {
@@ -79,6 +80,9 @@ class Engine {
           break
         case 'chart':
           this.mdc.use(markdownItChart)
+          break
+        case 'mermaid':
+          this.mdc.use(markdownItMermaid)
           break
         default:
           break
