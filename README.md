@@ -49,4 +49,5 @@ MIT
     - GitHub pages
 - `mdc.xxx` => `xxx`
 - setup Travis CI and coveralls.io, add badges
-- move all the features into markdown-it plugin
+- mixin CSS, then does it still work for Node ?
+- add lots of plugins as peer dependencies
