@@ -13,6 +13,7 @@ import markdownItTaskList from 'markdown-it-task-list'
 import markdownItSourceMap from 'markdown-it-source-map'
 import markdownItHighlight from 'markdown-it-highlight'
 import markdownItLatex from 'markdown-it-latex'
+import markdownItChart from 'markdown-it-chart'
 
 class Engine {
   constructor (options = {}, extensions = []) {
@@ -75,6 +76,9 @@ class Engine {
           break
         case 'latex':
           this.mdc.use(markdownItLatex)
+          break
+        case 'chart':
+          this.mdc.use(markdownItChart)
           break
         default:
           break

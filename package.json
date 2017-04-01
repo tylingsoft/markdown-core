@@ -15,6 +15,7 @@
   "dependencies": {
     "markdown-it": "^8.3.1",
     "markdown-it-abbr": "^1.0.4",
+    "markdown-it-chart": "^0.1.0",
     "markdown-it-container": "^2.0.0",
     "markdown-it-deflist": "^2.0.1",
     "markdown-it-footnote": "^3.0.1",
