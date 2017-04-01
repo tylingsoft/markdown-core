@@ -2,7 +2,7 @@
   "name": "markdown-core",
   "description": "An extensible markdown engine.",
   "license": "MIT",
-  "version": "0.9.7",
+  "version": "0.9.8",
   "main": "src/index-node.js",
   "scripts": {
     "upgrade": "ncu -ua && yarn upgrade",
