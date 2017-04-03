@@ -49,5 +49,6 @@ MIT
     - GitHub pages
 - `mdc.xxx` => `xxx`
 - setup Travis CI and coveralls.io, add badges
-- mixin CSS, then does it still work for Node ?
+- load css in plugin code
+    - mixin CSS, then does it still work for Node ?
 - add lots of plugins as peer dependencies
