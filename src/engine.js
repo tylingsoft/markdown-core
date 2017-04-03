@@ -1,5 +1,5 @@
 import markdownIt from 'markdown-it'
-// import markdownItMark from 'markdown-it-mark'
+import markdownItMark from 'markdown-it-mark'
 import markdownItIns from 'markdown-it-ins'
 import markdownItSub from 'markdown-it-sub'
 import markdownItSup from 'markdown-it-sup'
@@ -14,7 +14,7 @@ import markdownItSourceMap from 'markdown-it-source-map'
 import markdownItHighlight from 'markdown-it-highlight'
 import markdownItLatex from 'markdown-it-latex'
 import markdownItChart from 'markdown-it-chart'
-// import markdownItMermaid from 'markdown-it-mermaid'
+import markdownItMermaid from 'markdown-it-mermaid'
 
 class Engine {
   constructor (options = {}, plugins = []) {
@@ -25,8 +25,6 @@ class Engine {
     plugins.forEach((plugin) => {
       switch (plugin) {
         case 'mark':
-          let markdownItMark = require('markdown-it-mark')
-          markdownItMark = markdownItMark.default || markdownItMark
           this.mdc.use(markdownItMark)
           break
         case 'ins':
@@ -84,8 +82,6 @@ class Engine {
           this.mdc.use(markdownItChart)
           break
         case 'mermaid':
-          let markdownItMermaid = require('markdown-it-mermaid')
-          markdownItMermaid = markdownItMermaid.default || markdownItMermaid
           this.mdc.use(markdownItMermaid)
           break
         default:
