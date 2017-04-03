@@ -3,13 +3,6 @@ import Chart from 'chart.js'
 import $ from 'jquery'
 import Cookies from 'js-cookie'
 
-import 'github-css/index.css'
-import 'highlight.js/styles/atom-one-light.css'
-import 'markdown-it-icons/src/emojione-awesome.css'
-import './index.css'
-import 'font-awesome/css/font-awesome.css'
-import 'katex/dist/katex.min.css'
-
 // mermaid charts
 mdc.mermaid = {
   gantt: {

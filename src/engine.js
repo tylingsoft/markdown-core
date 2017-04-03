@@ -1,4 +1,16 @@
+import 'github-css/index.css'
 import markdownIt from 'markdown-it'
+
+import 'markdown-it-icons/src/emojione-awesome.css'
+import 'font-awesome/css/font-awesome.css'
+import markdownitIcons from 'markdown-it-icons'
+
+import 'highlight.js/styles/atom-one-light.css'
+import markdownItHighlight from 'markdown-it-highlight'
+
+import 'katex/dist/katex.css'
+import markdownItLatex from 'markdown-it-latex'
+
 import markdownItMark from 'markdown-it-mark'
 import markdownItIns from 'markdown-it-ins'
 import markdownItSub from 'markdown-it-sub'
@@ -8,13 +20,12 @@ import markdownItDeflist from 'markdown-it-deflist'
 import markdownItAbbr from 'markdown-it-abbr'
 import markdownItFootnote from 'markdown-it-footnote'
 import markdownItGithubToc from 'markdown-it-github-toc'
-import markdownitIcons from 'markdown-it-icons'
 import markdownItTaskList from 'markdown-it-task-list'
 import markdownItSourceMap from 'markdown-it-source-map'
-import markdownItHighlight from 'markdown-it-highlight'
-import markdownItLatex from 'markdown-it-latex'
 import markdownItChart from 'markdown-it-chart'
 import markdownItMermaid from 'markdown-it-mermaid'
+
+import './index.css'
 
 class Engine {
   constructor (options = {}, plugins = []) {
