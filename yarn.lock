@@ -1905,10 +1905,6 @@ font-awesome-icon-chars@^1.2.2:
   version "1.2.2"
   resolved "https://registry.yarnpkg.com/font-awesome-icon-chars/-/font-awesome-icon-chars-1.2.2.tgz#297495177aacbfbf49f40e4a023096da850ae006"
 
-font-awesome@^4.7.0:
-  version "4.7.0"
-  resolved "https://registry.yarnpkg.com/font-awesome/-/font-awesome-4.7.0.tgz#8fa8cf0411a1a31afd07b06d2902bb9fc815a133"
-
 for-in@^1.0.1:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/for-in/-/for-in-1.0.2.tgz#81068d295a8142ec0ac726c6e2200c30fb6d5e80"
@@ -2870,9 +2866,9 @@ markdown-it-highlight@^0.1.0:
   dependencies:
     highlight.js "^9.9.0"
 
-markdown-it-icons@^0.1.3:
-  version "0.1.3"
-  resolved "https://registry.yarnpkg.com/markdown-it-icons/-/markdown-it-icons-0.1.3.tgz#360d35d21b479ffa255339bc6d6fbabd0e7db53a"
+markdown-it-icons@^0.1.4:
+  version "0.1.4"
+  resolved "https://registry.yarnpkg.com/markdown-it-icons/-/markdown-it-icons-0.1.4.tgz#cf674017c380ccafc84a8c13e03e220033d4f008"
   dependencies:
     emojione "^2.2.7"
     font-awesome-icon-chars "^1.2.2"

@@ -2,7 +2,7 @@ import 'github-css/index.css'
 import markdownIt from 'markdown-it'
 
 import 'markdown-it-icons/src/emojione-awesome.css'
-import 'font-awesome/css/font-awesome.css'
+import 'markdown-it-icons/src/font-awesome.css'
 import markdownitIcons from 'markdown-it-icons'
 
 import 'highlight.js/styles/atom-one-light.css'
