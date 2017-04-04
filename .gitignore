@@ -1,6 +1,5 @@
 node_modules/
 *.bundle.js
 *.log
-dist/fonts/
 .DS_Store
 *.bundle.css

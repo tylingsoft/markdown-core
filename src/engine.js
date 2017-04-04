@@ -4,7 +4,6 @@ import markdownIt from 'markdown-it'
 import markdownitIcons from 'markdown-it-icons'
 import markdownItHighlight from 'markdown-it-highlight'
 import markdownItLatex from 'markdown-it-latex'
-
 import markdownItMark from 'markdown-it-mark'
 import markdownItIns from 'markdown-it-ins'
 import markdownItSub from 'markdown-it-sub'

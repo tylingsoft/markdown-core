@@ -78,13 +78,12 @@ const webConfig = {
     'web': './dist/index.js'
   },
   output: {
-    path: path.join(__dirname, './dist/fonts/'),
-    publicPath: 'fonts/',
-    filename: '../[name].bundle.js'
+    path: path.join(__dirname, './dist/'),
+    filename: '[name].bundle.js'
   },
   module: { rules: webRules },
   plugins: [
-    new ExtractTextPlugin('../[name].bundle.css')
+    new ExtractTextPlugin('[name].bundle.css')
   ]
 }
 

@@ -2869,9 +2869,9 @@ markdown-it-highlight@^0.1.2:
   dependencies:
     highlight.js "^9.9.0"
 
-markdown-it-icons@^0.1.7:
-  version "0.1.7"
-  resolved "https://registry.yarnpkg.com/markdown-it-icons/-/markdown-it-icons-0.1.7.tgz#6ea873d251c8da3a46379921761cb811f3e0d8c3"
+markdown-it-icons@^0.1.8:
+  version "0.1.8"
+  resolved "https://registry.yarnpkg.com/markdown-it-icons/-/markdown-it-icons-0.1.8.tgz#67eb6d8713612f031e06d570a74fb19445f5b1cb"
   dependencies:
     emojione "^2.2.7"
     font-awesome-icon-chars "^1.2.2"
@@ -2881,9 +2881,9 @@ markdown-it-ins@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/markdown-it-ins/-/markdown-it-ins-2.0.0.tgz#a5aa6a30f1e2f71e9497567cfdff40f1fde67483"
 
-markdown-it-latex@^0.1.1:
-  version "0.1.1"
-  resolved "https://registry.yarnpkg.com/markdown-it-latex/-/markdown-it-latex-0.1.1.tgz#d4cae631c994ceecb8b5daf78f6607b69de24edd"
+markdown-it-latex@^0.1.2:
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/markdown-it-latex/-/markdown-it-latex-0.1.2.tgz#66cd119b2ae3c8fdf20e7a7bd3d88e5ec61e8be2"
   dependencies:
     asciimath-to-latex "^0.3.1"
     katex "^0.7.1"
