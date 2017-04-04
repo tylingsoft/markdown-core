@@ -1,5 +1,6 @@
 import path from 'path'
 import ExtractTextPlugin from 'extract-text-webpack-plugin'
+import nodeExternals from 'webpack-node-externals'
 
 const commonRules = [
   {
@@ -54,13 +55,15 @@ const webRules = [...commonRules, {
 
 const nodeConfig = {
   target: 'node',
+  externals: [nodeExternals()],
   entry: {
     'index': './src/index-node.js'
   },
   output: {
     path: path.join(__dirname, './dist/fonts/'),
     publicPath: 'fonts/',
-    filename: '../[name].bundle.js'
+    filename: '../[name].bundle.js',
+    libraryTarget: 'commonjs2'
   },
   module: { rules: nodeRules },
   plugins: [
