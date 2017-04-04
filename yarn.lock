@@ -2869,9 +2869,9 @@ markdown-it-highlight@^0.1.2:
   dependencies:
     highlight.js "^9.9.0"
 
-markdown-it-icons@^0.1.8:
-  version "0.1.8"
-  resolved "https://registry.yarnpkg.com/markdown-it-icons/-/markdown-it-icons-0.1.8.tgz#67eb6d8713612f031e06d570a74fb19445f5b1cb"
+markdown-it-icons@^0.1.9:
+  version "0.1.9"
+  resolved "https://registry.yarnpkg.com/markdown-it-icons/-/markdown-it-icons-0.1.9.tgz#f64468f3f76c22655481400be745f2389b8f18bf"
   dependencies:
     emojione "^2.2.7"
     font-awesome-icon-chars "^1.2.2"

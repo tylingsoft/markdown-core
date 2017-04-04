@@ -58,4 +58,3 @@ MIT
 - setup Travis CI and coveralls.io, add badges
 - add lots of plugins as peer dependencies
 - markdown-mate possible bug
-- don't bundle for node

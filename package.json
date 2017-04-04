@@ -2,7 +2,7 @@
   "name": "markdown-core",
   "description": "An extensible markdown engine.",
   "license": "MIT",
-  "version": "0.9.14",
+  "version": "0.9.17",
   "main": "dist/index.bundle.js",
   "scripts": {
     "upgrade": "ncu -ua && yarn upgrade",
@@ -22,7 +22,7 @@
     "markdown-it-footnote": "^3.0.1",
     "markdown-it-github-toc": "^3.2.4",
     "markdown-it-highlight": "^0.1.2",
-    "markdown-it-icons": "^0.1.8",
+    "markdown-it-icons": "^0.1.9",
     "markdown-it-ins": "^2.0.0",
     "markdown-it-latex": "^0.1.2",
     "markdown-it-mark": "^2.0.0",

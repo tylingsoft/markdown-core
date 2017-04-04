@@ -1,7 +1,7 @@
 import 'github-css/index.css'
 
 import markdownIt from 'markdown-it'
-import markdownitIcons from 'markdown-it-icons'
+import markdownitIcons from 'markdown-it-icons/src/index'
 import markdownItHighlight from 'markdown-it-highlight'
 import markdownItLatex from 'markdown-it-latex'
 import markdownItMark from 'markdown-it-mark'
