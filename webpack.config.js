@@ -2,11 +2,18 @@ import path from 'path'
 import nodeExternals from 'webpack-node-externals'
 import ExtractTextPlugin from 'extract-text-webpack-plugin'
 
-const nodeRules = [
+const commonRules = [
   {
     test: /\.css$/,
-    use: { loader: 'ignore-loader' }
-  },
+    use: ExtractTextPlugin.extract({
+      fallback: 'style-loader',
+      use: 'css-loader'
+    })
+  }
+]
+
+const nodeRules = [
+  ...commonRules,
   {
     test: /\.js$/,
     use: {
@@ -15,7 +22,7 @@ const nodeRules = [
         presets: [
           ['env', {
             'targets': {
-              'node': 4.2
+              'node': 'current'
             }
           }]
         ]
@@ -35,26 +42,14 @@ const nodeConfig = {
     filename: '[name].bundle.js',
     libraryTarget: 'commonjs2'
   },
-  module: { rules: nodeRules }
+  module: { rules: nodeRules },
+  plugins: [
+    new ExtractTextPlugin('[name].bundle.css')
+  ]
 }
 
 const webRules = [
-  {
-    test: /\.css$/,
-    use: ExtractTextPlugin.extract({
-      fallback: 'style-loader',
-      use: 'css-loader'
-    })
-  },
-  {
-    test: /\.(ttf|eot|svg|woff2?)(\?v=.+?)?$/,
-    use: {
-      loader: 'url-loader',
-      options: {
-        limit: 10000
-      }
-    }
-  },
+  ...commonRules,
   {
     test: /\.js$/,
     use: {
@@ -83,7 +78,7 @@ const webConfig = {
   },
   module: { rules: webRules },
   plugins: [
-    new ExtractTextPlugin('[name].bundle.css')
+    new ExtractTextPlugin('index.bundle.css')
   ]
 }
 

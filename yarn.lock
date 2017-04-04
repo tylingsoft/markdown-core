@@ -2045,10 +2045,6 @@ getpass@^0.1.1:
   dependencies:
     assert-plus "^1.0.0"
 
-github-css@^0.1.0:
-  version "0.1.0"
-  resolved "https://registry.yarnpkg.com/github-css/-/github-css-0.1.0.tgz#bdbdaff4c94ace8c058a9e91d15cd0145fa5653a"
-
 glob-base@^0.3.0:
   version "0.3.0"
   resolved "https://registry.yarnpkg.com/glob-base/-/glob-base-0.3.0.tgz#dbb164f6221b1c0b1ccf82aea328b497df0ea3c4"
@@ -2869,9 +2865,9 @@ markdown-it-highlight@^0.1.2:
   dependencies:
     highlight.js "^9.9.0"
 
-markdown-it-icons@^0.1.9:
-  version "0.1.9"
-  resolved "https://registry.yarnpkg.com/markdown-it-icons/-/markdown-it-icons-0.1.9.tgz#f64468f3f76c22655481400be745f2389b8f18bf"
+markdown-it-icons@^0.2.0:
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/markdown-it-icons/-/markdown-it-icons-0.2.0.tgz#6c28f36767f3c809bcce7443837a921516c7d7b3"
   dependencies:
     emojione "^2.2.7"
     font-awesome-icon-chars "^1.2.2"
