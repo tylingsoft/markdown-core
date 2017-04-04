@@ -1,8 +1,44 @@
 import path from 'path'
-import ExtractTextPlugin from 'extract-text-webpack-plugin'
 import nodeExternals from 'webpack-node-externals'
+import ExtractTextPlugin from 'extract-text-webpack-plugin'
 
-const commonRules = [
+const nodeRules = [
+  {
+    test: /\.css$/,
+    use: { loader: 'ignore-loader' }
+  },
+  {
+    test: /\.js$/,
+    use: {
+      loader: 'babel-loader',
+      options: {
+        presets: [
+          ['env', {
+            'targets': {
+              'node': 6.9
+            }
+          }]
+        ]
+      }
+    }
+  }
+]
+
+const nodeConfig = {
+  target: 'node',
+  externals: [nodeExternals()],
+  entry: {
+    'index': './src/index-node.js'
+  },
+  output: {
+    path: path.join(__dirname, './dist/'),
+    filename: '[name].bundle.js',
+    libraryTarget: 'commonjs2'
+  },
+  module: { rules: nodeRules }
+}
+
+const webRules = [
   {
     test: /\.css$/,
     use: ExtractTextPlugin.extract({
@@ -18,58 +54,23 @@ const commonRules = [
         limit: 10000
       }
     }
+  },
+  {
+    test: /\.js$/,
+    use: {
+      loader: 'babel-loader',
+      options: {
+        presets: [
+          ['env', {
+            'targets': {
+              'browsers': ['last 2 versions']
+            }
+          }]
+        ]
+      }
+    }
   }
 ]
-
-const nodeRules = [...commonRules, {
-  test: /\.js$/,
-  use: {
-    loader: 'babel-loader',
-    options: {
-      presets: [
-        ['env', {
-          'targets': {
-            'node': 4.2
-          }
-        }]
-      ]
-    }
-  }
-}]
-
-const webRules = [...commonRules, {
-  test: /\.js$/,
-  use: {
-    loader: 'babel-loader',
-    options: {
-      presets: [
-        ['env', {
-          'targets': {
-            'browsers': ['last 2 versions']
-          }
-        }]
-      ]
-    }
-  }
-}]
-
-const nodeConfig = {
-  target: 'node',
-  externals: [nodeExternals()],
-  entry: {
-    'index': './src/index-node.js'
-  },
-  output: {
-    path: path.join(__dirname, './dist/fonts/'),
-    publicPath: 'fonts/',
-    filename: '../[name].bundle.js',
-    libraryTarget: 'commonjs2'
-  },
-  module: { rules: nodeRules },
-  plugins: [
-    new ExtractTextPlugin('../[name].bundle.css')
-  ]
-}
 
 const webConfig = {
   target: 'web',
@@ -83,7 +84,7 @@ const webConfig = {
   },
   module: { rules: webRules },
   plugins: [
-    new ExtractTextPlugin('../index.bundle.css')
+    new ExtractTextPlugin('../[name].bundle.css')
   ]
 }
 
