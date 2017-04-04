@@ -2863,9 +2863,9 @@ markdown-it-github-toc@^3.2.4:
   dependencies:
     uslug "^1.0.4"
 
-markdown-it-highlight@^0.1.0:
-  version "0.1.0"
-  resolved "https://registry.yarnpkg.com/markdown-it-highlight/-/markdown-it-highlight-0.1.0.tgz#5be0f5278d0c1a524087d6bd925dba5ec6fd3882"
+markdown-it-highlight@^0.1.2:
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/markdown-it-highlight/-/markdown-it-highlight-0.1.2.tgz#ddb49b8958bd5e329581dd001da169f4b9ecbf1a"
   dependencies:
     highlight.js "^9.9.0"
 
