@@ -3,8 +3,6 @@ import 'github-css/index.css'
 import markdownIt from 'markdown-it'
 import markdownitIcons from 'markdown-it-icons'
 import markdownItHighlight from 'markdown-it-highlight'
-
-import 'katex/dist/katex.css'
 import markdownItLatex from 'markdown-it-latex'
 
 import markdownItMark from 'markdown-it-mark'
