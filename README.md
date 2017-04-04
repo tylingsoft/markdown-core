@@ -14,10 +14,17 @@ yarn add markdown-core
 
 ### Node.js
 
+`index.js`:
+
 ```javascript
-import mdc from 'markdown-core'
+import mdc from 'markdown-core' // OR const mdc = require('markdown-core').default
 const html = mdc.render('# hello world')
+console.log(html)
 ```
+
+    node -r ignore-styles index.js
+
+Demo project: https://github.com/tylingsoft/markdown-core-node-demo
 
 ### Browser
 
@@ -52,3 +59,4 @@ MIT
 - load css in plugin code
     - mixin CSS, then does it still work for Node ?
 - add lots of plugins as peer dependencies
+- markdown-mate possible bug
