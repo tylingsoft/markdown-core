@@ -1,6 +1,6 @@
 import 'github-css/index.css'
-import markdownIt from 'markdown-it'
 
+import markdownIt from 'markdown-it'
 import markdownitIcons from 'markdown-it-icons'
 
 import 'highlight.js/styles/atom-one-light.css'
