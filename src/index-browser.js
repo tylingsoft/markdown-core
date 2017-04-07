@@ -41,13 +41,11 @@ mdc.mermaid_charts = (code) => {
 mdc.inited = () => {
   // this is a hook method
 }
-mdc.init = (markdown, debug) => {
+mdc.init = (markdown) => {
   let result = mdc.render(markdown)
-  if (debug === true) {
-    console.log(result)
-  }
+  document.getElementById('preview').innerHTML = result
 
-  $('#preview').html(result)
+  // mermaid
   window.mermaid.init(undefined, $('#preview .mermaid'))
 
   // charts
