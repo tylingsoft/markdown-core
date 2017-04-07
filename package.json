@@ -6,7 +6,7 @@
   "main": "dist/index.bundle.js",
   "scripts": {
     "upgrade": "ncu -ua && yarn upgrade",
-    "build": "node -r babel-register node_modules/.bin/webpack --progress --colors"
+    "build": "node -r babel-register node_modules/.bin/webpack --progress --colors --config webpack.node.config.js && node -r babel-register node_modules/.bin/webpack --progress --colors --config webpack.web.config.js"
   },
   "files": [
     "dist",
