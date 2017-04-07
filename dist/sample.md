@@ -14,6 +14,11 @@ std::string
 
 ---
 
+## Table of Contents
+
+[toc]
+
+
 ## Charts
 
 ### Line Chart
@@ -326,11 +331,6 @@ std::string
 ###### heading 6
 
 
-## Table of Contents
-
-[toc]
-
-
 ## Github Flavored Markdown
 
 ~~strikethrough~~
@@ -451,8 +451,16 @@ phi_n(kappa) = 1/(4pi^2 kappa^2)
 ```mermaid
 graph TD
     A[Hard edge] -->|Link text| B(Round edge)
-    B --> C{Decision}
+    B ----> C{Decision}
     C -->|One| D[Result one]
+    C -->|Two| E[Result two]
+```
+
+```mermaid
+graph TD
+    A[Hard edge] -->|Link text| B(Round edge)
+    B --> C{Decision}
+    C ---->|One| D[Result one]
     C -->|Two| E[Result two]
 ```
 
