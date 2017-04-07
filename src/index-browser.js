@@ -50,10 +50,7 @@ mdc.init = (markdown) => {
   // charts
   document.querySelectorAll('#preview .chartjs').forEach(element => {
     try {
-      let chart = new Chart(element, JSON.parse(element.textContent))
-      if (process.env.NODE_ENV === 'development') {
-        console.log(chart.generateLegend())
-      }
+      new Chart(element, JSON.parse(element.textContent)) // eslint-disable-line no-new
     } catch (e) {
       element.outerHTML = `<pre>Chart.js complains: "${e}"</pre>`
     }
