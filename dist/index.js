@@ -1,11 +1,13 @@
 import mdc from '../src/index-browser'
-import $ from 'jquery'
 
 const request = new window.XMLHttpRequest()
 request.onload = function () {
   mdc.init(this.response, false)
   if (window.location.hash.length > 0) {
-    $('html,body').scrollTop($(window.location.hash).offset().top - 8) // scroll to hash element
+    const element = document.getElementById(window.location.hash.substr(1))
+    if (element) {
+      document.body.scrollTop = element.getBoundingClientRect().top
+    }
   }
 }
 request.open('GET', 'sample.md')
