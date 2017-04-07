@@ -1,6 +1,5 @@
 import mdc from './index-node'
 import Chart from 'chart.js'
-import $ from 'jquery'
 import Cookies from 'js-cookie'
 
 // mermaid charts
@@ -46,17 +45,17 @@ mdc.init = (markdown) => {
   document.getElementById('preview').innerHTML = result
 
   // mermaid
-  window.mermaid.init(undefined, $('#preview .mermaid'))
+  window.mermaid.init(undefined, document.querySelectorAll('#preview .mermaid'))
 
   // charts
-  $('#preview .chartjs').each((index, element) => {
+  document.querySelectorAll('#preview .chartjs').forEach(element => {
     try {
-      let chart = new Chart($(element), JSON.parse($(element).text()))
+      let chart = new Chart(element, JSON.parse(element.textContent))
       if (process.env.NODE_ENV === 'development') {
         console.log(chart.generateLegend())
       }
     } catch (e) {
-      $(element).replaceWith(`<pre>Chart.js complains: "${e}"</pre>`)
+      element.outerHTML = `<pre>Chart.js complains: "${e}"</pre>`
     }
   })
 
