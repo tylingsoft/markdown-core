@@ -3,10 +3,10 @@
   "description": "An extensible markdown engine.",
   "license": "MIT",
   "version": "0.9.26",
-  "main": "dist/index.bundle.js",
+  "main": "src/index-node.js",
   "scripts": {
     "upgrade": "ncu -ua && yarn upgrade",
-    "build": "node -r babel-register node_modules/.bin/webpack --progress --colors --config webpack.node.config.js && node -r babel-register node_modules/.bin/webpack --progress --colors --config webpack.web.config.js"
+    "build": "node -r babel-register node_modules/.bin/webpack --progress --colors"
   },
   "files": [
     "dist",
@@ -38,16 +38,12 @@
     "chart.js": "^2.5.0",
     "css-loader": "^0.28.0",
     "extract-text-webpack-plugin": "^2.1.0",
-    "file-loader": "^0.11.1",
-    "ignore-loader": "^0.1.2",
     "jquery": "^3.2.1",
     "js-cookie": "^2.1.4",
     "npm-check-updates": "^2.10.5",
     "standard": "^10.0.1",
     "style-loader": "^0.16.1",
-    "url-loader": "^0.5.8",
-    "webpack": "^2.3.3",
-    "webpack-node-externals": "^1.5.4"
+    "webpack": "^2.3.3"
   },
   "repository": {
     "type": "git",

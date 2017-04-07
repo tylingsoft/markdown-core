@@ -1,8 +1,7 @@
 import path from 'path'
-import nodeExternals from 'webpack-node-externals'
 import ExtractTextPlugin from 'extract-text-webpack-plugin'
 
-const nodeRules = [
+const rules = [
   {
     test: /\.css$/,
     use: ExtractTextPlugin.extract({
@@ -18,7 +17,7 @@ const nodeRules = [
         presets: [
           ['env', {
             'targets': {
-              'node': 'current'
+              'browsers': ['last 2 versions']
             }
           }]
         ]
@@ -28,17 +27,15 @@ const nodeRules = [
 ]
 
 const config = {
-  target: 'node',
-  externals: [nodeExternals()],
+  target: 'web',
   entry: {
-    'index': './src/index-node.js'
+    'index': './dist/index.js'
   },
   output: {
     path: path.join(__dirname, './dist/'),
-    filename: '[name].bundle.js',
-    libraryTarget: 'commonjs2'
+    filename: '[name].bundle.js'
   },
-  module: { rules: nodeRules },
+  module: { rules },
   plugins: [
     new ExtractTextPlugin('[name].bundle.css')
   ]
