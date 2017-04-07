@@ -26,16 +26,6 @@ mdc.loadPreferences = () => {
   return { 'gantt-axis-format': ganttAxisFormat }
 }
 mdc.loadPreferences()
-window.mermaid.parseError = (err, hash) => {
-  mdc.mermaidError = err
-}
-mdc.mermaid_charts = (code) => {
-  if (window.mermaid.parse(code)) {
-    return `<div class="mermaid">${code}</div>`
-  } else {
-    return `<pre>${mdc.mermaidError}</pre>`
-  }
-}
 
 mdc.inited = () => {
   // this is a hook method
