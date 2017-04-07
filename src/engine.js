@@ -1,4 +1,4 @@
-import './github.css'
+import 'github-css'
 
 import markdownIt from 'markdown-it'
 import markdownitIcons from 'markdown-it-icons'

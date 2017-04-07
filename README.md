@@ -14,16 +14,6 @@ yarn add markdown-core
 
 ### Node.js
 
-`index.js`:
-
-```javascript
-import mdc from 'markdown-core' // OR const mdc = require('markdown-core').default
-const html = mdc.render('# hello world')
-console.log(html)
-```
-
-    node -r ignore-styles index.js
-
 Demo project: https://github.com/tylingsoft/markdown-core-node-demo
 
 ### Browser
@@ -58,4 +48,3 @@ MIT
 - setup Travis CI and coveralls.io, add badges
 - add lots of plugins as peer dependencies
 - markdown-mate possible bug
-- webpack bundle node and web separately
