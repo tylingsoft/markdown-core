@@ -47,7 +47,6 @@ MIT
 - `mdc.xxx` => `xxx`
 - setup Travis CI and coveralls.io, add badges
 - add lots of plugins as peer dependencies
-- markdown-mate possible bug
 - support more diagram types from mermaid
     - class diagram
     - git diagram
