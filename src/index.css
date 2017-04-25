@@ -14,7 +14,7 @@ body {
   text-align: justify;
 }
 
-iframe.chartjs-hidden-iframe + * {
+.chartjs-hidden-iframe + * {
   margin-top: 0!important;
 }
 
@@ -22,11 +22,11 @@ iframe.chartjs-hidden-iframe + * {
   background-color: transparent;
 }
 
-div.mermaid {
+.mermaid {
   text-align: center;
 }
 
-hr.footnotes-sep {
+.footnotes-sep {
   margin: 128px 0 32px 0;
   height: 1px;
 }
@@ -36,7 +36,7 @@ hr.footnotes-sep {
 .footnotes * {
   font-size: 14px;
 }
-li.footnote-item > p {
+.footnote-item > p {
   margin: 8px 0;
 }
 
