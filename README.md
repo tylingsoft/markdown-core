@@ -1,5 +1,7 @@
 # Markdown Core
 
+[![Code Climate](https://codeclimate.com/github/tylingsoft/markdown-core.png)](https://codeclimate.com/github/tylingsoft/markdown-core)
+
 An extensible markdown engine used in the [Markdown Plus](https://github.com/tylingsoft/markdown-plus) project.
 
 
