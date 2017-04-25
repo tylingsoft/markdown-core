@@ -20,35 +20,33 @@ import markdownItMermaid from 'markdown-it-mermaid'
 
 import './index.css'
 
+const pluginMap = {
+  'mark': markdownItMark,
+  'ins': markdownItIns,
+  'sub': markdownItSub,
+  'sup': markdownItSup,
+  'deflist': markdownItDeflist,
+  'abbr': markdownItAbbr,
+  'footnote': markdownItFootnote,
+  'task-list': markdownItTaskList,
+  'source-map': markdownItSourceMap,
+  'highlight': markdownItHighlight,
+  'latex': markdownItLatex,
+  'chart': markdownItChart,
+  'mermaid': markdownItMermaid
+}
+
 class Engine {
   constructor (options = {}, plugins = []) {
     this.mdc = markdownIt(options)
     if (options.linkify === true) {
       this.mdc.linkify.set({ fuzzyLink: false })
     }
-    plugins.forEach((plugin) => {
+    plugins.filter((plugin) => pluginMap[plugin]).forEach((plugin) => {
+      this.mdc.use(pluginMap[plugin])
+    })
+    plugins.filter((plugin) => !pluginMap[plugin]).forEach((plugin) => {
       switch (plugin) {
-        case 'mark':
-          this.mdc.use(markdownItMark)
-          break
-        case 'ins':
-          this.mdc.use(markdownItIns)
-          break
-        case 'sub':
-          this.mdc.use(markdownItSub)
-          break
-        case 'sup':
-          this.mdc.use(markdownItSup)
-          break
-        case 'deflist':
-          this.mdc.use(markdownItDeflist)
-          break
-        case 'abbr':
-          this.mdc.use(markdownItAbbr)
-          break
-        case 'footnote':
-          this.mdc.use(markdownItFootnote)
-          break
         case 'container':
           this.mdc.use(markdownitContainer, 'success')
           this.mdc.use(markdownitContainer, 'info')
@@ -69,24 +67,6 @@ class Engine {
         case 'emoji':
         case 'font-awesome':
           this.mdc.use(markdownitIcons, plugin)
-          break
-        case 'task-list':
-          this.mdc.use(markdownItTaskList)
-          break
-        case 'source-map':
-          this.mdc.use(markdownItSourceMap)
-          break
-        case 'highlight':
-          this.mdc.use(markdownItHighlight)
-          break
-        case 'latex':
-          this.mdc.use(markdownItLatex)
-          break
-        case 'chart':
-          this.mdc.use(markdownItChart)
-          break
-        case 'mermaid':
-          this.mdc.use(markdownItMermaid)
           break
         default:
           break
