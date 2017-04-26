@@ -3,4 +3,3 @@ node_modules/
 *.log
 .DS_Store
 *.bundle.css
-test/fixture/
