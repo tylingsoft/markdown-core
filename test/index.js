@@ -6,6 +6,7 @@ const assert = require('assert')
 
 let chromeBin = '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome'
 const chromeOptions = [
+  '--headless',
   '--disable-gpu',
   '--remote-debugging-port=9222',
   '--user-data-dir=/tmp/chrome-user-data-dir',
@@ -18,10 +19,6 @@ const chromeOptions = [
   '--disable-device-discovery-notifications',
   '--window-size=800,600'
 ]
-if (process.platform === 'linux') {
-  chromeBin = '/usr/bin/google-chrome'
-  chromeOptions.push('--headless')
-}
 
 const timeout = (ms) => {
   return new Promise(resolve => setTimeout(resolve, ms))
@@ -58,8 +55,8 @@ const main = async (done) => {
     Page.loadEventFired(async () => {
       await timeout(3000)
       const html = (await Runtime.evaluate({ expression: 'document.documentElement.outerHTML' })).result.value
-      // fs.writeFileSync('test/fixture/index.html', html)
-      assert.equal(html, fs.readFileSync('test/fixture/index.html'))
+      fs.writeFileSync('test/fixture/index.html', html)
+      assert.equal(html, fs.readFileSync('test/fixture/index.html', 'utf8'))
       const height = (await Runtime.evaluate({ expression: 'Math.max(document.body.scrollHeight, document.body.offsetHeight, document.documentElement.clientHeight, document.documentElement.scrollHeight, document.documentElement.offsetHeight)' })).result.value
       const visibleHeight = (await Runtime.evaluate({ expression: 'window.innerHeight' })).result.value
       const times = Math.floor(height / visibleHeight)
