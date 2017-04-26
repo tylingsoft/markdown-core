@@ -14,7 +14,7 @@ const chromeOptions = [
   '--disable-translate',
   '--disable-background-timer-throttling',
   '--disable-device-discovery-notifications',
-  '--window-size=1440,5000'
+  '--window-size=800,600'
 ]
 if (process.platform === 'linux') {
   chromeBin = '/usr/bin/google-chrome'
@@ -54,11 +54,20 @@ const main = async () => {
     await Page.enable()
     await Page.navigate({ url: 'http://127.0.0.1:8080' })
     Page.loadEventFired(async () => {
-      await timeout(6000)
+      await timeout(3000)
       const result = await Runtime.evaluate({ expression: 'document.documentElement.outerHTML' })
       fs.writeFileSync('test/fixture/temp.html', result.result.value)
+      const height = (await Runtime.evaluate({ expression: 'Math.max(document.body.scrollHeight, document.body.offsetHeight, document.documentElement.clientHeight, document.documentElement.scrollHeight, document.documentElement.offsetHeight)' })).result.value
+      const visibleHeight = (await Runtime.evaluate({ expression: 'window.innerHeight' })).result.value
+      const times = Math.floor(height / visibleHeight)
+      for (let i = 0; i < times; i++) {
+        const screenshot = await Page.captureScreenshot()
+        fs.writeFileSync(`test/fixture/temp-${i + 1}.png`, screenshot.data, 'base64')
+        await Runtime.evaluate({ expression: `window.scrollBy(0, ${visibleHeight})` })
+        await timeout(100)
+      }
       const screenshot = await Page.captureScreenshot()
-      fs.writeFileSync('test/fixture/temp.png', screenshot.data, 'base64')
+      fs.writeFileSync(`test/fixture/temp-${times + 1}.png`, screenshot.data, 'base64')
       quitChrome()
       quitHttp()
     })
