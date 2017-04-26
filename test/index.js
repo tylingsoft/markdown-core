@@ -35,13 +35,24 @@ const quitChrome = () => {
   }
 }
 
+let httpServer = null
+const startHttp = () => {
+  httpServer = spawn('./node_modules/.bin/http-server', ['dist'])
+}
+const quitHttp = () => {
+  if (httpServer != null) {
+    httpServer.kill('SIGINT')
+  }
+}
+
 const main = async () => {
+  startHttp()
   startChrome()
   await timeout(3000)
   CDP(async (client) => {
     const { Page, Runtime } = client
     await Page.enable()
-    await Page.navigate({ url: 'http://mdp.tylingsoft.com' })
+    await Page.navigate({ url: 'http://127.0.0.1:8080' })
     Page.loadEventFired(async () => {
       await timeout(6000)
       const result = await Runtime.evaluate({ expression: 'document.documentElement.outerHTML' })
@@ -49,10 +60,12 @@ const main = async () => {
       const screenshot = await Page.captureScreenshot()
       fs.writeFileSync('test/fixture/temp.png', screenshot.data, 'base64')
       quitChrome()
+      quitHttp()
     })
   }).on('error', (err) => {
     console.error('Cannot connect to browser:', err)
     quitChrome()
+    quitHttp()
   })
 }
 
