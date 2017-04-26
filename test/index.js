@@ -1,3 +1,4 @@
+/* eslint-env mocha */
 const spawn = require('child_process').spawn
 const CDP = require('chrome-remote-interface')
 const fs = require('fs')
@@ -46,7 +47,7 @@ const quitHttp = () => {
   }
 }
 
-const main = async () => {
+const main = async (done) => {
   startHttp()
   startChrome()
   await timeout(3000)
@@ -67,13 +68,13 @@ const main = async () => {
         // fs.writeFileSync(`test/fixture/index-${i + 1}.png`, screenshot, 'base64')
         assert.equal(screenshot, fs.readFileSync(`test/fixture/index-${i + 1}.png`, 'base64'))
         await Runtime.evaluate({ expression: `window.scrollBy(0, ${visibleHeight})` })
-        await timeout(20)
       }
       const screenshot = (await Page.captureScreenshot()).data
       // fs.writeFileSync(`test/fixture/index-${times + 1}.png`, screenshot, 'base64')
       assert.equal(screenshot, fs.readFileSync(`test/fixture/index-${times + 1}.png`, 'base64'))
       quitChrome()
       quitHttp()
+      done()
     })
   }).on('error', (err) => {
     console.error('Cannot connect to browser:', err)
@@ -82,4 +83,9 @@ const main = async () => {
   })
 }
 
-main()
+describe('test', function () {
+  this.timeout(32000)
+  it('should work', function (done) {
+    main(done)
+  })
+})

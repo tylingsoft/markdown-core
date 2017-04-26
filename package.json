@@ -8,7 +8,8 @@
     "upgrade": "ncu -ua && yarn upgrade",
     "build": "node -r babel-register node_modules/.bin/webpack --progress --colors",
     "watch": "yarn build -- --watch",
-    "dist": "yarn build -- -p"
+    "dist": "yarn build -- -p",
+    "test": "mocha"
   },
   "files": [
     "dist",
@@ -44,6 +45,7 @@
     "extract-text-webpack-plugin": "^2.1.0",
     "http-server": "^0.9.0",
     "js-cookie": "^2.1.4",
+    "mocha": "^3.3.0",
     "npm-check-updates": "^2.10.5",
     "standard": "^10.0.1",
     "style-loader": "^0.16.1",
