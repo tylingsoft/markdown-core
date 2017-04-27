@@ -4,6 +4,8 @@ const CDP = require('chrome-remote-interface')
 const fs = require('fs')
 const assert = require('assert')
 
+const init = false
+
 let chromeBin = '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome'
 const chromeOptions = [
   '--disable-gpu',
@@ -16,7 +18,7 @@ const chromeOptions = [
   '--disable-translate',
   '--disable-background-timer-throttling',
   '--disable-device-discovery-notifications',
-  '--window-size=800,600'
+  '--window-size=1280,800'
 ]
 
 const timeout = (ms) => {
@@ -54,19 +56,25 @@ const main = async (done) => {
     Page.loadEventFired(async () => {
       await timeout(3000)
       const html = (await Runtime.evaluate({ expression: 'document.documentElement.outerHTML' })).result.value
-      // fs.writeFileSync('test/fixture/index.html', html)
+      if (init) {
+        fs.writeFileSync('test/fixture/index.html', html)
+      }
       assert.equal(html, fs.readFileSync('test/fixture/index.html', 'utf8'))
       const height = (await Runtime.evaluate({ expression: 'Math.max(document.body.scrollHeight, document.body.offsetHeight, document.documentElement.clientHeight, document.documentElement.scrollHeight, document.documentElement.offsetHeight)' })).result.value
       const visibleHeight = (await Runtime.evaluate({ expression: 'window.innerHeight' })).result.value
       const times = Math.floor(height / visibleHeight)
       for (let i = 0; i < times; i++) {
         const screenshot = (await Page.captureScreenshot()).data
-        // fs.writeFileSync(`test/fixture/index-${i + 1}.png`, screenshot, 'base64')
+        if (init) {
+          fs.writeFileSync(`test/fixture/index-${i + 1}.png`, screenshot, 'base64')
+        }
         assert.equal(screenshot, fs.readFileSync(`test/fixture/index-${i + 1}.png`, 'base64'))
         await Runtime.evaluate({ expression: `window.scrollBy(0, ${visibleHeight})` })
       }
       const screenshot = (await Page.captureScreenshot()).data
-      // fs.writeFileSync(`test/fixture/index-${times + 1}.png`, screenshot, 'base64')
+      if (init) {
+        fs.writeFileSync(`test/fixture/index-${times + 1}.png`, screenshot, 'base64')
+      }
       assert.equal(screenshot, fs.readFileSync(`test/fixture/index-${times + 1}.png`, 'base64'))
       quitChrome()
       quitHttp()
