@@ -57,25 +57,25 @@ const main = async (done) => {
       await timeout(3000)
       const html = (await Runtime.evaluate({ expression: 'document.documentElement.outerHTML' })).result.value
       if (init) {
-        fs.writeFileSync('test/fixture/index.html', html)
+        fs.writeFileSync('test/fixtures/index.html', html)
       }
-      assert.equal(html, fs.readFileSync('test/fixture/index.html', 'utf8'))
+      assert.equal(html, fs.readFileSync('test/fixtures/index.html', 'utf8'))
       const height = (await Runtime.evaluate({ expression: 'Math.max(document.body.scrollHeight, document.body.offsetHeight, document.documentElement.clientHeight, document.documentElement.scrollHeight, document.documentElement.offsetHeight)' })).result.value
       const visibleHeight = (await Runtime.evaluate({ expression: 'window.innerHeight' })).result.value
       const times = Math.floor(height / visibleHeight)
       for (let i = 0; i < times; i++) {
         const screenshot = (await Page.captureScreenshot()).data
         if (init) {
-          fs.writeFileSync(`test/fixture/index-${i + 1}.png`, screenshot, 'base64')
+          fs.writeFileSync(`test/fixtures/index-${i + 1}.png`, screenshot, 'base64')
         }
-        assert.equal(screenshot, fs.readFileSync(`test/fixture/index-${i + 1}.png`, 'base64'))
+        assert.equal(screenshot, fs.readFileSync(`test/fixtures/index-${i + 1}.png`, 'base64'))
         await Runtime.evaluate({ expression: `window.scrollBy(0, ${visibleHeight})` })
       }
       const screenshot = (await Page.captureScreenshot()).data
       if (init) {
-        fs.writeFileSync(`test/fixture/index-${times + 1}.png`, screenshot, 'base64')
+        fs.writeFileSync(`test/fixtures/index-${times + 1}.png`, screenshot, 'base64')
       }
-      assert.equal(screenshot, fs.readFileSync(`test/fixture/index-${times + 1}.png`, 'base64'))
+      assert.equal(screenshot, fs.readFileSync(`test/fixtures/index-${times + 1}.png`, 'base64'))
       quitChrome()
       quitHttp()
       done()

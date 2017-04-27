@@ -41,6 +41,19 @@ Host and open `dist/index.html` in browser
 MIT
 
 
+---
+
+
+## Test
+
+1. Manually review dist/index.html in browser, make sure it look good and everything is fine.
+2. In `test/index.js` set `const init = true`.
+3. Run `yarn test` to generate fixtures in `test/fixtures`.
+4. In `test/index.js` set `const init = false`.
+5. Do development, change code.
+6. Run `yarn test` to make sure nothing breaks.
+
+
 ## Todo
 
 - PPT
