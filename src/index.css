@@ -1,6 +1,6 @@
 body {
   background-color: white;
-  -webkit-print-color-adjust: exact !important;
+  -webkit-print-color-adjust: exact;
 }
 
 .markdown-body {
@@ -15,7 +15,7 @@ body {
 }
 
 .chartjs-hidden-iframe+* {
-  margin-top: 0!important;
+  margin-top: 0;
 }
 
 .markdown-body img {
@@ -114,7 +114,7 @@ mark {
 @media print {
   .markdown-body {
     /* no scroll past end， saving paper */
-    padding-bottom: 0 !important;
+    padding-bottom: 0;
   }
   .markdown-body>* {
     /* avoid line breaks in top level blocks */
