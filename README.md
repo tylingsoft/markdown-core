@@ -60,8 +60,6 @@ MIT
 - Create a website for this project
     - GitHub pages
 - `mdc.xxx` => `xxx`
-- setup Travis CI and coveralls.io, add badges
-- add lots of plugins as peer dependencies
 - support more diagram types from mermaid
     - class diagram
     - git diagram
