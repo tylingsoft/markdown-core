@@ -83,6 +83,7 @@ body {
 
 abbr[title] {
   cursor: help;
+  text-decoration: none;
   border-bottom: 1px dotted #777;
 }
 
