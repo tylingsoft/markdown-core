@@ -2,6 +2,8 @@ import mdc from './index-node'
 import Chart from 'chart.js'
 import Cookies from 'js-cookie'
 
+import 'mermaid'
+
 mdc.loadPreferences = () => {
   let ganttAxisFormat = Cookies.get('gantt-axis-format')
   if (ganttAxisFormat === undefined) {

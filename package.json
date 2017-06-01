@@ -33,11 +33,13 @@
     "markdown-it-source-map": "^0.1.1",
     "markdown-it-sub": "^1.0.0",
     "markdown-it-sup": "^1.0.0",
-    "markdown-it-task-list": "^0.1.2"
+    "markdown-it-task-list": "^0.1.2",
+    "mermaid": "^7.0.2"
   },
   "devDependencies": {
     "babel-core": "^6.24.1",
     "babel-loader": "^7.0.0",
+    "babel-plugin-transform-remove-strict-mode": "^0.0.2",
     "babel-preset-env": "^1.5.1",
     "chart.js": "^2.6.0",
     "chrome-remote-interface": "^0.23.0",

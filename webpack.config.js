@@ -20,6 +20,9 @@ const rules = [
               'browsers': ['last 2 versions']
             }
           }]
+        ],
+        plugins: [
+          'transform-remove-strict-mode'
         ]
       }
     }
@@ -31,6 +34,7 @@ const config = {
   entry: {
     'index': './dist/index.js'
   },
+  externals: 'fs',
   output: {
     path: path.join(__dirname, './dist/'),
     filename: '[name].bundle.js'
