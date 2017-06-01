@@ -3,6 +3,7 @@ import Chart from 'chart.js'
 import Cookies from 'js-cookie'
 
 import 'mermaid'
+import 'mermaid/dist/mermaid.css'
 
 mdc.loadPreferences = () => {
   let ganttAxisFormat = Cookies.get('gantt-axis-format')
