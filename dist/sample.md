@@ -446,7 +446,7 @@ phi_n(kappa) = 1/(4pi^2 kappa^2)
 ```
 
 
-## Flowcharts
+## Flowchart
 
 ```mermaid
 graph TD
@@ -456,14 +456,6 @@ graph TD
     C -->|Two| E[Result two]
 ```
 
-```mermaid
-graph TD
-    A[Hard edge] -->|Link text| B(Round edge)
-    B --> C{Decision}
-    C ---->|One| D[Result one]
-    C -->|Two| E[Result two]
-```
-
 ```
 graph TD
     A[Hard edge] -->|Link text| B(Round edge)
@@ -473,34 +465,76 @@ graph TD
 ```
 
 
-## Sequence diagrams
+## Sequence diagram
 
 ```mermaid
 sequenceDiagram
-    Alice->>Bob: Hello Bob, how are you?
-    alt is sick
-        Bob->>Alice: Not so good :(
-    else is well
-        Bob->>Alice: Feeling fresh like a daisy
-    end
-    opt Extra response
-        Bob->>Alice: Thanks for asking
-    end
+Alice->>Bob: Hello Bob, how are you?
+alt is sick
+    Bob->>Alice: Not so good :(
+else is well
+    Bob->>Alice: Feeling fresh like a daisy
+end
+opt Extra response
+    Bob->>Alice: Thanks for asking
+end
 ```
 
 
-## Gantt diagrams
+## Gantt diagram
 
 ```mermaid
 gantt
-    title A Gantt Diagram
-    dateFormat  YYYY-MM-DD
-    section Section
-    A task           :a1, 2014-01-01, 30d
-    Another task     :after a1, 20d
-    section Another
-    Task in sec      :2014-01-12, 12d
-    anther task      : 24d
+title A Gantt Diagram
+dateFormat  YYYY-MM-DD
+section Section
+A task           :a1, 2014-01-01, 30d
+Another task     :after a1, 20d
+section Another
+Task in sec      :2014-01-12, 12d
+anther task      : 24d
+```
+
+
+## Class diagram
+
+```mermaid
+classDiagram
+Class01 <|-- AveryLongClass : Cool
+Class03 *-- Class04
+Class05 o-- Class06
+Class07 .. Class08
+Class09 --> C2 : Where am i?
+Class09 --* C3
+Class09 --|> Class07
+Class07 : equals()
+Class07 : Object[] elementData
+Class01 : size()
+Class01 : int chimp
+Class01 : int gorilla
+Class08 <--> C2: Cool label
+```
+
+
+## Git graph
+
+```mermaid
+gitGraph:
+options
+{
+    "nodeSpacing": 150,
+    "nodeRadius": 10
+}
+end
+commit
+branch newbranch
+checkout newbranch
+commit
+commit
+checkout master
+commit
+commit
+merge newbranch
 ```
 
 
