@@ -31,6 +31,13 @@ Please refer to [the example](./dist).
 yarn build
 ```
 
+Build in realtime:
+
+```
+yarn watch
+```
+
+
 ### Verify
 
 Host and open `dist/index.html` in browser

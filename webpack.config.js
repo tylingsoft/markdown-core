@@ -22,7 +22,7 @@ const rules = [
           }]
         ],
         plugins: [
-          'transform-remove-strict-mode'
+          'transform-remove-strict-mode' // in order to make mermaid work
         ]
       }
     }
