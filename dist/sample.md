@@ -450,18 +450,18 @@ phi_n(kappa) = 1/(4pi^2 kappa^2)
 
 ```mermaid
 graph TD
-    A[Hard edge] -->|Link text| B(Round edge)
-    B ----> C{Decision}
-    C -->|One| D[Result one]
-    C -->|Two| E[Result two]
+A[Hard edge] -->|Link text| B(Round edge)
+B ----> C{Decision}
+C -->|One| D[Result one]
+C -->|Two| E[Result two]
 ```
 
 ```
 graph TD
-    A[Hard edge] -->|Link text| B(Round edge)
-    B --> C{Decision}
-    C -->|One| D[Result one]
-    C -->|Two| E[Result two]
+A[Hard edge] -->|Link text| B(Round edge)
+B --> C{Decision}
+C -->|One| D[Result one]
+C -->|Two| E[Result two]
 ```
 
 
@@ -513,28 +513,6 @@ Class01 : size()
 Class01 : int chimp
 Class01 : int gorilla
 Class08 <--> C2: Cool label
-```
-
-
-## Git graph
-
-```mermaid
-gitGraph:
-options
-{
-    "nodeSpacing": 150,
-    "nodeRadius": 10
-}
-end
-commit
-branch newbranch
-checkout newbranch
-commit
-commit
-checkout master
-commit
-commit
-merge newbranch
 ```
 
 

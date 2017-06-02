@@ -60,3 +60,4 @@ MIT
 - Create a website for this project
     - GitHub pages
 - `mdc.xxx` => `xxx`
+- Support mermaid git graph
