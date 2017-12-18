@@ -46,7 +46,8 @@ const configCreator = () => ({
   },
   plugins: [
     new ExtractTextPlugin('[name].bundle.css')
-  ]
+  ],
+  devtool: 'source-map'
 })
 
 const config = configCreator()
