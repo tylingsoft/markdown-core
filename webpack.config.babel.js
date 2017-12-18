@@ -29,7 +29,7 @@ const rules = [
   }
 ]
 
-const config = {
+const configCreator = () => ({
   target: 'web',
   entry: {
     'index': './dist/index.js'
@@ -43,6 +43,8 @@ const config = {
   plugins: [
     new ExtractTextPlugin('[name].bundle.css')
   ]
-}
+})
+
+const config = configCreator()
 
 export default [config]
