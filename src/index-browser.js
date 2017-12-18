@@ -1,8 +1,12 @@
+import 'github-css'
+
 import mdc from './index-node'
 import Chart from 'chart.js'
 import Cookies from 'js-cookie'
 
 import 'mermaid'
+
+import './index.css'
 import 'mermaid/dist/mermaid.css'
 
 mdc.loadPreferences = () => {

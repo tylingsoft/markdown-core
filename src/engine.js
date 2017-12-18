@@ -1,5 +1,3 @@
-import 'github-css'
-
 import markdownIt from 'markdown-it'
 import markdownitIcons from 'markdown-it-icons'
 import markdownItHighlight from 'markdown-it-highlight'
@@ -17,8 +15,6 @@ import markdownItTaskList from 'markdown-it-task-list'
 import markdownItSourceMap from 'markdown-it-source-map'
 import markdownItChart from 'markdown-it-chart'
 import markdownItMermaid from 'markdown-it-mermaid'
-
-import './index.css'
 
 const pluginMap = {
   'mark': markdownItMark,

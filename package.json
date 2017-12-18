@@ -7,7 +7,7 @@
   "scripts": {
     "upgrade": "node_modules/.bin/yarn-upgrade-all",
     "build": "webpack --progress --colors",
-    "watch": "yarn build --watch",
+    "build:watch": "yarn build --watch",
     "dist": "yarn build -p",
     "test": "mocha"
   },
