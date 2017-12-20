@@ -1,7 +1,7 @@
 node_modules/
-*.bundle.js
+*.bundle.*
 *.log
 .DS_Store
-*.bundle.css
 test/fixtures/
 *.map
+dist/
