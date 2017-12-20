@@ -16,11 +16,16 @@ yarn add markdown-core
 
 ### Node.js
 
-Demo project: https://github.com/tylingsoft/markdown-core-node-demo
+```js
+import mdc from 'markdown-core'
+
+mdc.render('# hello world')
+```
+
 
 ### Browser
 
-Please refer to [the example](./dist).
+Please refer to [the example](./build).
 
 
 ## Development
@@ -40,7 +45,7 @@ yarn watch
 
 ### Verify
 
-Host and open `dist/index.html` in browser
+Host and open `build/index.html` in browser
 
 
 ## License
@@ -53,7 +58,7 @@ MIT
 
 ## Test
 
-1. Manually review dist/index.html in browser, make sure it look good and everything is fine.
+1. Manually review `build/index.html` in browser, make sure it look good and everything is fine.
 2. In `test/index.js` set `const init = true`.
 3. Run `yarn test` to generate fixtures in `test/fixtures`.
 4. In `test/index.js` set `const init = false`.
@@ -68,3 +73,4 @@ MIT
     - GitHub pages
 - `mdc.xxx` => `xxx`
 - Support mermaid git graph
+- Replace mocha with jest

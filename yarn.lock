@@ -148,7 +148,7 @@ arrify@^1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/arrify/-/arrify-1.0.1.tgz#898508da2226f380df904728456849c1501a4b0d"
 
-asciimath-to-latex@^0.3.1:
+asciimath-to-latex@^0.3.2:
   version "0.3.2"
   resolved "https://registry.yarnpkg.com/asciimath-to-latex/-/asciimath-to-latex-0.3.2.tgz#1f6e6b36ccc11e3de0ceeffa3dce16483ec28b4e"
 
@@ -1421,9 +1421,9 @@ elliptic@^6.0.0:
     minimalistic-assert "^1.0.0"
     minimalistic-crypto-utils "^1.0.0"
 
-emojione@^2.2.7:
-  version "2.2.7"
-  resolved "https://registry.yarnpkg.com/emojione/-/emojione-2.2.7.tgz#46457cf6b9b2f8da13ae8a2e4e547de06ee15e96"
+emojione@^3.1.2:
+  version "3.1.2"
+  resolved "https://registry.yarnpkg.com/emojione/-/emojione-3.1.2.tgz#991e30c80db4b1cf15eacb257620a7edce9c6ef4"
 
 emojis-list@^2.0.0:
   version "2.1.0"
@@ -1837,9 +1837,9 @@ flatten@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/flatten/-/flatten-1.0.2.tgz#dae46a9d78fbe25292258cc1e780a41d95c03782"
 
-font-awesome-icon-chars@^1.2.2:
-  version "1.2.5"
-  resolved "https://registry.yarnpkg.com/font-awesome-icon-chars/-/font-awesome-icon-chars-1.2.5.tgz#25b6088189cc8fe51f921ce06506ed94b1bb8bdb"
+font-awesome-icon-chars@^1.3.0:
+  version "1.3.0"
+  resolved "https://registry.yarnpkg.com/font-awesome-icon-chars/-/font-awesome-icon-chars-1.3.0.tgz#c2cd1628ce67e14f66803044216d91b65e94b741"
 
 for-in@^1.0.1:
   version "1.0.2"
@@ -2079,7 +2079,7 @@ he@^1.1.1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/he/-/he-1.1.1.tgz#93410fd21b009735151f8868c2f271f3427e23fd"
 
-highlight.js@^9.10.0:
+highlight.js@^9.12.0:
   version "9.12.0"
   resolved "https://registry.yarnpkg.com/highlight.js/-/highlight.js-9.12.0.tgz#e6d9dbe57cbefe60751f02af336195870c90c01e"
 
@@ -2478,11 +2478,11 @@ jsx-ast-utils@^1.3.4:
   version "1.4.1"
   resolved "https://registry.yarnpkg.com/jsx-ast-utils/-/jsx-ast-utils-1.4.1.tgz#3867213e8dd79bf1e8f2300c0cfc1efb182c0df1"
 
-katex@^0.7.1:
-  version "0.7.1"
-  resolved "https://registry.yarnpkg.com/katex/-/katex-0.7.1.tgz#06bb5298efad05e1e7228035ba8e1591f3061b8f"
+katex@^0.9.0-alpha2:
+  version "0.9.0-alpha2"
+  resolved "https://registry.yarnpkg.com/katex/-/katex-0.9.0-alpha2.tgz#f559e8bb32969082d735d949960b7df133fd5831"
   dependencies:
-    match-at "^0.1.0"
+    match-at "^0.1.1"
 
 kind-of@^3.0.2:
   version "3.2.2"
@@ -2643,9 +2643,9 @@ markdown-it-abbr@^1.0.4:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/markdown-it-abbr/-/markdown-it-abbr-1.0.4.tgz#d66b5364521cbb3dd8aa59dadfba2fb6865c8fd8"
 
-markdown-it-chart@^0.1.2:
-  version "0.1.2"
-  resolved "https://registry.yarnpkg.com/markdown-it-chart/-/markdown-it-chart-0.1.2.tgz#84fb6183c2cdb34122d1dc0301423e646b5e3c66"
+markdown-it-chart@^0.2.0:
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/markdown-it-chart/-/markdown-it-chart-0.2.0.tgz#5b8a6ec8f44db11df7fabfd28acb3beca6f8b6ff"
 
 markdown-it-container@^2.0.0:
   version "2.0.0"
@@ -2665,38 +2665,38 @@ markdown-it-github-toc@^3.2.4:
   dependencies:
     uslug "^1.0.4"
 
-markdown-it-highlight@^0.1.3:
-  version "0.1.3"
-  resolved "https://registry.yarnpkg.com/markdown-it-highlight/-/markdown-it-highlight-0.1.3.tgz#f9bb7bb5c4c3e89b82ec36cedd0c83b686356ea2"
+markdown-it-highlight@^0.2.0:
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/markdown-it-highlight/-/markdown-it-highlight-0.2.0.tgz#6955a438eefed1cde54edd5ea6b9f6b186846fb1"
   dependencies:
-    highlight.js "^9.10.0"
+    highlight.js "^9.12.0"
 
-markdown-it-icons@^0.3.2:
-  version "0.3.2"
-  resolved "https://registry.yarnpkg.com/markdown-it-icons/-/markdown-it-icons-0.3.2.tgz#85f7a4e21f5d04b9d6c9af402277d5f4fc6d5769"
+markdown-it-icons@^0.4.0:
+  version "0.4.0"
+  resolved "https://registry.yarnpkg.com/markdown-it-icons/-/markdown-it-icons-0.4.0.tgz#6519ad7a0d414210bcaae7ebc36c161cb5987e80"
   dependencies:
-    emojione "^2.2.7"
-    font-awesome-icon-chars "^1.2.2"
+    emojione "^3.1.2"
+    font-awesome-icon-chars "^1.3.0"
     markdown-it-regex "^0.1.4"
 
 markdown-it-ins@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/markdown-it-ins/-/markdown-it-ins-2.0.0.tgz#a5aa6a30f1e2f71e9497567cfdff40f1fde67483"
 
-markdown-it-latex@^0.1.3:
-  version "0.1.3"
-  resolved "https://registry.yarnpkg.com/markdown-it-latex/-/markdown-it-latex-0.1.3.tgz#cf40b03b75489efa46852ff3673926e19e4de928"
+markdown-it-latex@^0.2.0:
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/markdown-it-latex/-/markdown-it-latex-0.2.0.tgz#b7421ddb8ecfdb65f4428b50691c1308e18ab2f0"
   dependencies:
-    asciimath-to-latex "^0.3.1"
-    katex "^0.7.1"
+    asciimath-to-latex "^0.3.2"
+    katex "^0.9.0-alpha2"
 
 markdown-it-mark@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/markdown-it-mark/-/markdown-it-mark-2.0.0.tgz#46a1aa947105aed8188978e0a016179e404f42c7"
 
-markdown-it-mermaid@^0.1.8:
-  version "0.1.8"
-  resolved "https://registry.yarnpkg.com/markdown-it-mermaid/-/markdown-it-mermaid-0.1.8.tgz#b3f9eb7ffad98ca635ae53e804a86f4a9168a2f9"
+markdown-it-mermaid@^0.2.0:
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/markdown-it-mermaid/-/markdown-it-mermaid-0.2.0.tgz#ba0d6e6398bb1b26dd607403262da7a617b8327f"
 
 markdown-it-regex@^0.1.4:
   version "0.1.4"
@@ -2728,9 +2728,9 @@ markdown-it@^8.3.1:
     mdurl "^1.0.1"
     uc.micro "^1.0.3"
 
-match-at@^0.1.0:
-  version "0.1.0"
-  resolved "https://registry.yarnpkg.com/match-at/-/match-at-0.1.0.tgz#f561e7709ff9a105b85cc62c6b8ee7c15bf24f31"
+match-at@^0.1.1:
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/match-at/-/match-at-0.1.1.tgz#25d040d291777704d5e6556bbb79230ec2de0540"
 
 math-expression-evaluator@^1.2.14:
   version "1.2.17"
