@@ -37,7 +37,7 @@ const quitChrome = () => {
 
 let httpServer = null
 const startHttp = () => {
-  httpServer = spawn('./node_modules/.bin/http-server', ['dist'])
+  httpServer = spawn('./node_modules/.bin/http-server', ['build'])
 }
 const quitHttp = () => {
   if (httpServer != null) {

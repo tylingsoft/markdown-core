@@ -6,8 +6,11 @@ import Cookies from 'js-cookie'
 
 import 'mermaid'
 
-import './index.css'
 import 'mermaid/dist/mermaid.css'
+import 'markdown-it-latex/dist/index.css'
+import 'markdown-it-icons/dist/index.css'
+import 'markdown-it-highlight/dist/index.css'
+import './index.css'
 
 mdc.loadPreferences = () => {
   let ganttAxisFormat = Cookies.get('gantt-axis-format')

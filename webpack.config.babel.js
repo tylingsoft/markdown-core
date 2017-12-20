@@ -5,11 +5,11 @@ import nodeExternals from 'webpack-node-externals'
 const configCreator = () => ({
   target: 'web',
   entry: {
-    'index': './dist/index.js'
+    'index': './build/index.js'
   },
   externals: 'fs', // in order to make mermaid work
   output: {
-    path: path.join(__dirname, './dist/'),
+    path: path.join(__dirname, 'build'),
     filename: '[name].bundle.js',
     library: 'mdc',
     libraryTarget: 'umd',
@@ -50,11 +50,12 @@ const configCreator = () => ({
   devtool: 'source-map'
 })
 
-const config = configCreator()
+const webConfig = configCreator()
 
-const coreConfig = configCreator()
-coreConfig.entry.index = './src/index-node.js'
-coreConfig.externals = [nodeExternals()]
-coreConfig.output.filename = '[name].core.bundle.js'
+const nodeConfig = configCreator()
+nodeConfig.entry.index = './src/index-node.js'
+nodeConfig.externals = [nodeExternals()]
+nodeConfig.output.path = path.join(__dirname, 'dist')
+nodeConfig.output.filename = '[name].js'
 
-export default [config, coreConfig]
+export default [webConfig, nodeConfig]
