@@ -29,12 +29,11 @@
     "markdown-it-ins": "^2.0.0",
     "markdown-it-latex": "^0.2.0",
     "markdown-it-mark": "^2.0.0",
-    "markdown-it-mermaid": "^0.2.0",
+    "markdown-it-mermaid": "^0.2.3",
     "markdown-it-source-map": "^0.1.1",
     "markdown-it-sub": "^1.0.0",
     "markdown-it-sup": "^1.0.0",
-    "markdown-it-task-list": "^0.1.2",
-    "mermaid": "^7.1.1"
+    "markdown-it-task-list": "^0.1.2"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",

@@ -4,38 +4,12 @@ import mdc from './index-node'
 import Chart from 'chart.js'
 import Cookies from 'js-cookie'
 
-import mermaid from 'mermaid'
-
 import 'markdown-it-latex/dist/index.css'
 import 'markdown-it-icons/dist/index.css'
 import 'markdown-it-highlight/dist/index.css'
 import './index.css'
 
-window.mermaid = mermaid
-
-mdc.loadPreferences = () => {
-  let mermaidTheme = Cookies.get('mermaid-theme')
-  if (mermaidTheme === undefined) {
-    mermaidTheme = 'default'
-  }
-  let ganttAxisFormat = Cookies.get('gantt-axis-format')
-  if (ganttAxisFormat === undefined) {
-    ganttAxisFormat = '%Y-%m-%d'
-  }
-  window.mermaid.initialize({
-    theme: mermaidTheme,
-    gantt: { axisFormatter: [
-      [ganttAxisFormat, (d) => {
-        return d.getDay() === 1
-      }]
-    ] }
-  })
-  return {
-    'mermaid-theme': mermaidTheme,
-    'gantt-axis-format': ganttAxisFormat
-  }
-}
-mdc.loadPreferences()
+mdc.mermaid.loadPreferences(Cookies) // load mermaid preferences from Cookie
 
 mdc.inited = () => {
   // this is a hook method
@@ -45,7 +19,7 @@ mdc.init = (markdown) => {
   document.getElementById('preview').innerHTML = result
 
   // mermaid
-  window.mermaid.init(undefined, document.querySelectorAll('#preview .mermaid'))
+  mdc.mermaid.init(undefined, document.querySelectorAll('#preview .mermaid'))
 
   // charts
   document.querySelectorAll('#preview .chartjs').forEach(element => {
