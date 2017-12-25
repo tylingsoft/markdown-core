@@ -12,21 +12,28 @@ import 'markdown-it-highlight/dist/index.css'
 import './index.css'
 
 window.mermaid = mermaid
-window.mermaid.initialize({
-  theme: 'forest',
-  gantt: { axisFormatter: [
-    ['%Y-%m-%d', (d) => {
-      return d.getDay() === 1
-    }]
-  ] }
-})
 
 mdc.loadPreferences = () => {
+  let mermaidTheme = Cookies.get('mermaid-theme')
+  if (mermaidTheme === undefined) {
+    mermaidTheme = 'default'
+  }
   let ganttAxisFormat = Cookies.get('gantt-axis-format')
   if (ganttAxisFormat === undefined) {
     ganttAxisFormat = '%Y-%m-%d'
   }
-  return { 'gantt-axis-format': ganttAxisFormat }
+  window.mermaid.initialize({
+    theme: mermaidTheme,
+    gantt: { axisFormatter: [
+      [ganttAxisFormat, (d) => {
+        return d.getDay() === 1
+      }]
+    ] }
+  })
+  return {
+    'mermaid-theme': mermaidTheme,
+    'gantt-axis-format': ganttAxisFormat
+  }
 }
 mdc.loadPreferences()
 
