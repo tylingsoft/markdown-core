@@ -4,20 +4,22 @@ import mdc from './index-node'
 import Chart from 'chart.js'
 import Cookies from 'js-cookie'
 
-import 'mermaid'
+import mermaid from 'mermaid'
 
-import 'mermaid/dist/mermaid.css'
+// import 'mermaid/dist/mermaid.css'
 import 'markdown-it-latex/dist/index.css'
 import 'markdown-it-icons/dist/index.css'
 import 'markdown-it-highlight/dist/index.css'
 import './index.css'
+
+window.mermaid = mermaid
 
 mdc.loadPreferences = () => {
   let ganttAxisFormat = Cookies.get('gantt-axis-format')
   if (ganttAxisFormat === undefined) {
     ganttAxisFormat = '%Y-%m-%d'
   }
-  mdc.mermaid.gantt.axisFormat(ganttAxisFormat)
+  // window.mermaid.gantt.axisFormat(ganttAxisFormat)
   return { 'gantt-axis-format': ganttAxisFormat }
 }
 mdc.loadPreferences()

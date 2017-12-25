@@ -33,13 +33,7 @@ Please refer to [the example](./build).
 ### Build
 
 ```
-yarn build
-```
-
-Build in realtime:
-
-```
-yarn watch
+yarn build:watch
 ```
 
 
@@ -74,3 +68,4 @@ MIT
 - `mdc.xxx` => `xxx`
 - Support mermaid git graph
 - Replace mocha with jest
+- Support mermaid charts with syntax errors
