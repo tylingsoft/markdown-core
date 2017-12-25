@@ -11,6 +11,21 @@ import './index.css'
 
 mdc.mermaid.loadPreferences(Cookies) // load mermaid preferences from Cookie
 
+// below is code sample to load mermaid preference from memory
+/*
+mdc.mermaid.loadPreferences({
+  get: key => {
+    if (key === 'mermaid-theme') {
+      return 'forest'
+    } else if (key === 'gantt-axis-format') {
+      return '%Y/%m/%d'
+    } else {
+      return undefined
+    }
+  }
+})
+*/
+
 mdc.inited = () => {
   // this is a hook method
 }
