@@ -68,4 +68,3 @@ MIT
 - `mdc.xxx` => `xxx`
 - Support mermaid git graph
 - Replace mocha with jest
-- Support mermaid charts with syntax errors

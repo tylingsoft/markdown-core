@@ -448,6 +448,14 @@ phi_n(kappa) = 1/(4pi^2 kappa^2)
 
 ## Flowchart
 
+```mermaid
+graph TD
+A[Hard edge] -->|Link text| B(Round edge)
+B ----> C{Decision}
+C -->|One| D[Result one]
+C -->|Two| E[Result two]
+```
+
 ```
 graph TD
 A[Hard edge] -->|Link text| B(Round edge)

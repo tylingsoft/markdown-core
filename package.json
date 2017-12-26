@@ -2,7 +2,7 @@
   "name": "markdown-core",
   "description": "An extensible markdown engine.",
   "license": "MIT",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "main": "dist/index.js",
   "scripts": {
     "upgrade": "yarn-upgrade-all",
@@ -29,7 +29,7 @@
     "markdown-it-ins": "^2.0.0",
     "markdown-it-latex": "^0.2.0",
     "markdown-it-mark": "^2.0.0",
-    "markdown-it-mermaid": "^0.2.3",
+    "markdown-it-mermaid": "^0.2.5",
     "markdown-it-source-map": "^0.1.1",
     "markdown-it-sub": "^1.0.0",
     "markdown-it-sup": "^1.0.0",
